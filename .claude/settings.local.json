@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(powershell -Command \"\\(Get-Content index.html | Select-String -Pattern '<section|<nav|<header|<main|<div class=\\\\\".*hero|<div class=\\\\\".*banner' | Select-Object -First 30\\)\")",
+      "WebFetch(domain:agenciatrius.com.br)",
+      "Bash(powershell -Command \"\\(Invoke-WebRequest -Uri 'https://agenciatrius.com.br' -UseBasicParsing\\).Content\")",
+      "Bash(powershell -Command \"\\(Invoke-WebRequest -Uri 'https://agenciatrius.com.br/assets/index-CqmMMECK.js' -UseBasicParsing\\).Content\")",
+      "PowerShell($file = 'C:\\\\Users\\\\giova\\\\.claude\\\\projects\\\\c--Users-giova-OneDrive--rea-de-Trabalho-Projetos-Projetos-Projeto-WS-Net\\\\c5e50b7f-88d1-42f4-ab3c-a68cea63f175\\\\tool-results\\\\bifi27afy.txt'; $content = Get-Content $file -Raw; $idx = $content.IndexOf\\('.logo-path'\\); if \\($idx -gt 0\\) { $start = [Math]::Max\\(0, $idx - 300\\); $length = [Math]::Min\\(1000, $content.Length - $start\\); Write-Host $content.Substring\\($start, $length\\) })",
+      "PowerShell($file = 'C:\\\\Users\\\\giova\\\\.claude\\\\projects\\\\c--Users-giova-OneDrive--rea-de-Trabalho-Projetos-Projetos-Projeto-WS-Net\\\\c5e50b7f-88d1-42f4-ab3c-a68cea63f175\\\\tool-results\\\\bifi27afy.txt'; $content = Get-Content $file -Raw; $idx = $content.IndexOf\\('animationDelay'\\); if \\($idx -gt 0\\) { $start = [Math]::Max\\(0, $idx - 500\\); $length = [Math]::Min\\(1500, $content.Length - $start\\); Write-Host $content.Substring\\($start, $length\\) })",
+      "PowerShell($file = 'C:\\\\Users\\\\giova\\\\.claude\\\\projects\\\\c--Users-giova-OneDrive--rea-de-Trabalho-Projetos-Projetos-Projeto-WS-Net\\\\c5e50b7f-88d1-42f4-ab3c-a68cea63f175\\\\tool-results\\\\bifi27afy.txt'; $content = Get-Content $file -Raw; $idxPath1 = $content.IndexOf\\('M11.763084,22.28333c29.232881'\\); $idxPath2 = $content.IndexOf\\('M18.508887,37.233748l65.977311'\\); if \\($idxPath1 -gt 0\\) { $start = [Math]::Max\\(0, $idxPath1 - 800\\); $length = [Math]::Min\\(2000, $content.Length - $start\\); Write-Host $content.Substring\\($start, $length\\) })"
+    ]
+  }
+}

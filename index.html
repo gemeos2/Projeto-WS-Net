@@ -1,0 +1,3120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WS Net - Internet Fibra Óptica de Ultra Velocidade</title>
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <!-- Iconify Icon library -->
+  <script src="https://cdn.jsdelivr.net/npm/iconify-icon@2.1.0/dist/iconify-icon.min.js"></script>
+
+  <style>
+    /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+         DESIGN SYSTEM STYLE BLOCK
+       â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    :root {
+      --bg: #ffffff;
+      --surface: #f4f7ff;
+      --surface2: #eaf0fd;
+      --border: rgba(4, 13, 191, 0.10);
+      --border-bright: rgba(4, 13, 191, 0.22);
+      --c1: #040DBF;
+      --c2: #056CF2;
+      --c3: #05AFF2;
+      --c4: #05F2F2;
+      --text: #242431;
+      --text-mid: #454551;
+      --text-faint: #767679;
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Poppins', system-ui, sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .font-title {
+      font-family: 'Roboto Mono', monospace;
+      font-weight: 500;
+    }
+
+    ::-webkit-scrollbar {
+      width: 5px
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: rgba(4, 13, 191, 0.15);
+      border-radius: 9999px
+    }
+
+    *:focus-visible {
+      outline: 2px solid var(--c1);
+      outline-offset: 2px
+    }
+
+    /* TESTIMONIAL CARD */
+    .dep-card {
+      background: #ffffff;
+      border: 1px solid rgba(4, 13, 191, 0.08);
+      border-radius: 1.5rem;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+        box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+        border-color 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(4, 13, 191, 0.02);
+    }
+
+    .dep-card.active {
+      transform: scale(1.03);
+      border-color: rgba(4, 13, 191, 0.2);
+      box-shadow: 0 20px 40px rgba(4, 13, 191, 0.08);
+    }
+
+    .dep-card:hover.active {
+      transform: scale(1.05) translateY(-4px);
+      box-shadow: 0 24px 48px rgba(4, 13, 191, 0.15);
+      border-color: var(--c1);
+    }
+
+    /* VIEWPORT OVERLAYS FOR EDGE BLUR */
+    #dep-viewport {
+      position: relative;
+    }
+
+    #dep-viewport::before,
+    #dep-viewport::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 160px;
+      z-index: 5;
+      pointer-events: none;
+    }
+
+    #dep-viewport::before {
+      left: 0;
+      background: linear-gradient(to right, var(--surface) 10%, transparent);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      -webkit-mask-image: linear-gradient(to right, black, transparent);
+      mask-image: linear-gradient(to right, black, transparent);
+    }
+
+    #dep-viewport::after {
+      right: 0;
+      background: linear-gradient(to left, var(--surface) 10%, transparent);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      -webkit-mask-image: linear-gradient(to left, black, transparent);
+      mask-image: linear-gradient(to left, black, transparent);
+    }
+
+    /* GRID PATTERN */
+    .grid-pattern {
+      background-image:
+        linear-gradient(rgba(4, 13, 191, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(4, 13, 191, 0.04) 1px, transparent 1px);
+      background-size: 64px 64px;
+    }
+
+    /* SCROLL REVEAL */
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(2rem);
+      transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1)
+    }
+
+    .scroll-reveal.from-left {
+      transform: translateX(-2.5rem)
+    }
+
+    .scroll-reveal.from-scale {
+      transform: scale(0.9) translateY(1rem)
+    }
+
+    .scroll-reveal.revealed {
+      opacity: 1;
+      transform: none
+    }
+
+    /* KEYFRAMES */
+    @keyframes kineticReveal {
+      0% {
+        opacity: 0;
+        transform: translateZ(-800px) translateY(80px) rotateX(30deg) scale(.8);
+        filter: blur(12px)
+      }
+
+      60% {
+        opacity: 1;
+        transform: translateZ(50px) translateY(-10px) rotateX(-5deg) scale(1.02)
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateZ(0) translateY(0) rotateX(0) scale(1);
+        filter: blur(0)
+      }
+    }
+
+    @keyframes liquidFlow {
+      0% {
+        background-position: 0% 50%
+      }
+
+      50% {
+        background-position: 100% 50%
+      }
+
+      100% {
+        background-position: 0% 50%
+      }
+    }
+
+    @keyframes marquee-scroll {
+      0% {
+        transform: translateX(0)
+      }
+
+      100% {
+        transform: translateX(-50%)
+      }
+    }
+
+    @keyframes fadeSlideIn {
+      0% {
+        opacity: 0;
+        transform: translateY(20px)
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0)
+      }
+
+      50% {
+        transform: translateY(-18px)
+      }
+    }
+
+    @keyframes pulseGlow {
+
+      0%,
+      100% {
+        opacity: .25;
+        transform: scale(1)
+      }
+
+      50% {
+        opacity: .55;
+        transform: scale(1.08)
+      }
+    }
+
+    @keyframes shimmer {
+      0% {
+        background-position: -200% 0
+      }
+
+      100% {
+        background-position: 200% 0
+      }
+    }
+
+    @keyframes progressFill {
+      from {
+        width: 0%
+      }
+
+      to {
+        width: var(--progress)
+      }
+    }
+
+    @keyframes auraBar {
+      0% {
+        transform: scaleY(.2)
+      }
+
+      100% {
+        transform: scaleY(1)
+      }
+    }
+
+    @keyframes ping {
+
+      75%,
+      100% {
+        transform: scale(2);
+        opacity: 0
+      }
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg)
+      }
+    }
+
+    @keyframes orbitGlow {
+      0% {
+        transform: rotate(0deg) translateX(140px) rotate(0deg)
+      }
+
+      100% {
+        transform: rotate(360deg) translateX(140px) rotate(-360deg)
+      }
+    }
+
+    /* ANIMATION CLASSES */
+    .animate-kinetic {
+      animation: kineticReveal 1.8s cubic-bezier(0.19, 1, 0.22, 1) both;
+      will-change: transform, opacity, filter
+    }
+
+    .animate-kinetic-d1 {
+      animation-delay: 200ms
+    }
+
+    .animate-kinetic-d2 {
+      animation-delay: 400ms
+    }
+
+    .animate-kinetic-d3 {
+      animation-delay: 600ms
+    }
+
+    .animate-kinetic-d4 {
+      animation-delay: 800ms
+    }
+
+    .text-liquid {
+      color: var(--c4);
+      display: inline-block;
+      max-width: 660px;
+      width: 100%;
+    }
+
+    .animate-marquee {
+      animation: marquee-scroll 32s linear infinite
+    }
+
+    .marquee-wrap:hover .animate-marquee {
+      animation-play-state: paused
+    }
+
+    .animate-float {
+      animation: float 6s ease-in-out infinite
+    }
+
+    .animate-float-d1 {
+      animation-delay: -2s
+    }
+
+    .animate-float-d2 {
+      animation-delay: -4s
+    }
+
+    .animate-pulse-glow {
+      animation: pulseGlow 4s ease-in-out infinite
+    }
+
+    .fade-in {
+      animation: fadeSlideIn 0.8s ease-out both
+    }
+
+    .fade-in-d1 {
+      animation-delay: .1s
+    }
+
+    .fade-in-d2 {
+      animation-delay: .2s
+    }
+
+    .fade-in-d3 {
+      animation-delay: .3s
+    }
+
+    .fade-in-d4 {
+      animation-delay: .4s
+    }
+
+    .shimmer {
+      background: linear-gradient(90deg, #f0f3ff 25%, #d6e0ff 50%, #f0f3ff 75%);
+      background-size: 200% 100%;
+      animation: shimmer 2s infinite;
+    }
+
+    .animate-ping {
+      animation: ping 1.5s cubic-bezier(0, 0, .2, 1) infinite
+    }
+
+    .animate-spin {
+      animation: spin 20s linear infinite
+    }
+
+    /* GLASS CARD */
+    .glass-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 1.5rem;
+      box-shadow: 0 2px 20px rgba(4, 13, 191, 0.06);
+      transition: border-color .3s, box-shadow .3s;
+    }
+
+    .glass-card:hover {
+      border-color: var(--border-bright);
+      box-shadow: 0 4px 32px rgba(4, 13, 191, 0.1);
+    }
+
+    /* SECTION GLOW */
+    .s-glow {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(90px);
+      pointer-events: none
+    }
+
+    /* DIVIDER */
+    .divider {
+      border: none;
+      border-top: 1px solid rgba(4, 13, 191, 0.08);
+      margin: 0
+    }
+
+    /* NAV LINK */
+    .nav-link {
+      font-size: .875rem;
+      color: var(--text-mid);
+      transition: color .2s;
+      cursor: pointer;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 300
+    }
+
+    .nav-link:hover {
+      color: var(--c1)
+    }
+
+    /* â”€â”€ BUTTONS â”€â”€ */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+      padding: .6rem 1.25rem;
+      border-radius: 9999px;
+      font-size: .875rem;
+      font-weight: 400;
+      cursor: pointer;
+      transition: all .3s cubic-bezier(.4, 0, .2, 1);
+      position: relative;
+      overflow: hidden;
+      white-space: nowrap;
+      border: none;
+      font-family: 'Poppins', sans-serif;
+      text-decoration: none;
+    }
+
+    .btn-xs {
+      padding: .3rem .7rem;
+      font-size: .75rem
+    }
+
+    .btn-sm {
+      padding: .4rem .9rem;
+      font-size: .8125rem
+    }
+
+    .btn-lg {
+      padding: .85rem 2rem;
+      font-size: 1rem
+    }
+
+    .btn-xl {
+      padding: 1rem 2.5rem;
+      font-size: 1.0625rem
+    }
+
+    .btn-icon {
+      width: 40px;
+      height: 40px;
+      padding: 0;
+      border-radius: 12px;
+      justify-content: center
+    }
+
+    .btn-icon-sm {
+      width: 34px;
+      height: 34px;
+      padding: 0;
+      border-radius: 10px;
+      justify-content: center
+    }
+
+    .btn-primary {
+      background: var(--c1);
+      color: #fff
+    }
+
+    .btn-primary:hover {
+      background: #0309a0;
+      transform: translateY(-1px);
+      box-shadow: 0 8px 28px rgba(4, 13, 191, 0.35)
+    }
+
+    .btn-primary .btn-glow-layer {
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: linear-gradient(135deg, var(--c2), var(--c3));
+      transform: translateX(-100%);
+      transition: transform .4s cubic-bezier(.4, 0, .2, 1);
+    }
+
+    .btn-primary:hover .btn-glow-layer {
+      transform: translateX(0)
+    }
+
+    .btn-primary>span,
+    .btn-primary>iconify-icon {
+      position: relative;
+      z-index: 1
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--c1);
+      border: 1.5px solid var(--c1)
+    }
+
+    .btn-secondary:hover {
+      background: rgba(4, 13, 191, 0.06);
+      transform: translateY(-1px)
+    }
+
+    .btn-c2 {
+      background: var(--c2);
+      color: #fff
+    }
+
+    .btn-c2:hover {
+      background: #044fd4;
+      transform: translateY(-1px);
+      box-shadow: 0 8px 28px rgba(5, 108, 242, 0.35)
+    }
+
+    .btn-glow {
+      background: linear-gradient(135deg, var(--c1), var(--c2));
+      color: #fff;
+      box-shadow: 0 0 22px rgba(4, 13, 191, 0.25)
+    }
+
+    .btn-glow:hover {
+      box-shadow: 0 0 44px rgba(4, 13, 191, 0.5), 0 0 80px rgba(5, 108, 242, 0.2);
+      transform: translateY(-2px)
+    }
+
+    .btn-ghost {
+      background: rgba(4, 13, 191, 0.05);
+      color: var(--c1);
+      border: 1px solid rgba(4, 13, 191, 0.15)
+    }
+
+    .btn-ghost:hover {
+      background: rgba(4, 13, 191, 0.1);
+      border-color: rgba(4, 13, 191, 0.3)
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text-mid);
+      border: 1px solid rgba(4, 13, 191, 0.2);
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      transition: color .3s, border-color .3s, box-shadow .3s, transform .3s;
+    }
+
+    .btn-outline::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--c2), var(--c3));
+      transform: translateX(-100%);
+      transition: transform .4s cubic-bezier(.4, 0, .2, 1);
+      z-index: -1;
+      border-radius: inherit;
+    }
+
+    .btn-outline:hover::before {
+      transform: translateX(0);
+    }
+
+    .btn-outline:hover {
+      border-color: transparent;
+      color: #ffffff;
+      box-shadow: 0 8px 28px rgba(4, 13, 191, 0.35);
+      transform: translateY(-1px);
+    }
+
+    .btn-outline:hover img {
+      filter: brightness(0) invert(1);
+      transition: filter .3s;
+    }
+
+    .btn-outline>* {
+      position: relative;
+      z-index: 1;
+    }
+
+    .btn-danger {
+      background: rgba(220, 38, 38, 0.08);
+      color: #dc2626;
+      border: 1px solid rgba(220, 38, 38, 0.25)
+    }
+
+    .btn-danger:hover {
+      background: rgba(220, 38, 38, 0.15);
+      box-shadow: 0 0 18px rgba(220, 38, 38, 0.15)
+    }
+
+    .btn-light {
+      background: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--border)
+    }
+
+    .btn-light:hover {
+      background: var(--surface2);
+      border-color: var(--border-bright)
+    }
+
+
+    /* â”€â”€ DARK THEME & HERO LAYOUT OVERRIDES â”€â”€ */
+    .hero-dark-grid {
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    }
+
+    /* Override text liquid style to display solid c4 color so it is visible on deep blue bg */
+    .hero-dark-grid .text-liquid {
+      color: var(--c4);
+    }
+
+    .header-dark .nav-link {
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    .header-dark .nav-link:hover {
+      color: var(--c4);
+    }
+
+    /* Custom dark theme modifier buttons */
+    .btn-c4 {
+      background: var(--c4);
+      color: var(--c1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-c4 .btn-glow-layer {
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: linear-gradient(135deg, var(--c2), var(--c3));
+      transform: translateX(-100%);
+      transition: transform .4s cubic-bezier(.4, 0, .2, 1);
+    }
+
+    .btn-c4:hover .btn-glow-layer {
+      transform: translateX(0);
+    }
+
+    .btn-c4:hover {
+      color: #ffffff;
+      box-shadow: 0 8px 28px rgba(5, 242, 242, 0.45);
+      transform: translateY(-1px);
+    }
+
+    .btn-c4>span,
+    .btn-c4>iconify-icon {
+      position: relative;
+      z-index: 1;
+    }
+
+    .btn-outline-white {
+      background: transparent;
+      color: #ffffff;
+      border: 1.5px solid rgba(255, 255, 255, 0.35);
+    }
+
+    .btn-outline-white:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: #ffffff;
+      color: #ffffff;
+      transform: translateY(-1px);
+    }
+
+    .btn-white {
+      background: #ffffff;
+      color: var(--c1);
+      font-weight: 500;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-white .btn-glow-layer {
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: linear-gradient(135deg, var(--c2), var(--c3));
+      transform: translateX(-100%);
+      transition: transform .4s cubic-bezier(.4, 0, .2, 1);
+    }
+
+    .btn-white:hover .btn-glow-layer {
+      transform: translateX(0);
+    }
+
+    .btn-white:hover {
+      color: #ffffff;
+      box-shadow: 0 8px 28px rgba(4, 13, 191, 0.35);
+      transform: translateY(-1px);
+    }
+
+    .btn-white>span,
+    .btn-white>iconify-icon {
+      position: relative;
+      z-index: 1;
+    }
+
+    @media (max-width: 1024px) {
+      .hero-container {
+        grid-template-columns: 1fr !important;
+        text-align: center;
+        gap: 3.5rem !important;
+        padding-top: 40px;
+        padding-bottom: 0;
+      }
+
+      .hero-content {
+        align-items: center !important;
+      }
+
+      .hero-content .animate-kinetic {
+        align-self: center !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-menu {
+        display: none !important;
+      }
+    }
+
+    /* NAV DARK THEME */
+    .nav-dark-theme .nav-link {
+      color: var(--c1) !important;
+      text-decoration: none;
+      font-size: 15px;
+    }
+
+    .nav-dark-theme .nav-link:hover {
+      color: var(--c4) !important;
+    }
+
+    /* --- ELECTRIC BORDER SYSTEM --- */
+    .electric-border {
+      --electric-border-color: #040DBF;
+      --electric-light-color: #056CF2;
+      position: relative;
+      border-radius: 1.5rem;
+      overflow: visible;
+      isolation: isolate;
+    }
+
+    .eb-canvas-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: 2;
+      opacity: 0.25;
+    }
+
+    .eb-canvas {
+      display: block;
+    }
+
+    .eb-content {
+      position: relative;
+      border-radius: inherit;
+      z-index: 1;
+    }
+
+    .eb-layers {
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .eb-glow-1,
+    .eb-glow-2,
+    .eb-background-glow {
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      pointer-events: none;
+      box-sizing: border-box;
+    }
+
+    .eb-glow-1 {
+      border: 2px solid rgba(4, 13, 191, 0.2);
+      filter: blur(1px);
+    }
+
+    .eb-glow-2 {
+      border: 2px solid rgba(5, 108, 242, 0.3);
+      filter: blur(4px);
+    }
+
+    .eb-background-glow {
+      z-index: -1;
+      transform: scale(1.05);
+      filter: blur(32px);
+      opacity: 0.08;
+      background: linear-gradient(-30deg, rgba(5, 108, 242, 0.25), transparent, rgba(4, 13, 191, 0.25));
+    }
+
+    /* GSAP Entrance Animation Overrides */
+    .word-wrapper {
+      display: inline-block;
+      overflow: hidden;
+      vertical-align: bottom;
+    }
+    .masked-word {
+      display: inline-block;
+      transform: translateY(110%);
+    }
+    
+    /* Disable default CSS keyframe animation for kinetic hero reveal when using GSAP */
+    .animate-kinetic {
+      animation: none !important;
+      opacity: 0;
+    }
+    #hero-section h1.animate-kinetic {
+      opacity: 1;
+    }
+    
+    /* Hide scroll-reveal elements initially so GSAP can fade them up */
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: none !important; /* disable CSS transitions for GSAP control */
+    }
+    .scroll-reveal.from-left {
+      transform: translateX(-40px);
+    }
+    .scroll-reveal.revealed {
+      opacity: 0; /* Override direct revealed state until GSAP controls it */
+      transform: translateY(30px);
+    }
+    .scroll-reveal.from-left.revealed {
+      transform: translateX(-40px);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ════════════════════════════════════════
+       PAGE PRELOADER — Lightning SVG Draw
+       ════════════════════════════════════════ -->
+  <div id="preloader" aria-hidden="true" style="
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f4f7ff;
+    overflow: hidden;
+  ">
+    <!-- Radial ambient glow behind logo -->
+    <div id="preloader-glow" style="
+      position: absolute;
+      width: 480px;
+      height: 480px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(5,108,242,0.12) 0%, transparent 70%);
+      pointer-events: none;
+      opacity: 0;
+    "></div>
+
+    <!-- SVG logo container -->
+    <div id="preloader-logo" style="width: clamp(160px, 22vw, 280px); position: relative; will-change: transform; filter: drop-shadow(0 0 12px rgba(5,108,242,0.5));">
+      <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 8600 4800"
+        style="width:100%;height:auto;display:block;overflow:visible">
+
+        <!-- ── stroke paths — single continuous pen draw ── -->
+        <g id="logo-strokes" style="opacity:1;will-change:transform">
+          <path id="sp0" class="svg-stroke-path" fill="none" stroke="#056CF2" stroke-width="80" stroke-linecap="round" stroke-linejoin="round"
+            d="M8427.43 2074.65c-91.16,981.1 -514.72,1828.93 -1090.41,2255.13 -885.99,655.93 -1700.97,14.96 -2468.5,-298.85 -1081.52,-442.19 -1783.45,-82.18 -2841.9,61.09 -1109.44,150.17 -1751.95,-503.84 -1855.59,-1458.32 -109.82,-1011.4 353.6,-1825.72 1507.28,-1797.8 503.62,12.18 958.29,140.58 1416.83,244.14 598.08,135.06 860.13,190.74 1423.46,-26.62 702.82,-271.18 1590.02,-840.06 2476.1,-857.73 1176.34,-23.47 1527.22,862.13 1432.73,1878.96zm-1739.02 -1988.39c-874.53,107.61 -1817.32,759.02 -2517.33,938.68 -458.9,117.77 -1054.97,-89.16 -1485.47,-180.14 -473.66,-100.11 -1045.85,-212.83 -1551.7,-94.42 -458.34,107.3 -788.55,401.54 -949.25,780.81 -349.03,823.72 -141.15,2033.47 655.09,2500.48 879.04,515.58 2009.38,-80.16 2971.98,-79.18 1179.72,1.2 1706.88,775.61 2657.94,791.62 1756.26,29.56 2588.09,-2912.14 1819.87,-4099.1 -322.16,-497.75 -938.11,-640.34 -1601.13,-558.75z"/>
+          <path id="sp1" class="svg-stroke-path" fill="none" stroke="#056CF2" stroke-width="80" stroke-linecap="round" stroke-linejoin="round"
+            d="M1259.66 3344.91l469.39 -0.43c35.62,-83.33 310.48,-738.9 338.69,-752.46l80.62 752.78 439.22 -1.02 474.82 -1629.62 -412.92 11.21 -207.92 669.53c-39.91,-66.19 -75.56,-547.08 -90.91,-674.91l-322.59 -7.84 -306.33 750.94 29.1 -749.83 -397.82 -0.05 -93.35 1631.7z"/>
+          <path id="sp2" class="svg-stroke-path" fill="none" stroke="#056CF2" stroke-width="80" stroke-linecap="round" stroke-linejoin="round"
+            d="M4010.62 3346.55c490.68,-2 377.55,77.42 501.73,-334.95 29.32,-97.36 66.96,-290.8 112.11,-355.97l49.38 686.97 424.72 1.8 482.26 -1630.71 -416.48 -0.28 -212.54 691.22 -70.68 -688.86 -399.06 -3.15 -356.37 1214.83c-31.63,109.39 -110.48,325.05 -115.07,419.1z"/>
+          <path id="sp3" class="svg-stroke-path" fill="none" stroke="#056CF2" stroke-width="80" stroke-linecap="round" stroke-linejoin="round"
+            d="M3332 2806.66l-415.15 -3.23c-53.91,182.22 -193.65,541.62 267.97,569.16 316.58,18.88 599.66,-25.94 724.3,-254.03 127.09,-232.56 170.19,-548.23 -53.27,-699.3 -139.49,-94.3 -386.94,-175.14 -276.06,-391.2 49.53,-96.53 210.05,-124.5 177.85,41.4 -8.01,41.23 -21.99,62.19 -30.66,110.97l397.28 2.65c60.47,-221.93 186.79,-513.92 -380.73,-502.03 -363.77,7.62 -520.65,109.44 -609.82,410.04 -134.15,452.21 71.04,446.6 307.06,642.61 103.1,85.62 55.37,298.65 -35.15,339.81 -224.84,102.22 -76.73,-249.02 -73.62,-266.85z"/>
+          <path id="sp4" class="svg-stroke-path" fill="none" stroke="#056CF2" stroke-width="80" stroke-linecap="round" stroke-linejoin="round"
+            d="M5279.76 3346.55l817.83 -3.39 110.92 -358.35 -423.58 -2.95 94.92 -326.19 385.29 -0.88 92.7 -312.99 -385.32 -2.19 83.11 -299.7 394.44 -1.2 100.86 -325.69 -797.51 -0.01c-46.16,195.95 -468.21,1523.04 -473.66,1633.54z"/>
+          <path id="sp5" class="svg-stroke-path" fill="none" stroke="#056CF2" stroke-width="80" stroke-linecap="round" stroke-linejoin="round"
+            d="M6602.55 2046.37l283.1 2.54 -368.67 1293.08 459.32 2.74 379.03 -1300.46 316.91 -6.59 99.19 -324.21 -1016.15 -1.6c-45.28,-0.07 -53.9,-1.35 -54.44,0.01l-14.88 37.06c-17.81,29.01 -73.57,253.15 -83.41,297.43z"/>
+        </g>
+
+      </svg>
+    </div>
+  </div>
+  <!-- END PRELOADER -->
+
+  <!-- GSAP + GSAP ScrollTrigger CDN (loaded early for preloader) -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+  <script>
+    /* ──────────────────────────────────────────────────────────────
+       PRELOADER — Single-pen SVG Draw Animation
+       Each path is drawn fully before the next begins, simulating
+       one continuous stroke travelling around the logo outline.
+    ────────────────────────────────────────────────────────────── */
+    (function () {
+      const preloader   = document.getElementById('preloader');
+      const glow        = document.getElementById('preloader-glow');
+      const strokePaths = Array.from(document.querySelectorAll('.svg-stroke-path'));
+
+      /* Measure every path and hide it completely via dashoffset */
+      strokePaths.forEach(path => {
+        const len = path.getTotalLength();
+        path.style.strokeDasharray  = len;
+        path.style.strokeDashoffset = len;
+      });
+
+      const tl = gsap.timeline();
+
+      /* Glow entra junto com o traço */
+      tl.to(glow, { opacity: 1, duration: 0.6, ease: 'power2.out' }, 0);
+
+      /* Todas as letras e o contorno começam em t=0 e terminam juntos em t=drawTotal.
+         Cada path anima seu próprio dashoffset (comprimento → 0) na mesma duração. */
+      const outerPath   = strokePaths[0];
+      const letterPaths = strokePaths.slice(1);
+      const drawTotal   = 2.4;
+
+      /* ── Todas as letras em paralelo, mesma duração ── */
+      tl.to(letterPaths, {
+        strokeDashoffset: 0,
+        duration: drawTotal,
+        ease: 'power2.inOut',
+      }, 0);
+
+      /* ── Contorno em paralelo, mesma duração ── */
+      tl.to(outerPath, {
+        strokeDashoffset: 0,
+        duration: drawTotal,
+        ease: 'power2.inOut',
+      }, 0);
+
+      /* 3 — Fade entire preloader out after draw completes */
+      tl.to(preloader, {
+        opacity: 0,
+        duration: 0.65,
+        ease: 'power2.inOut',
+        delay: 0.25,
+        onComplete() {
+          preloader.style.display = 'none';
+          document.body.style.overflow = '';
+        },
+      });
+
+      /* Lock scroll while preloader is active */
+      document.body.style.overflow = 'hidden';
+    })();
+  </script>
+
+  <nav class="nav-dark-theme"
+    style="position:fixed;top:1.25rem;left:50%;transform:translateX(-50%);width:calc(100% - 2.5rem);max-width:82rem;z-index:100;background:rgba(255, 255, 255, 0.95);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255, 255, 255, 0.15);border-radius:9999px;box-shadow:0 12px 40px rgba(5, 108, 242, 0.3)">
+    <div style="padding:0 1.75rem 0 1.25rem;display:flex;align-items:center;justify-content:space-between;height:64px">
+      <!-- Logo image -->
+      <div style="display:flex;align-items:center">
+        <img src="assets/icons/logo.svg" alt="WS Net" style="height:40px;width:auto;object-fit:contain">
+      </div>
+
+      <!-- Nav menu layout -->
+      <div class="nav-menu" style="display:flex;align-items:center;gap:28px">
+        <a href="#planos" class="nav-link">Planos</a>
+        <a href="#atendimento" class="nav-link">Atendimento</a>
+        <a href="#cobertura" class="nav-link">Cobertura</a>
+        <a href="#sobre" class="nav-link">Sobre nós</a>
+        <a href="#area-assinante" class="nav-link">Área do assinante</a>
+      </div>
+
+      <!-- Nav CTAs -->
+      <div style="display:flex;align-items:center;gap:10px">
+        <a href="https://wa.me/5500000000000" target="_blank" class="btn btn-primary btn-sm"
+          onmouseenter="this.querySelector('.btn-glow-layer').style.transform='translateX(0)'"
+          onmouseleave="this.querySelector('.btn-glow-layer').style.transform='translateX(-100%)'"
+          style="text-decoration:none">
+          <span class="btn-glow-layer" style="transform:translateX(-100%)"></span>
+          <span>ASSINE JÁ</span>
+          <iconify-icon icon="solar:arrow-right-linear" style="position:relative;z-index:1"></iconify-icon>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+       HERO SECTION (Royal Blue c1)
+     â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+  <section id="hero-section"
+    style="position:relative;display:flex;align-items:center;justify-content:center;padding-top:180px;padding-bottom:50px;min-height:90vh;background:var(--c1)"
+    class="grid-pattern hero-dark-grid">
+
+    <!-- Antigravity Canvas Background -->
+    <canvas id="antigravity-canvas"
+      style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:2"></canvas>
+
+    <!-- Ambient glows (brand-colored) -->
+    <div class="s-glow animate-pulse-glow"
+      style="width:600px;height:600px;background:radial-gradient(circle,rgba(5,175,242,0.15),transparent 70%);top:-80px;left:-80px">
+    </div>
+    <div class="s-glow animate-pulse-glow animate-float-d1"
+      style="width:480px;height:480px;background:radial-gradient(circle,rgba(5,242,242,0.12),transparent 70%);bottom:-60px;right:-60px">
+    </div>
+    <div class="s-glow animate-float"
+      style="width:260px;height:260px;background:radial-gradient(circle,rgba(5,108,242,0.18),transparent 70%);top:38%;right:14%">
+    </div>
+
+    <!-- Orbiting rings -->
+    <div
+      style="position:absolute;width:320px;height:320px;border-radius:50%;border:1px solid rgba(255,255,255,0.05);top:50%;left:50%;transform:translate(-50%,-50%);animation:spin 30s linear infinite">
+    </div>
+    <div
+      style="position:absolute;width:480px;height:480px;border-radius:50%;border:1px dashed rgba(255,255,255,0.03);top:50%;left:50%;transform:translate(-50%,-50%);animation:spin 50s linear infinite reverse">
+    </div>
+    <!-- Orbiting dot -->
+    <div
+      style="position:absolute;top:50%;left:50%;width:8px;height:8px;margin:-4px;border-radius:50%;background:var(--c4);box-shadow:0 0 16px rgba(5,242,242,0.7);animation:orbitGlow 8s linear infinite">
+    </div>
+
+    <!-- Floating particles -->
+    <div
+      style="position:absolute;width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,0.25);top:22%;left:18%;animation:float 7s ease-in-out infinite">
+    </div>
+    <div
+      style="position:absolute;width:4px;height:4px;border-radius:50%;background:rgba(5,242,242,0.4);top:58%;left:14%;animation:float 9s ease-in-out infinite 2s">
+    </div>
+    <div
+      style="position:absolute;width:6px;height:6px;border-radius:50%;background:rgba(5,175,242,0.4);top:33%;right:19%;animation:float 8s ease-in-out infinite 1s">
+    </div>
+    <div
+      style="position:absolute;width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,0.15);bottom:28%;right:28%;animation:float 6s ease-in-out infinite 3s">
+    </div>
+
+    <!-- Layout Container -->
+    <div class="hero-container"
+      style="position:relative;z-index:10;max-width:82rem;margin:0 auto;padding:0 1.5rem;display:grid;grid-template-columns:1.15fr 0.85fr;gap:4rem;align-items:center;width:100%">
+
+      <!-- Content (Left Column) -->
+      <div class="hero-content"
+        style="display:flex;flex-direction:column;align-items:flex-start;perspective:1200px;transform-style:preserve-3d">
+
+        <!-- Badge -->
+        <div class="animate-kinetic"
+          style="display:inline-flex;align-items:center;gap:8px;border-radius:9999px;border:1.5px solid rgba(5,242,242,0.3);background:rgba(5,242,242,0.06);padding:.4rem 1rem .4rem .7rem;margin-bottom:2rem">
+          <span style="position:relative;display:flex;align-items:center;justify-content:center;width:8px;height:8px">
+            <span class="animate-ping"
+              style="position:absolute;inset:0;border-radius:50%;background:var(--c4);opacity:.7"></span>
+            <span
+              style="position:relative;width:8px;height:8px;border-radius:50%;background:var(--c4);display:block"></span>
+          </span>
+          <span
+            style="font-size:.8125rem;font-weight:500;color:var(--c4);font-family:'Roboto Mono',monospace;letter-spacing:0.05em">INTERNET
+            ULTRA FIBRA</span>
+        </div>
+
+        <!-- Headline -->
+        <h1 class="animate-kinetic animate-kinetic-d1"
+          style="font-family:'Poppins',sans-serif;font-size:clamp(2.25rem,4.5vw,3.75rem);font-weight:600;line-height:1.15;letter-spacing:-.03em;transform-style:preserve-3d;margin-bottom:1.5rem;color:#ffffff">
+          A internet mais bem avaliada de <br>
+          <span class="text-liquid">Mongaguá, Itanhaém e Peruíbe</span>
+        </h1>
+
+        <!-- Sub -->
+        <ul class="animate-kinetic animate-kinetic-d2"
+          style="max-width:38rem;margin-bottom:2.5rem;font-size:1.125rem;line-height:1.8;color:rgba(255,255,255,0.9);font-weight:400;list-style:none;display:flex;flex-direction:row;flex-wrap:wrap;gap:2rem;padding:0">
+          <li style="display:flex;align-items:center;gap:10px;opacity:0.6">
+            <img src="assets/icons/Icone loja.svg" alt="Loja" style="width:1.5rem;height:1.5rem;object-fit:contain">
+            Desconto em 3.000+ lojas
+          </li>
+          <li style="display:flex;align-items:center;gap:10px;opacity:0.6">
+            <img src="assets/icons/Money.svg" alt="Cashback" style="width:1.5rem;height:1.5rem;object-fit:contain">
+            Cashback
+          </li>
+        </ul>
+
+      </div>
+
+      <!-- Modem Image (Right Column) -->
+      <div class="hero-image-wrapper animate-kinetic animate-kinetic-d2"
+        style="display:flex;flex-direction:column;justify-content:center;align-items:center;position:relative;width:100%;z-index:20">
+        <div class="s-glow animate-pulse-glow"
+          style="width:380px;height:380px;background:radial-gradient(circle,rgba(5,242,242,0.16),transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);filter:blur(40px)">
+        </div>
+        <img src="assets/img/Sem-Título-3333.png" alt="Modem Wi-Fi WS Net Fibra"
+          style="position:relative;z-index:2;max-width:100%;height:auto;object-fit:contain;filter:drop-shadow(0 20px 50px rgba(4,13,191,0.4)) drop-shadow(0 10px 15px rgba(5,108,242,0.2))">
+      </div>
+
+    </div>
+  </section>
+
+
+  </section>
+
+  <hr class="divider">
+
+  <!-- ==========================================
+       PLANOS SECTION (Light Theme - NovaDS Compliant)
+       ========================================== -->
+  <section id="planos" class="grid-pattern"
+    style="position:relative;background:var(--surface);padding:100px 0;overflow:hidden;color:var(--text);display:flex;align-items:center;justify-content:center">
+
+    <!-- Ambient glows (light, brand-colored) -->
+    <div class="s-glow animate-pulse-glow"
+      style="width:500px;height:500px;background:radial-gradient(circle,rgba(4,13,191,0.06),transparent 70%);top:-80px;left:-80px">
+    </div>
+    <div class="s-glow animate-float"
+      style="width:400px;height:400px;background:radial-gradient(circle,rgba(5,175,242,0.08),transparent 70%);bottom:-60px;right:-60px">
+    </div>
+
+    <div style="position:relative;z-index:10;max-width:82rem;margin:0 auto;padding:0 1.5rem;width:100%">
+
+      <!-- Headline -->
+      <div style="text-align:center;margin-bottom:40px">
+        <span class="badge badge-c2" style="margin-bottom:1rem;display:inline-flex">Nossos Planos</span>
+        <h2
+          style="font-family:'Poppins',sans-serif;font-size:clamp(1.75rem,3.5vw,2.75rem);font-weight:600;color:var(--text);letter-spacing:-.02em;line-height:1.25;margin-bottom:1.5rem">
+          Escolha a velocidade ideal para você
+        </h2>
+
+        <!-- Tab Selector Capsule -->
+        <div
+          style="display:inline-flex;background:var(--surface2);padding:6px;border-radius:9999px;border:1px solid var(--border);box-shadow:0 4px 12px rgba(4,13,191,0.05)">
+          <button id="tab-residencial" onclick="switchTab('residencial')" class="btn btn-sm btn-primary"
+            style="border-radius:9999px;font-weight:500;padding:.5rem 1.5rem;border:none;cursor:pointer;">
+            Internet Residencial
+          </button>
+          <button id="tab-movel" onclick="switchTab('movel')" class="btn btn-sm btn-outline"
+            style="border-radius:9999px;font-weight:500;padding:.5rem 1.5rem;border:none;background:transparent;color:var(--text-mid);cursor:pointer;">
+            Internet Móvel
+          </button>
+        </div>
+      </div>
+
+      <!-- RESIDENCIAL PLANS GRID -->
+      <div id="grid-residencial"
+        style="display:grid;grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));gap:2rem;margin-bottom:40px;animation:fadeSlideIn 0.5s ease-out">
+
+        <!-- Plan 1: SMART+ -->
+        <div class="glass-card scroll-reveal revealed"
+          style="padding:3rem 2.25rem;display:flex;flex-direction:column;justify-content:space-between;min-height:540px;transition:all .4s cubic-bezier(.4,0,.2,1);cursor:pointer;"
+          onmouseenter="this.style.transform='translateY(-8px)';this.style.borderColor='var(--border-bright)';this.style.boxShadow='0 20px 40px rgba(4,13,191,0.08)'"
+          onmouseleave="this.style.transform='';this.style.borderColor='var(--border)';this.style.boxShadow=''">
+
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem">
+              <span
+                style="font-family:'Roboto Mono',monospace;font-size:0.8125rem;font-weight:600;color:var(--c2);text-transform:uppercase;letter-spacing:0.05em">Ultra
+                Fibra</span>
+            </div>
+            <h3
+              style="font-family:'Poppins',sans-serif;font-size:2.5rem;font-weight:700;color:var(--text);line-height:1;margin-bottom:0.25rem">
+              500<span style="font-size:1.25rem;font-weight:500;color:var(--text-mid)"> Mega</span>
+            </h3>
+            <div
+              style="font-family:'Poppins',sans-serif;font-size:1.125rem;font-weight:600;color:var(--c1);margin-bottom:1.5rem">
+              SMART+
+            </div>
+            <hr style="border:none;border-top:1px solid rgba(4,13,191,0.08);margin-bottom:1.5rem">
+
+            <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.75rem">
+              <li style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-mid)">
+                <iconify-icon icon="solar:check-circle-bold"
+                  style="color:var(--c3);flex-shrink:0;font-size:1.1rem"></iconify-icon>
+                1 roteador wi-fi Giga
+              </li>
+              <li style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-mid)">
+                <iconify-icon icon="solar:check-circle-bold"
+                  style="color:var(--c3);flex-shrink:0;font-size:1.1rem"></iconify-icon>
+                TV streaming <span
+                  style="font-size:0.75rem;color:var(--c1);font-weight:600;background:rgba(4,13,191,0.06);padding:2px 6px;border-radius:4px;margin-left:4px">Grátis
+                  por 6 meses</span>
+              </li>
+              <li style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-mid)">
+                <iconify-icon icon="solar:check-circle-bold"
+                  style="color:var(--c3);flex-shrink:0;font-size:1.1rem"></iconify-icon>
+                Acesso à estante digital
+              </li>
+              <li style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-mid)">
+                <iconify-icon icon="solar:check-circle-bold"
+                  style="color:var(--c3);flex-shrink:0;font-size:1.1rem"></iconify-icon>
+                Acesso ao jornalz
+              </li>
+              <li style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-mid)">
+                <iconify-icon icon="solar:check-circle-bold"
+                  style="color:var(--c3);flex-shrink:0;font-size:1.1rem"></iconify-icon>
+                Planos pós-pago
+              </li>
+              <li style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-mid)">
+                <iconify-icon icon="solar:check-circle-bold"
+                  style="color:var(--c3);flex-shrink:0;font-size:1.1rem"></iconify-icon>
+                Instalação gratuita
+              </li>
+            </ul>
+          </div>
+
+          <div style="margin-top:2.5rem">
+            <span
+              style="display:block;font-family:'Roboto Mono',monospace;font-size:0.75rem;font-weight:600;letter-spacing:0.1em;color:var(--text-faint);text-transform:uppercase;margin-bottom:0.5rem">
+              Assinatura mensal
+            </span>
+            <div style="display:flex;align-items:baseline;gap:4px;margin-bottom:1.5rem">
+              <span style="font-family:'Poppins',sans-serif;font-size:2.5rem;font-weight:700;color:var(--c1)">R$
+                105,90</span>
+              <span style="font-family:'Poppins',sans-serif;font-size:1rem;color:var(--text-faint)">/mês</span>
+            </div>
+            <a href="https://wa.me/5500000000000?text=Olá!%20Gostaria%20de%20assinar%20o%20plano%20SMART+%20de%20500%20Mega"
+              target="_blank" class="btn btn-outline"
+              style="width:100%;justify-content:center;gap:8px;border-color:rgba(4, 13, 191, 0.25)">
+              <img src="assets/icons/wpp verde.svg" alt="WhatsApp"
+                style="width:1.2rem;height:1.2rem;object-fit:contain">
+              Quero assinar
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Plan 2: Premium+ (Highlighted/Most Popular) -->
+        <div class="glass-card scroll-reveal revealed"
+          style="padding:3rem 2.25rem;display:flex;flex-direction:column;justify-content:space-between;min-height:540px;transition:all .4s cubic-bezier(.4,0,.2,1);position:relative;overflow:hidden;border-color:rgba(4,13,191,0.25);cursor:pointer;"
+          onmouseenter="this.style.transform='translateY(-8px)';this.style.borderColor='var(--border-bright)';this.style.boxShadow='0 20px 40px rgba(4,13,191,0.12)'"
+          onmouseleave="this.style.transform='';this.style.borderColor='rgba(4,13,191,0.25)';this.style.boxShadow=''">
+
+          <div
+            style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:60%;height:2px;background:linear-gradient(90deg,transparent,var(--c2),transparent)">
+          </div>
+
+          <div>
+            <div style="display:flex;justify-content:between;align-items:center;margin-bottom:0.5rem">
+              <span
+                style="font-family:'Roboto Mono',monospace;font-size:0.8125rem;font-weight:600;color:var(--c2);text-transform:uppercase;letter-spacing:0.05em;margin-right:8px">Ultra
+                Fibra</span>
+              <span class="badge badge-c2"
+                style="font-size:0.7rem;background:var(--c2);color:#fff;padding:2px 8px;border-radius:99px">Mais
+                vendido</span>
+            </div>
+            <h3
+              style="font-family:'Poppins',sans-serif;font-size:2.5rem;font-weight:700;color:var(--text);line-height:1;margin-bottom:0.25rem">
+              750<span style="font-size:1.25rem;font-weight:500;color:var(--text-mid)"> Mega</span>
+            </h3>
+            <div
+              style="font-family:'Poppins',sans-serif;font-size:1.125rem;font-weight:600;color:var(--c1);margin-bottom:1.5rem">
+              Premium+
+            </div>
+            <hr style="border:none;border-top:1px solid rgba(4,13,191,0.08);margin-bottom:1.5rem">
+
+            <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.75rem">
+              <li style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-mid)">
+                <iconify-icon icon="solar:check-circle-bold"
+                  style="color:var(--c3);flex-shrink:0;font-size:1.1rem"></iconify-icon>
+                1 roteador wi-fi Giga
+              </li>
+              <li style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-mid)">
+                <iconify-icon icon="solar:check-circle-bold"
+                  style="color:var(--c3);flex-shrink:0;font-size:1.1rem"></iconify-icon>
+                1 roteador wi-fi Fast
+              </li>
+              <li style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-mid)">
+                <iconify-icon icon="solar:check-circle-bold"
+                  style="color:var(--c3);flex-shrink:0;font-size:1.1rem"></iconify-icon>
+                TV streaming <span
+                  style="font-size:0.75rem;color:var(--c1);font-weight:600;background:rgba(4,13,191,0.06);padding:2px 6px;border-radius:4px;margin-left:4px">Grátis
+                  por 6 meses</span>
+              </li>
+              <li style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-mid)">
+                <iconify-icon icon="solar:check-circle-bold"
+                  style="color:var(--c3);flex-shrink:0;font-size:1.1rem"></iconify-icon>
+                Acesso à estante digital
+              </li>
+              <li style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-mid)">
+                <iconify-icon icon="solar:check-circle-bold"
+                  style="color:var(--c3);flex-shrink:0;font-size:1.1rem"></iconify-icon>
+                Acesso ao jornalz
+              </li>
+              <li style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-mid)">
+                <iconify-icon icon="solar:check-circle-bold"
+                  style="color:var(--c3);flex-shrink:0;font-size:1.1rem"></iconify-icon>
+                Planos pós-pago
+              </li>
+              <li style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-mid)">
+                <iconify-icon icon="solar:check-circle-bold"
+                  style="color:var(--c3);flex-shrink:0;font-size:1.1rem"></iconify-icon>
+                Instalação gratuita
+              </li>
+            </ul>
+          </div>
+
+          <div style="margin-top:2.5rem">
+            <span
+              style="display:block;font-family:'Roboto Mono',monospace;font-size:0.75rem;font-weight:600;letter-spacing:0.1em;color:var(--text-faint);text-transform:uppercase;margin-bottom:0.5rem">
+              Assinatura mensal
+            </span>
+            <div style="display:flex;align-items:baseline;gap:4px;margin-bottom:1.5rem">
+              <span style="font-family:'Poppins',sans-serif;font-size:2.5rem;font-weight:700;color:var(--c1)">R$
+                137,90</span>
+              <span style="font-family:'Poppins',sans-serif;font-size:1rem;color:var(--text-faint)">/mês</span>
+            </div>
+            <a href="https://wa.me/5500000000000?text=Olá!%20Gostaria%20de%20assinar%20o%20plano%20Premium+%20de%20750%20Mega"
+              target="_blank" class="btn btn-primary"
+              onmouseenter="this.querySelector('.btn-glow-layer').style.transform='translateX(0)'"
+              onmouseleave="this.querySelector('.btn-glow-layer').style.transform='translateX(-100%)'"
+              style="width:100%;justify-content:center;gap:8px">
+              <span class="btn-glow-layer" style="transform:translateX(-100%)"></span>
+              <span style="position:relative;z-index:1;display:flex;align-items:center;gap:8px">
+                <img src="assets/icons/wpp branco.svg" alt="WhatsApp"
+                  style="width:1.2rem;height:1.2rem;object-fit:contain">
+                Quero assinar
+              </span>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Plan 3: Extreme 5g -->
+        <div class="glass-card scroll-reveal revealed"
+          style="padding:3rem 2.25rem;display:flex;flex-direction:column;justify-content:space-between;min-height:540px;transition:all .4s cubic-bezier(.4,0,.2,1);cursor:pointer;"
+          onmouseenter="this.style.transform='translateY(-8px)';this.style.borderColor='var(--border-bright)';this.style.boxShadow='0 20px 40px rgba(4,13,191,0.08)'"
+          onmouseleave="this.style.transform='';this.style.borderColor='var(--border)';this.style.boxShadow=''">
+
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem">
+              <span
+                style="font-family:'Roboto Mono',monospace;font-size:0.8125rem;font-weight:600;color:var(--c2);text-transform:uppercase;letter-spacing:0.05em">Ultra
+                Fibra</span>
+            </div>
+            <h3
+              style="font-family:'Poppins',sans-serif;font-size:2.5rem;font-weight:700;color:var(--text);line-height:1;margin-bottom:0.25rem">
+              1000<span style="font-size:1.25rem;font-weight:500;color:var(--text-mid)"> Mega</span>
+            </h3>
+            <div
+              style="font-family:'Poppins',sans-serif;font-size:1.125rem;font-weight:600;color:var(--c1);margin-bottom:1.5rem">
+              Extreme 5g
+            </div>
+            <hr style="border:none;border-top:1px solid rgba(4,13,191,0.08);margin-bottom:1.5rem">
+
+            <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.75rem">
+              <li style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-mid)">
+                <iconify-icon icon="solar:check-circle-bold"
+                  style="color:var(--c3);flex-shrink:0;font-size:1.1rem"></iconify-icon>
+                2 roteadores com wi-fi inteligente
+              </li>
+              <li style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-mid)">
+                <iconify-icon icon="solar:check-circle-bold"
+                  style="color:var(--c3);flex-shrink:0;font-size:1.1rem"></iconify-icon>
+                TV streaming <span
+                  style="font-size:0.75rem;color:var(--c1);font-weight:600;background:rgba(4,13,191,0.06);padding:2px 6px;border-radius:4px;margin-left:4px">Grátis
+                  por 6 meses</span>
+              </li>
+              <li style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-mid)">
+                <iconify-icon icon="solar:check-circle-bold"
+                  style="color:var(--c3);flex-shrink:0;font-size:1.1rem"></iconify-icon>
+                Acesso à estante digital
+              </li>
+              <li style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-mid)">
+                <iconify-icon icon="solar:check-circle-bold"
+                  style="color:var(--c3);flex-shrink:0;font-size:1.1rem"></iconify-icon>
+                Acesso ao jornalz
+              </li>
+              <li style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-mid)">
+                <iconify-icon icon="solar:check-circle-bold"
+                  style="color:var(--c3);flex-shrink:0;font-size:1.1rem"></iconify-icon>
+                Acesso a cursos online
+              </li>
+              <li style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-mid)">
+                <iconify-icon icon="solar:check-circle-bold"
+                  style="color:var(--c3);flex-shrink:0;font-size:1.1rem"></iconify-icon>
+                Planos pós-pago
+              </li>
+              <li style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-mid)">
+                <iconify-icon icon="solar:check-circle-bold"
+                  style="color:var(--c3);flex-shrink:0;font-size:1.1rem"></iconify-icon>
+                Instalação gratuita
+              </li>
+            </ul>
+          </div>
+
+          <div style="margin-top:2.5rem">
+            <span
+              style="display:block;font-family:'Roboto Mono',monospace;font-size:0.75rem;font-weight:600;letter-spacing:0.1em;color:var(--text-faint);text-transform:uppercase;margin-bottom:0.5rem">
+              Assinatura mensal
+            </span>
+            <div style="display:flex;align-items:baseline;gap:4px;margin-bottom:1.5rem">
+              <span style="font-family:'Poppins',sans-serif;font-size:2.5rem;font-weight:700;color:var(--c1)">R$
+                185,90</span>
+              <span style="font-family:'Poppins',sans-serif;font-size:1rem;color:var(--text-faint)">/mês</span>
+            </div>
+            <a href="https://wa.me/5500000000000?text=Olá!%20Gostaria%20de%20assinar%20o%20plano%20Extreme%205g%20de%201000%20Mega"
+              target="_blank" class="btn btn-outline"
+              style="width:100%;justify-content:center;gap:8px;border-color:rgba(4, 13, 191, 0.25)">
+              <img src="assets/icons/wpp verde.svg" alt="WhatsApp"
+                style="width:1.2rem;height:1.2rem;object-fit:contain">
+              Quero assinar
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- MOVEL PLANS GRID (Hidden by default, containing the same cards for now) -->
+      <div id="grid-movel"
+        style="display:none;grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));gap:2rem;margin-bottom:40px;animation:fadeSlideIn 0.5s ease-out">
+
+        <!-- Plan 1: SMART+ (Móvel) -->
+        <div class="glass-card"
+          style="padding:3rem 2.25rem;display:flex;flex-direction:column;justify-content:space-between;min-height:540px;transition:all .4s cubic-bezier(.4,0,.2,1);cursor:pointer;"
+          onmouseenter="this.style.transform='translateY(-8px)';this.style.borderColor='var(--border-bright)';this.style.boxShadow='0 20px 40px rgba(4,13,191,0.08)'"
+          onmouseleave="this.style.transform='';this.style.borderColor='var(--border)';this.style.boxShadow=''">
+
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem">
+              <span
+                style="font-family:'Roboto Mono',monospace;font-size:0.8125rem;font-weight:600;color:var(--c2);text-transform:uppercase;letter-spacing:0.05em">Conexão
+                Móvel</span>
+            </div>
+            <h3
+              style="font-family:'Poppins',sans-serif;font-size:2.5rem;font-weight:700;color:var(--text);line-height:1;margin-bottom:0.25rem">
+              500<span style="font-size:1.25rem;font-weight:500;color:var(--text-mid)"> Mega</span>
+            </h3>
+            <div
+              style="font-family:'Poppins',sans-serif;font-size:1.125rem;font-weight:600;color:var(--c1);margin-bottom:1.5rem">
+              SMART+
+            </div>
+            <hr style="border:none;border-top:1px solid rgba(4,13,191,0.08);margin-bottom:1.5rem">
+
+            <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.75rem">
+              <li style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-mid)">
+                <iconify-icon icon="solar:check-circle-bold"
+                  style="color:var(--c3);flex-shrink:0;font-size:1.1rem"></iconify-icon>
+                1 roteador wi-fi Giga
+              </li>
+              <li style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-mid)">
+                <iconify-icon icon="solar:check-circle-bold"
+                  style="color:var(--c3);flex-shrink:0;font-size:1.1rem"></iconify-icon>
+                TV streaming <span
+                  style="font-size:0.75rem;color:var(--c1);font-weight:600;background:rgba(4,13,191,0.06);padding:2px 6px;border-radius:4px;margin-left:4px">Grátis
+                  por 6 meses</span>
+              </li>
+              <li style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-mid)">
+                <iconify-icon icon="solar:check-circle-bold"
+                  style="color:var(--c3);flex-shrink:0;font-size:1.1rem"></iconify-icon>
+                Acesso à estante digital
+              </li>
+              <li style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-mid)">
+                <iconify-icon icon="solar:check-circle-bold"
+                  style="color:var(--c3);flex-shrink:0;font-size:1.1rem"></iconify-icon>
+                Acesso ao jornalz
+              </li>
+              <li style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-mid)">
+                <iconify-icon icon="solar:check-circle-bold"
+                  style="color:var(--c3);flex-shrink:0;font-size:1.1rem"></iconify-icon>
+                Planos pós-pago
+              </li>
+              <li style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-mid)">
+                <iconify-icon icon="solar:check-circle-bold"
+                  style="color:var(--c3);flex-shrink:0;font-size:1.1rem"></iconify-icon>
+                Instalação gratuita
+              </li>
+            </ul>
+          </div>
+
+          <div style="margin-top:2.5rem">
+            <span
+              style="display:block;font-family:'Roboto Mono',monospace;font-size:0.75rem;font-weight:600;letter-spacing:0.1em;color:var(--text-faint);text-transform:uppercase;margin-bottom:0.5rem">
+              Assinatura mensal
+            </span>
+            <div style="display:flex;align-items:baseline;gap:4px;margin-bottom:1.5rem">
+              <span style="font-family:'Poppins',sans-serif;font-size:2.5rem;font-weight:700;color:var(--c1)">R$
+                105,90</span>
+              <span style="font-family:'Poppins',sans-serif;font-size:1rem;color:var(--text-faint)">/mês</span>
+            </div>
+            <a href="https://wa.me/5500000000000?text=Olá!%20Gostaria%20de%20assinar%20o%20plano%20Móvel%20SMART+%20de%20500%20Mega"
+              target="_blank" class="btn btn-outline"
+              style="width:100%;justify-content:center;gap:8px;border-color:rgba(4, 13, 191, 0.25)">
+              <img src="assets/icons/wpp verde.svg" alt="WhatsApp"
+                style="width:1.2rem;height:1.2rem;object-fit:contain">
+              Quero assinar
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Plan 2: Premium+ (Móvel) -->
+        <div class="glass-card"
+          style="padding:3rem 2.25rem;display:flex;flex-direction:column;justify-content:space-between;min-height:540px;transition:all .4s cubic-bezier(.4,0,.2,1);position:relative;overflow:hidden;border-color:rgba(4,13,191,0.25);cursor:pointer;"
+          onmouseenter="this.style.transform='translateY(-8px)';this.style.borderColor='var(--border-bright)';this.style.boxShadow='0 20px 40px rgba(4,13,191,0.12)'"
+          onmouseleave="this.style.transform='';this.style.borderColor='rgba(4,13,191,0.25)';this.style.boxShadow=''">
+
+          <div
+            style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:60%;height:2px;background:linear-gradient(90deg,transparent,var(--c2),transparent)">
+          </div>
+
+          <div>
+            <div style="display:flex;justify-content:between;align-items:center;margin-bottom:0.5rem">
+              <span
+                style="font-family:'Roboto Mono',monospace;font-size:0.8125rem;font-weight:600;color:var(--c2);text-transform:uppercase;letter-spacing:0.05em;margin-right:8px">Conexão
+                Móvel</span>
+              <span class="badge badge-c2"
+                style="font-size:0.7rem;background:var(--c2);color:#fff;padding:2px 8px;border-radius:99px">Mais
+                vendido</span>
+            </div>
+            <h3
+              style="font-family:'Poppins',sans-serif;font-size:2.5rem;font-weight:700;color:var(--text);line-height:1;margin-bottom:0.25rem">
+              750<span style="font-size:1.25rem;font-weight:500;color:var(--text-mid)"> Mega</span>
+            </h3>
+            <div
+              style="font-family:'Poppins',sans-serif;font-size:1.125rem;font-weight:600;color:var(--c1);margin-bottom:1.5rem">
+              Premium+
+            </div>
+            <hr style="border:none;border-top:1px solid rgba(4,13,191,0.08);margin-bottom:1.5rem">
+
+            <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.75rem">
+              <li style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-mid)">
+                <iconify-icon icon="solar:check-circle-bold"
+                  style="color:var(--c3);flex-shrink:0;font-size:1.1rem"></iconify-icon>
+                1 roteador wi-fi Giga
+              </li>
+              <li style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-mid)">
+                <iconify-icon icon="solar:check-circle-bold"
+                  style="color:var(--c3);flex-shrink:0;font-size:1.1rem"></iconify-icon>
+                1 roteador wi-fi Fast
+              </li>
+              <li style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-mid)">
+                <iconify-icon icon="solar:check-circle-bold"
+                  style="color:var(--c3);flex-shrink:0;font-size:1.1rem"></iconify-icon>
+                TV streaming <span
+                  style="font-size:0.75rem;color:var(--c1);font-weight:600;background:rgba(4,13,191,0.06);padding:2px 6px;border-radius:4px;margin-left:4px">Grátis
+                  por 6 meses</span>
+              </li>
+              <li style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-mid)">
+                <iconify-icon icon="solar:check-circle-bold"
+                  style="color:var(--c3);flex-shrink:0;font-size:1.1rem"></iconify-icon>
+                Acesso à estante digital
+              </li>
+              <li style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-mid)">
+                <iconify-icon icon="solar:check-circle-bold"
+                  style="color:var(--c3);flex-shrink:0;font-size:1.1rem"></iconify-icon>
+                Acesso ao jornalz
+              </li>
+              <li style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-mid)">
+                <iconify-icon icon="solar:check-circle-bold"
+                  style="color:var(--c3);flex-shrink:0;font-size:1.1rem"></iconify-icon>
+                Planos pós-pago
+              </li>
+              <li style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-mid)">
+                <iconify-icon icon="solar:check-circle-bold"
+                  style="color:var(--c3);flex-shrink:0;font-size:1.1rem"></iconify-icon>
+                Instalação gratuita
+              </li>
+            </ul>
+          </div>
+
+          <div style="margin-top:2.5rem">
+            <span
+              style="display:block;font-family:'Roboto Mono',monospace;font-size:0.75rem;font-weight:600;letter-spacing:0.1em;color:var(--text-faint);text-transform:uppercase;margin-bottom:0.5rem">
+              Assinatura mensal
+            </span>
+            <div style="display:flex;align-items:baseline;gap:4px;margin-bottom:1.5rem">
+              <span style="font-family:'Poppins',sans-serif;font-size:2.5rem;font-weight:700;color:var(--c1)">R$
+                137,90</span>
+              <span style="font-family:'Poppins',sans-serif;font-size:1rem;color:var(--text-faint)">/mês</span>
+            </div>
+            <a href="https://wa.me/5500000000000?text=Olá!%20Gostaria%20de%20assinar%20o%20plano%20Móvel%20Premium+%20de%20750%20Mega"
+              target="_blank" class="btn btn-primary"
+              onmouseenter="this.querySelector('.btn-glow-layer').style.transform='translateX(0)'"
+              onmouseleave="this.querySelector('.btn-glow-layer').style.transform='translateX(-100%)'"
+              style="width:100%;justify-content:center;gap:8px">
+              <span class="btn-glow-layer" style="transform:translateX(-100%)"></span>
+              <span style="position:relative;z-index:1;display:flex;align-items:center;gap:8px">
+                <img src="assets/icons/wpp branco.svg" alt="WhatsApp"
+                  style="width:1.2rem;height:1.2rem;object-fit:contain">
+                Quero assinar
+              </span>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Plan 3: Extreme 5g (Móvel) -->
+        <div class="glass-card"
+          style="padding:3rem 2.25rem;display:flex;flex-direction:column;justify-content:space-between;min-height:540px;transition:all .4s cubic-bezier(.4,0,.2,1);cursor:pointer;"
+          onmouseenter="this.style.transform='translateY(-8px)';this.style.borderColor='var(--border-bright)';this.style.boxShadow='0 20px 40px rgba(4,13,191,0.08)'"
+          onmouseleave="this.style.transform='';this.style.borderColor='var(--border)';this.style.boxShadow=''">
+
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem">
+              <span
+                style="font-family:'Roboto Mono',monospace;font-size:0.8125rem;font-weight:600;color:var(--c2);text-transform:uppercase;letter-spacing:0.05em">Conexão
+                Móvel</span>
+            </div>
+            <h3
+              style="font-family:'Poppins',sans-serif;font-size:2.5rem;font-weight:700;color:var(--text);line-height:1;margin-bottom:0.25rem">
+              1000<span style="font-size:1.25rem;font-weight:500;color:var(--text-mid)"> Mega</span>
+            </h3>
+            <div
+              style="font-family:'Poppins',sans-serif;font-size:1.125rem;font-weight:600;color:var(--c1);margin-bottom:1.5rem">
+              Extreme 5g
+            </div>
+            <hr style="border:none;border-top:1px solid rgba(4,13,191,0.08);margin-bottom:1.5rem">
+
+            <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.75rem">
+              <li style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-mid)">
+                <iconify-icon icon="solar:check-circle-bold"
+                  style="color:var(--c3);flex-shrink:0;font-size:1.1rem"></iconify-icon>
+                2 roteadores com wi-fi inteligente
+              </li>
+              <li style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-mid)">
+                <iconify-icon icon="solar:check-circle-bold"
+                  style="color:var(--c3);flex-shrink:0;font-size:1.1rem"></iconify-icon>
+                TV streaming <span
+                  style="font-size:0.75rem;color:var(--c1);font-weight:600;background:rgba(4,13,191,0.06);padding:2px 6px;border-radius:4px;margin-left:4px">Grátis
+                  por 6 meses</span>
+              </li>
+              <li style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-mid)">
+                <iconify-icon icon="solar:check-circle-bold"
+                  style="color:var(--c3);flex-shrink:0;font-size:1.1rem"></iconify-icon>
+                Acesso à estante digital
+              </li>
+              <li style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-mid)">
+                <iconify-icon icon="solar:check-circle-bold"
+                  style="color:var(--c3);flex-shrink:0;font-size:1.1rem"></iconify-icon>
+                Acesso ao jornalz
+              </li>
+              <li style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-mid)">
+                <iconify-icon icon="solar:check-circle-bold"
+                  style="color:var(--c3);flex-shrink:0;font-size:1.1rem"></iconify-icon>
+                Acesso a cursos online
+              </li>
+              <li style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-mid)">
+                <iconify-icon icon="solar:check-circle-bold"
+                  style="color:var(--c3);flex-shrink:0;font-size:1.1rem"></iconify-icon>
+                Planos pós-pago
+              </li>
+              <li style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-mid)">
+                <iconify-icon icon="solar:check-circle-bold"
+                  style="color:var(--c3);flex-shrink:0;font-size:1.1rem"></iconify-icon>
+                Instalação gratuita
+              </li>
+            </ul>
+          </div>
+
+          <div style="margin-top:2.5rem">
+            <span
+              style="display:block;font-family:'Roboto Mono',monospace;font-size:0.75rem;font-weight:600;letter-spacing:0.1em;color:var(--text-faint);text-transform:uppercase;margin-bottom:0.5rem">
+              Assinatura mensal
+            </span>
+            <div style="display:flex;align-items:baseline;gap:4px;margin-bottom:1.5rem">
+              <span style="font-family:'Poppins',sans-serif;font-size:2.5rem;font-weight:700;color:var(--c1)">R$
+                185,90</span>
+              <span style="font-family:'Poppins',sans-serif;font-size:1rem;color:var(--text-faint)">/mês</span>
+            </div>
+            <a href="https://wa.me/5500000000000?text=Olá!%20Gostaria%20de%20assinar%20o%20plano%20Móvel%20Extreme%205g%20de%201000%20Mega"
+              target="_blank" class="btn btn-outline"
+              style="width:100%;justify-content:center;gap:8px;border-color:rgba(4, 13, 191, 0.25)">
+              <img src="assets/icons/wpp verde.svg" alt="WhatsApp"
+                style="width:1.2rem;height:1.2rem;object-fit:contain">
+              Quero assinar
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- ==========================================
+           COMBO XPERIENCE SECTION
+           ========================================== -->
+      <div style="margin-top:4rem;margin-bottom:4rem;">
+        <div id="electric-combo-card" class="electric-border glass-card"
+          style="padding:3.5rem 3rem;background:linear-gradient(135deg,#ffffff 0%,var(--surface) 100%);">
+          <!-- Electric Border Canvas Elements -->
+          <div class="eb-canvas-container">
+            <canvas id="eb-canvas-combo" class="eb-canvas"></canvas>
+          </div>
+          <div class="eb-layers">
+            <div class="eb-glow-1"></div>
+            <div class="eb-glow-2"></div>
+            <div class="eb-background-glow"></div>
+          </div>
+
+          <div class="eb-content">
+            <!-- Badge & Header -->
+            <div
+              style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1.5rem;margin-bottom:2.5rem;">
+              <div>
+                <span class="badge badge-c2"
+                  style="background:var(--c1);color:#fff;font-size:0.75rem;padding:4px 12px;border-radius:99px;margin-bottom:0.75rem;display:inline-block;">Combo
+                  Especial</span>
+                <h3
+                  style="font-family:'Poppins',sans-serif;font-size:2.25rem;font-weight:700;color:var(--text);line-height:1.2;letter-spacing:-0.02em;">
+                  COMBO XPERIENCE
+                </h3>
+                <p
+                  style="font-family:'Poppins',sans-serif;font-size:0.95rem;color:var(--text-mid);margin-top:0.5rem;max-width:36rem;font-weight:300;">
+                  A experiência definitiva em conectividade, entretenimento e comunicação. Escolha a modalidade ideal
+                  para você.
+                </p>
+              </div>
+              <div
+                style="display:flex;align-items:center;gap:10px;background:#fff;padding:8px 16px;border-radius:12px;border:1px solid var(--border);">
+                <iconify-icon icon="solar:shield-check-bold" style="color:var(--c2);font-size:1.5rem;"></iconify-icon>
+                <span style="font-size:0.875rem;font-weight:600;color:var(--text);">Melhor Custo-Benefício</span>
+              </div>
+            </div>
+
+            <!-- Two pricing columns side by side -->
+            <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));gap:2.5rem;">
+
+              <!-- Column 1: Apenas Internet (Base Combo) -->
+              <div
+                style="background:rgba(255,255,255,0.75);border:1px solid rgba(4,13,191,0.06);border-radius:1.25rem;padding:2.25rem;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 8px 24px rgba(4,13,191,0.02)">
+                <div>
+                  <h4
+                    style="font-family:'Poppins',sans-serif;font-size:1.25rem;font-weight:600;color:var(--text);margin-bottom:1rem;display:flex;align-items:center;gap:8px;">
+                    <img src="assets/icons/Group 1.svg" alt="" style="width:1.2rem;height:1.2rem;object-fit:contain">
+                    Plano Internet Combo
+                  </h4>
+                  <p
+                    style="font-size:0.9rem;color:var(--text-mid);margin-bottom:1.5rem;line-height:1.6;font-weight:300;">
+                    Garanta a máxima performance na sua casa com 1000 Mega de velocidade.
+                  </p>
+
+                  <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.75rem;">
+                    <li style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-mid)">
+                      <iconify-icon icon="solar:check-circle-bold"
+                        style="color:var(--c3);flex-shrink:0;font-size:1.1rem"></iconify-icon>
+                      Internet + TV + Telefone
+                    </li>
+                    <li style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-mid)">
+                      <iconify-icon icon="solar:check-circle-bold"
+                        style="color:var(--c3);flex-shrink:0;font-size:1.1rem"></iconify-icon>
+                      Até 1000 Mega de internet
+                    </li>
+                  </ul>
+                </div>
+
+                <div style="margin-top:2.5rem;">
+                  <span
+                    style="display:block;font-family:'Roboto Mono',monospace;font-size:0.75rem;font-weight:600;letter-spacing:0.1em;color:var(--text-faint);text-transform:uppercase;margin-bottom:0.25rem">
+                    Por apenas
+                  </span>
+                  <div style="display:flex;align-items:baseline;gap:4px;margin-bottom:1.5rem">
+                    <span style="font-family:'Poppins',sans-serif;font-size:2.25rem;font-weight:700;color:var(--c1)">R$
+                      69,90</span>
+                    <span style="font-family:'Poppins',sans-serif;font-size:0.95rem;color:var(--text-faint)">/mês</span>
+                  </div>
+                  <a href="https://wa.me/5500000000000?text=Olá!%20Gostaria%20de%20assinar%20o%20Plano%20Internet%20do%20Combo%20Xperience%20de%201000%20Mega"
+                    target="_blank" class="btn btn-outline"
+                    style="width:100%;justify-content:center;gap:8px;border-color:rgba(4, 13, 191, 0.25)">
+                    <img src="assets/icons/wpp verde.svg" alt="WhatsApp"
+                      style="width:1.2rem;height:1.2rem;object-fit:contain">
+                    Quero assinar
+                  </a>
+                </div>
+              </div>
+
+              <!-- Column 2: Combo Completo (Full Experience) -->
+              <div
+                style="background:#fff;border:2px solid var(--c1);border-radius:1.25rem;padding:2.25rem;display:flex;flex-direction:column;justify-content:space-between;position:relative;box-shadow:0 12px 32px rgba(4,13,191,0.08)">
+                <div
+                  style="position:absolute;top:-12px;right:20px;background:var(--c1);color:#fff;font-size:0.7rem;font-weight:600;padding:2px 10px;border-radius:99px;font-family:'Roboto Mono',monospace;text-transform:uppercase;letter-spacing:0.05em;">
+                  Completo</div>
+
+                <div>
+                  <h4
+                    style="font-family:'Poppins',sans-serif;font-size:1.25rem;font-weight:600;color:var(--text);margin-bottom:1rem;display:flex;align-items:center;gap:8px;">
+                    <img src="assets/icons/Group 2.svg" alt="" style="width:1.2rem;height:1.2rem;object-fit:contain">
+                    Valor Total do Combo
+                  </h4>
+                  <p
+                    style="font-size:0.9rem;color:var(--text-mid);margin-bottom:1.5rem;line-height:1.6;font-weight:300;">
+                    A união perfeita de banda larga ultrarrápida, streaming de TV completo e fone fixo.
+                  </p>
+
+                  <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.75rem;">
+                    <li style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-mid)">
+                      <iconify-icon icon="solar:check-circle-bold"
+                        style="color:var(--c1);flex-shrink:0;font-size:1.1rem"></iconify-icon>
+                      Internet + TV + Telefone
+                    </li>
+                    <li style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-mid)">
+                      <iconify-icon icon="solar:check-circle-bold"
+                        style="color:var(--c1);flex-shrink:0;font-size:1.1rem"></iconify-icon>
+                      Até 1000 Mega de internet
+                    </li>
+                    <li style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-mid)">
+                      <iconify-icon icon="solar:check-circle-bold"
+                        style="color:var(--c1);flex-shrink:0;font-size:1.1rem"></iconify-icon>
+                      TV por streaming (SKY+)
+                    </li>
+                    <li style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-mid)">
+                      <iconify-icon icon="solar:check-circle-bold"
+                        style="color:var(--c1);flex-shrink:0;font-size:1.1rem"></iconify-icon>
+                      Fone fixo ilimitado
+                    </li>
+                    <li style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-mid)">
+                      <iconify-icon icon="solar:check-circle-bold"
+                        style="color:var(--c1);flex-shrink:0;font-size:1.1rem"></iconify-icon>
+                      2 Roteadores inteligente Wi-Fi
+                    </li>
+                    <li style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-mid)">
+                      <iconify-icon icon="solar:check-circle-bold"
+                        style="color:var(--c1);flex-shrink:0;font-size:1.1rem"></iconify-icon>
+                      Watch Brasil <span
+                        style="font-size:0.75rem;color:var(--c2);font-weight:600;background:rgba(5,175,242,0.1);padding:1px 6px;border-radius:4px;margin-left:4px">Grátis
+                        por 6 meses</span>
+                    </li>
+                    <li style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-mid)">
+                      <iconify-icon icon="solar:check-circle-bold"
+                        style="color:var(--c1);flex-shrink:0;font-size:1.1rem"></iconify-icon>
+                      Acesso à estante digital & jornalz
+                    </li>
+                    <li style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-mid)">
+                      <iconify-icon icon="solar:check-circle-bold"
+                        style="color:var(--c1);flex-shrink:0;font-size:1.1rem"></iconify-icon>
+                      Instalação gratuita
+                    </li>
+                  </ul>
+                </div>
+
+                <div style="margin-top:2.5rem;">
+                  <span
+                    style="display:block;font-family:'Roboto Mono',monospace;font-size:0.75rem;font-weight:600;letter-spacing:0.1em;color:var(--text-faint);text-transform:uppercase;margin-bottom:0.25rem">
+                    Total do combo
+                  </span>
+                  <div style="display:flex;align-items:baseline;gap:4px;margin-bottom:1.5rem">
+                    <span style="font-family:'Poppins',sans-serif;font-size:2.25rem;font-weight:700;color:var(--c1)">R$
+                      264,90</span>
+                    <span style="font-family:'Poppins',sans-serif;font-size:0.95rem;color:var(--text-faint)">/mês</span>
+                  </div>
+                  <a href="https://wa.me/5500000000000?text=Olá!%20Gostaria%20de%20assinar%20o%20Combo%20Completo%20Xperience%20de%20R$264,90"
+                    target="_blank" class="btn btn-primary"
+                    onmouseenter="this.querySelector('.btn-glow-layer').style.transform='translateX(0)'"
+                    onmouseleave="this.querySelector('.btn-glow-layer').style.transform='translateX(-100%)'"
+                    style="width:100%;justify-content:center;gap:8px">
+                    <span class="btn-glow-layer" style="transform:translateX(-100%)"></span>
+                    <span style="position:relative;z-index:1;display:flex;align-items:center;gap:8px">
+                      <img src="assets/icons/wpp branco.svg" alt="WhatsApp"
+                        style="width:1.2rem;height:1.2rem;object-fit:contain">
+                      Quero assinar
+                    </span>
+                  </a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Disclaimer Footer -->
+      <div style="text-align:center;max-width:54rem;margin:0 auto">
+        <p
+          style="font-family:'Poppins',sans-serif;font-size:0.8125rem;line-height:1.6;color:var(--text-faint);font-weight:300">
+          * As velocidades indicadas referem-se à velocidade nominal máxima de download. Valores válidos sob viabilidade
+          técnica.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Nosso APP Section -->
+  <section id="nosso-app" style="background:var(--surface);padding:2rem 1.5rem;overflow:hidden">
+    <div
+      style="background:var(--c1) url('assets/img/bgapp.png') center/cover no-repeat;border-radius:2rem;padding:5rem 1.5rem;width:80%;margin:0 auto;position:relative;overflow:visible;">
+      <img src="assets/img/hf_20260601_171421_5a6d203b-2df9-4f36-82a1-e0dc6002a160.png" alt=""
+        style="position:absolute;bottom:-30px;right:-50px;height:200px;pointer-events:none;user-select:none">
+      <div style="max-width:72rem;margin:0 auto;display:flex;align-items:center;gap:3rem;flex-wrap:wrap">
+
+        <!-- Imagem (esquerda) -->
+        <div class="scroll-reveal from-left revealed"
+          style="flex:1;min-width:220px;display:flex;justify-content:center">
+          <img src="assets/img/celularApp.png" alt="Aplicativo WSNET"
+            style="max-width:260px;width:100%;filter:drop-shadow(0 24px 48px rgba(0,0,0,0.35))">
+        </div>
+
+        <!-- Texto (direita) -->
+        <div class="scroll-reveal revealed" style="flex:1;min-width:260px">
+          <p
+            style="font-family:'Roboto Mono',monospace;font-size:0.75rem;font-weight:600;letter-spacing:0.18em;color:rgba(255,255,255,0.55);text-transform:uppercase;margin-bottom:0.75rem">
+            Nosso APP</p>
+          <h2
+            style="font-family:'Roboto Mono',monospace;font-size:clamp(1.75rem,4vw,2.75rem);font-weight:700;color:#ffffff;line-height:1.2;margin-bottom:1.5rem">
+            Baixe o aplicativo<br>WSNET</h2>
+          <p
+            style="font-family:'Poppins',sans-serif;font-size:1rem;font-weight:300;color:rgba(255,255,255,0.8);line-height:1.7;margin-bottom:2rem">
+            Gerencie sua conta, acompanhe sua conexão e fique por dentro de tudo com praticidade na palma da sua mão.
+          </p>
+          <div style="display:flex;gap:1rem;flex-wrap:wrap">
+            <a href="#"
+              style="display:inline-flex;align-items:center;gap:0.5rem;background:#ffffff;color:var(--c1);font-family:'Poppins',sans-serif;font-size:0.9rem;font-weight:600;padding:0.75rem 1.5rem;border-radius:0.75rem;text-decoration:none;transition:opacity 0.2s"
+              onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
+              <iconify-icon icon="ri:google-play-fill" width="20"></iconify-icon> Google Play
+            </a>
+            <a href="#"
+              style="display:inline-flex;align-items:center;gap:0.5rem;background:rgba(255,255,255,0.12);color:#ffffff;font-family:'Poppins',sans-serif;font-size:0.9rem;font-weight:600;padding:0.75rem 1.5rem;border-radius:0.75rem;text-decoration:none;border:1px solid rgba(255,255,255,0.25);transition:opacity 0.2s"
+              onmouseover="this.style.opacity='.75'" onmouseout="this.style.opacity='1'">
+              <iconify-icon icon="ri:apple-fill" width="20"></iconify-icon> App Store
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Depoimentos Section -->
+  <section id="depoimentos" style="background:var(--surface);padding:5rem 0;overflow:hidden">
+
+    <!-- Header -->
+    <div style="max-width:72rem;margin:0 auto;padding:0 1.5rem">
+      <div class="scroll-reveal revealed" style="text-align:center;margin-bottom:3rem">
+        <span
+          style="display:inline-block;font-family:'Roboto Mono',monospace;font-size:0.72rem;font-weight:600;letter-spacing:0.18em;color:var(--c1);text-transform:uppercase;border:1px solid var(--border-bright);border-radius:9999px;padding:0.35rem 1rem;margin-bottom:1.25rem">
+          Nossos Clientes
+        </span>
+        <h2
+          style="font-family:'Roboto Mono',monospace;font-size:clamp(2rem,4.5vw,3rem);font-weight:700;color:var(--text);line-height:1.15;margin-bottom:1rem">
+          Nossos casos de <span style="color:var(--c1)">sucesso</span>
+        </h2>
+        <p
+          style="font-family:'Poppins',sans-serif;font-size:1rem;font-weight:300;color:var(--text-faint);max-width:480px;margin:0 auto;line-height:1.7">
+          Veja o que nossos clientes dizem sobre a qualidade da nossa conexão e atendimento.
+        </p>
+      </div>
+    </div>
+
+    <!-- Viewport do carrossel -->
+    <div id="dep-viewport"
+      style="overflow:hidden;position:relative;max-width:72rem;margin:-2rem auto -3rem;padding:2rem 1.5rem 3rem">
+      <div id="dep-track"
+        style="display:flex;gap:1.5rem;transition:transform 0.5s cubic-bezier(0.16,1,0.3,1);will-change:transform;padding:1rem 0 1.5rem;align-items:stretch">
+
+        <!-- Card 1 -->
+        <div class="dep-card" style="width:500px;max-width:500px">
+          <div style="padding:2.25rem 2rem;display:flex;align-items:center">
+            <p
+              style="font-family:'Poppins',sans-serif;font-size:0.95rem;font-weight:400;color:var(--text-mid);line-height:1.7;margin:0">
+              "Internet maravilhosa! No hotel inteiro a gente pega mais de 850 megas no WiFi!!! Rafael e Henrique foram
+              demais, super atenciosos, e olha que foram 11 roteadores, 2 dias de instalação. Tudo perfeito,
+              incomparável!!!"
+            </p>
+          </div>
+          <div style="height:1px;background:rgba(4,13,191,0.08);width:100%"></div>
+          <div style="padding:1.5rem 2rem;background:rgba(4,13,191,0.02)">
+            <p
+              style="font-family:'Poppins',sans-serif;font-size:0.9rem;font-weight:500;color:var(--text);margin-bottom:0.2rem">
+              — Matheus Arrivabene</p>
+            <p
+              style="font-family:'Poppins',sans-serif;font-size:0.8rem;font-weight:400;background:linear-gradient(90deg,var(--c2),var(--c3),var(--c4));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">
+              Itanhaém · Cliente WS Net</p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="dep-card" style="width:500px;max-width:500px">
+          <div style="padding:2.25rem 2rem;display:flex;align-items:center">
+            <p
+              style="font-family:'Poppins',sans-serif;font-size:0.95rem;font-weight:400;color:var(--text-mid);line-height:1.7;margin:0">
+              "Venho dar os parabéns para a empresa. Wsnet devido o respeito que teve comigo como cliente. De sempre
+              estar buscando a melhor maneira de resolver. Parabéns a todos e a luana gerente que me deu um ótimo
+              atendimento e suporte."
+            </p>
+          </div>
+          <div style="height:1px;background:rgba(4,13,191,0.08);width:100%"></div>
+          <div style="padding:1.5rem 2rem;background:rgba(4,13,191,0.02)">
+            <p
+              style="font-family:'Poppins',sans-serif;font-size:0.9rem;font-weight:500;color:var(--text);margin-bottom:0.2rem">
+              — João Paulo Silveira</p>
+            <p
+              style="font-family:'Poppins',sans-serif;font-size:0.8rem;font-weight:400;background:linear-gradient(90deg,var(--c2),var(--c3),var(--c4));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">
+              Peruíbe · Cliente WS Net</p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="dep-card" style="width:500px;max-width:500px">
+          <div style="padding:2.25rem 2rem;display:flex;align-items:center">
+            <p
+              style="font-family:'Poppins',sans-serif;font-size:0.95rem;font-weight:400;color:var(--text-mid);line-height:1.7;margin:0">
+              "Desde o atendimento via telefone, WhatsApp e presencial do técnico ao uso e entrega da internet a
+              qualidade é absurda, fui muito bem tratado por todos e estou extremamente satisfeito com a WSNET obrigado
+              por tudo vocês são demais e como sou Gamer se quiser fechar parceria eu até divulgo rsrs porque eu
+              recomendo demais 😁🙏🏻❤️❤️❤️"
+            </p>
+          </div>
+          <div style="height:1px;background:rgba(4,13,191,0.08);width:100%"></div>
+          <div style="padding:1.5rem 2rem;background:rgba(4,13,191,0.02)">
+            <p
+              style="font-family:'Poppins',sans-serif;font-size:0.9rem;font-weight:500;color:var(--text);margin-bottom:0.2rem">
+              — Frantchesko Gamer</p>
+            <p
+              style="font-family:'Poppins',sans-serif;font-size:0.8rem;font-weight:400;background:linear-gradient(90deg,var(--c2),var(--c3),var(--c4));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">
+              Mongaguá · Cliente WS Net</p>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="dep-card" style="width:500px;max-width:500px">
+          <div style="padding:2.25rem 2rem;display:flex;align-items:center">
+            <p
+              style="font-family:'Poppins',sans-serif;font-size:0.95rem;font-weight:400;color:var(--text-mid);line-height:1.7;margin:0">
+              "Troquei para a WSNet hoje, 15/03/22, sendo que eu tinha 100Mb em outra empresa, e no primeiro teste de
+              velocidade, pelo Speedtest, já ultrapassou 400Mb.
+              A qualidade é muito boa e o sinal chega em todos os ambientes com o sistema de rede. Grato!"
+            </p>
+          </div>
+          <div style="height:1px;background:rgba(4,13,191,0.08);width:100%"></div>
+          <div style="padding:1.5rem 2rem;background:rgba(4,13,191,0.02)">
+            <p
+              style="font-family:'Poppins',sans-serif;font-size:0.9rem;font-weight:500;color:var(--text);margin-bottom:0.2rem">
+              — Helson Camilli</p>
+            <p
+              style="font-family:'Poppins',sans-serif;font-size:0.8rem;font-weight:400;background:linear-gradient(90deg,var(--c2),var(--c3),var(--c4));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">
+              Itanhaém · Cliente WS Net</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Setas -->
+    <div style="max-width:72rem;margin:0 auto;padding:0 1.5rem">
+      <div style="display:flex;justify-content:center;gap:1rem;margin-top:2rem">
+        <button id="dep-prev" aria-label="Anterior"
+          style="width:48px;height:48px;border-radius:50%;border:1.5px solid var(--border-bright);background:#fff;color:var(--c1);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all 0.2s"
+          onmouseover="this.style.background='var(--c1)';this.style.color='#fff';this.style.borderColor='var(--c1)'"
+          onmouseout="this.style.background='#fff';this.style.color='var(--c1)';this.style.borderColor='var(--border-bright)'">
+          <iconify-icon icon="ri:arrow-left-s-line" width="22"></iconify-icon>
+        </button>
+        <button id="dep-next" aria-label="Próximo"
+          style="width:48px;height:48px;border-radius:50%;border:1.5px solid var(--border-bright);background:#fff;color:var(--c1);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all 0.2s"
+          onmouseover="this.style.background='var(--c1)';this.style.color='#fff';this.style.borderColor='var(--c1)'"
+          onmouseout="this.style.background='#fff';this.style.color='var(--c1)';this.style.borderColor='var(--border-bright)'">
+          <iconify-icon icon="ri:arrow-right-s-line" width="22"></iconify-icon>
+        </button>
+      </div>
+    </div>
+
+  </section>
+
+  <script>
+    (function () {
+      const track = document.getElementById('dep-track');
+      const origCards = Array.from(track.querySelectorAll('.dep-card'));
+      const total = origCards.length;
+      const GAP = 24;
+      let pos = 0;       // índice absoluto, cresce/diminui livremente
+      let isAnimating = false;
+
+      // Duplicar os cards 3x: [cópia][originais][cópia] para ter margem nos dois sentidos
+      origCards.forEach(c => track.appendChild(c.cloneNode(true)));
+      origCards.forEach(c => track.appendChild(c.cloneNode(true)));
+      origCards.slice().reverse().forEach(c => track.insertBefore(c.cloneNode(true), track.firstChild));
+      origCards.slice().reverse().forEach(c => track.insertBefore(c.cloneNode(true), track.firstChild));
+
+      const allCards = Array.from(track.querySelectorAll('.dep-card'));
+      const OFFSET = total * 2; // os originais começam nesta posição no allCards
+
+      function getSiteMargin() {
+        const vw = window.innerWidth;
+        const maxW = 72 * 16;
+        return vw > maxW ? (vw - maxW) / 2 + 24 : 24;
+      }
+
+      function setCardWidths() {
+        const viewport = document.getElementById('dep-viewport');
+        const viewportW = viewport ? (viewport.clientWidth - 48) : (window.innerWidth - 48);
+        let cardW;
+        if (window.innerWidth < 768) {
+          cardW = Math.floor(viewportW * 0.9);
+        } else if (window.innerWidth < 1024) {
+          cardW = Math.floor((viewportW - GAP) / 2);
+        } else {
+          cardW = Math.floor((viewportW - 2 * GAP) / 3);
+        }
+        allCards.forEach(c => { c.style.width = cardW + 'px'; c.style.minWidth = cardW + 'px'; });
+        track.style.paddingLeft = '0px';
+      }
+
+      function cardStep() {
+        return allCards[0].getBoundingClientRect().width + GAP;
+      }
+
+      function updateActiveCard(idx) {
+        const activeIdx = OFFSET + idx;
+        allCards.forEach((c, i) => {
+          if (i === activeIdx) {
+            c.classList.add('active');
+          } else {
+            c.classList.remove('active');
+          }
+        });
+      }
+
+      function setPosition(idx, animated) {
+        const viewport = document.getElementById('dep-viewport');
+        const viewportW = viewport ? (viewport.clientWidth - 48) : (window.innerWidth - 48);
+        const step = cardStep();
+        const cardW = allCards[0].getBoundingClientRect().width;
+        // Centraliza o card ativo na viewport
+        const translateX = (OFFSET + idx) * step - (viewportW / 2 - cardW / 2);
+        track.style.transition = animated ? 'transform 0.5s cubic-bezier(0.16,1,0.3,1)' : 'none';
+        track.style.transform = 'translateX(-' + translateX + 'px)';
+        updateActiveCard(idx);
+      }
+
+      function goTo(delta) {
+        if (isAnimating) return;
+        pos += delta;
+        setPosition(pos, true);
+        isAnimating = true;
+
+        track.addEventListener('transitionend', function onEnd() {
+          track.removeEventListener('transitionend', onEnd);
+          // Teleporte silencioso: se saiu da faixa dos originais, recoloca no equivalente
+          if (pos >= total || pos <= -total) {
+            pos = ((pos % total) + total) % total;
+            setPosition(pos, false);
+          }
+          isAnimating = false;
+        });
+      }
+
+      function init() {
+        setCardWidths();
+        setPosition(pos, false);
+      }
+
+      document.getElementById('dep-prev').addEventListener('click', () => goTo(-1));
+      document.getElementById('dep-next').addEventListener('click', () => goTo(1));
+      window.addEventListener('resize', init);
+
+      init();
+    })();
+  </script>
+
+  <!-- Script for Tab Switching -->
+  <script>
+    function switchTab(type) {
+      const tabRes = document.getElementById('tab-residencial');
+      const tabMov = document.getElementById('tab-movel');
+      const gridRes = document.getElementById('grid-residencial');
+      const gridMov = document.getElementById('grid-movel');
+
+      if (type === 'residencial') {
+        tabRes.className = 'btn btn-sm btn-primary';
+        tabRes.style.background = 'var(--c1)';
+        tabRes.style.color = '#fff';
+
+        tabMov.className = 'btn btn-sm btn-outline';
+        tabMov.style.background = 'transparent';
+        tabMov.style.color = 'var(--text-mid)';
+
+        gridRes.style.display = 'grid';
+        gridMov.style.display = 'none';
+      } else {
+        tabRes.className = 'btn btn-sm btn-outline';
+        tabRes.style.background = 'transparent';
+        tabRes.style.color = 'var(--text-mid)';
+
+        tabMov.className = 'btn btn-sm btn-primary';
+        tabMov.style.background = 'var(--c1)';
+        tabMov.style.color = '#fff';
+
+        gridRes.style.display = 'none';
+        gridMov.style.display = 'grid';
+      }
+    }
+  </script>
+
+  <!-- ══════════════════════════════
+       FOOTER
+  ══════════════════════════════ -->
+  <footer id="footer"
+    style="background:var(--c1);border-top:1px solid rgba(4,13,191,0.08);position:relative;overflow:hidden">
+
+    <!-- Ambient glows -->
+    <div class="s-glow animate-pulse-glow"
+      style="width:400px;height:400px;background:radial-gradient(circle,rgba(4,13,191,0.05),transparent 70%);bottom:-120px;left:-80px">
+    </div>
+    <div class="s-glow"
+      style="width:320px;height:320px;background:radial-gradient(circle,rgba(5,175,242,0.06),transparent 70%);top:-60px;right:5%">
+    </div>
+
+    <!-- Top area: 3 columns -->
+    <div style="max-width:82rem;margin:0 auto;padding:4rem 1.5rem 3rem">
+      <div style="display:grid;grid-template-columns:1.4fr 1fr 1.6fr;gap:3.5rem;align-items:start" class="footer-grid">
+
+        <!-- Col 1: Logo + Descrição + Redes sociais -->
+        <div class="scroll-reveal revealed">
+          <!-- Logo -->
+          <div style="margin-bottom:1.5rem">
+            <img src="assets/icons/WSNETlogoBranca.svg" alt="WS Net" style="height:70px;width:auto;object-fit:contain">
+          </div>
+
+          <!-- Tagline -->
+          <p
+            style="font-family:'Poppins',sans-serif;font-size:0.875rem;font-weight:300;color:var(--surface);line-height:1.75;max-width:280px;margin-bottom:2rem">
+            Internet fibra óptica de ultra velocidade em Mongaguá, Itanhaém e Peruíbe. Conexão estável, rápida e com
+            atendimento de verdade.
+          </p>
+
+          <!-- Redes sociais -->
+          <div style="display:flex;align-items:center;gap:0.75rem">
+            <!-- Instagram -->
+            <a href="#" aria-label="Instagram" id="footer-instagram"
+              style="width:40px;height:40px;border-radius:12px;border:1.5px solid rgba(4,13,191,0.15);background:#fff;display:inline-flex;align-items:center;justify-content:center;color:var(--c1);transition:all 0.25s cubic-bezier(.4,0,.2,1);text-decoration:none"
+              onmouseover="this.style.background='var(--c1)';this.style.borderColor='var(--c1)';this.style.color='#fff';this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 20px rgba(4,13,191,0.3)'"
+              onmouseout="this.style.background='#fff';this.style.borderColor='rgba(4,13,191,0.15)';this.style.color='var(--c1)';this.style.transform='';this.style.boxShadow=''">
+              <iconify-icon icon="ri:instagram-line" width="18"></iconify-icon>
+            </a>
+            <!-- Facebook -->
+            <a href="#" aria-label="Facebook" id="footer-facebook"
+              style="width:40px;height:40px;border-radius:12px;border:1.5px solid rgba(4,13,191,0.15);background:#fff;display:inline-flex;align-items:center;justify-content:center;color:var(--c1);transition:all 0.25s cubic-bezier(.4,0,.2,1);text-decoration:none"
+              onmouseover="this.style.background='var(--c1)';this.style.borderColor='var(--c1)';this.style.color='#fff';this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 20px rgba(4,13,191,0.3)'"
+              onmouseout="this.style.background='#fff';this.style.borderColor='rgba(4,13,191,0.15)';this.style.color='var(--c1)';this.style.transform='';this.style.boxShadow=''">
+              <iconify-icon icon="ri:facebook-fill" width="18"></iconify-icon>
+            </a>
+            <!-- WhatsApp -->
+            <a href="#" aria-label="WhatsApp" id="footer-whatsapp"
+              style="width:40px;height:40px;border-radius:12px;border:1.5px solid rgba(4,13,191,0.15);background:#fff;display:inline-flex;align-items:center;justify-content:center;color:var(--c1);transition:all 0.25s cubic-bezier(.4,0,.2,1);text-decoration:none"
+              onmouseover="this.style.background='var(--c1)';this.style.borderColor='var(--c1)';this.style.color='#fff';this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 20px rgba(4,13,191,0.3)'"
+              onmouseout="this.style.background='#fff';this.style.borderColor='rgba(4,13,191,0.15)';this.style.color='var(--c1)';this.style.transform='';this.style.boxShadow=''">
+              <iconify-icon icon="ri:whatsapp-line" width="18"></iconify-icon>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: Links de navegação -->
+        <div class="scroll-reveal revealed" style="animation-delay:0.1s">
+          <p
+            style="font-family:'Roboto Mono',monospace;font-size:1rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--c4);margin-bottom:1.5rem">
+            Navegação</p>
+          <nav style="display:flex;flex-direction:column;gap:0.875rem">
+            <a href="#planos" id="footer-link-planos"
+              style="font-family:'Poppins',sans-serif;font-size:0.875rem;font-weight:300;color:var(--surface);text-decoration:none;display:inline-flex;align-items:center;gap:0.4rem;transition:color 0.2s,gap 0.2s"
+              onmouseover="this.style.color='var(--c4)';this.style.gap='0.65rem'"
+              onmouseout="this.style.color='var(--surface)';this.style.gap='0.4rem'">
+              <iconify-icon icon="solar:alt-arrow-right-linear" width="14"
+                style="opacity:0.5;flex-shrink:0"></iconify-icon>
+              Planos
+            </a>
+            <a href="#atendimento" id="footer-link-atendimento"
+              style="font-family:'Poppins',sans-serif;font-size:0.875rem;font-weight:300;color:var(--surface);text-decoration:none;display:inline-flex;align-items:center;gap:0.4rem;transition:color 0.2s,gap 0.2s"
+              onmouseover="this.style.color='var(--c4)';this.style.gap='0.65rem'"
+              onmouseout="this.style.color='var(--surface)';this.style.gap='0.4rem'">
+              <iconify-icon icon="solar:alt-arrow-right-linear" width="14"
+                style="opacity:0.5;flex-shrink:0"></iconify-icon>
+              Atendimento
+            </a>
+            <a href="#cobertura" id="footer-link-cobertura"
+              style="font-family:'Poppins',sans-serif;font-size:0.875rem;font-weight:300;color:var(--surface);text-decoration:none;display:inline-flex;align-items:center;gap:0.4rem;transition:color 0.2s,gap 0.2s"
+              onmouseover="this.style.color='var(--c4)';this.style.gap='0.65rem'"
+              onmouseout="this.style.color='var(--surface)';this.style.gap='0.4rem'">
+              <iconify-icon icon="solar:alt-arrow-right-linear" width="14"
+                style="opacity:0.5;flex-shrink:0"></iconify-icon>
+              Cobertura
+            </a>
+            <a href="#sobre" id="footer-link-sobre"
+              style="font-family:'Poppins',sans-serif;font-size:0.875rem;font-weight:300;color:var(--surface);text-decoration:none;display:inline-flex;align-items:center;gap:0.4rem;transition:color 0.2s,gap 0.2s"
+              onmouseover="this.style.color='var(--c4)';this.style.gap='0.65rem'"
+              onmouseout="this.style.color='var(--surface)';this.style.gap='0.4rem'">
+              <iconify-icon icon="solar:alt-arrow-right-linear" width="14"
+                style="opacity:0.5;flex-shrink:0"></iconify-icon>
+              Sobre nós
+            </a>
+            <a href="#area-assinante" id="footer-link-assinante"
+              style="font-family:'Poppins',sans-serif;font-size:0.875rem;font-weight:300;color:var(--surface);text-decoration:none;display:inline-flex;align-items:center;gap:0.4rem;transition:color 0.2s,gap 0.2s"
+              onmouseover="this.style.color='var(--c4)';this.style.gap='0.65rem'"
+              onmouseout="this.style.color='var(--surface)';this.style.gap='0.4rem'">
+              <iconify-icon icon="solar:alt-arrow-right-linear" width="14"
+                style="opacity:0.5;flex-shrink:0"></iconify-icon>
+              Área do assinante
+            </a>
+          </nav>
+        </div>
+
+        <!-- Col 3: Newsletter -->
+        <div class="scroll-reveal revealed" style="animation-delay:0.2s">
+          <p
+            style="font-family:'Roboto Mono',monospace;font-size:1rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--c4);margin-bottom:0.6rem">
+            Receba Novidades</p>
+          <p
+            style="font-family:'Poppins',sans-serif;font-size:0.8125rem;font-weight:300;color:var(--surface);line-height:1.65;margin-bottom:1.25rem">
+            Cadastre-se e receba em primeira mão promoções exclusivas, melhorias nos planos e dicas para aproveitar ao
+            máximo a sua internet. Sem spam, e você pode cancelar quando quiser!
+          </p>
+
+          <!-- Form -->
+          <form id="footer-newsletter-form" onsubmit="handleFooterNewsletter(event)"
+            style="display:flex;gap:0.5rem;align-items:stretch">
+            <div style="flex:1;position:relative">
+              <input id="footer-email-input" type="email" placeholder="Seu E-mail" required
+                style="width:100%;padding:0.65rem 1rem;background:#fff;border:1.5px solid rgba(4,13,191,0.15);border-radius:0.75rem;color:var(--text);font-size:0.875rem;font-family:'Poppins',sans-serif;font-weight:300;outline:none;transition:border-color 0.25s,box-shadow 0.25s;-webkit-appearance:none"
+                onfocus="this.style.borderColor='var(--c2)';this.style.boxShadow='0 0 0 3px rgba(5,108,242,0.14)'"
+                onblur="this.style.borderColor='rgba(4,13,191,0.15)';this.style.boxShadow=''">
+            </div>
+            <button id="footer-newsletter-btn" type="submit" class="btn btn-c4"
+              style="flex-shrink:0;border-radius:0.75rem;padding:0 1.25rem"
+              onmouseenter="this.querySelector('.btn-glow-layer').style.transform='translateX(0)'"
+              onmouseleave="this.querySelector('.btn-glow-layer').style.transform='translateX(-100%)'">
+              <span class="btn-glow-layer" style="transform:translateX(-100%);"></span>
+              <span>Receber</span>
+            </button>
+          </form>
+
+          <!-- Success message (hidden by default) -->
+          <div id="footer-newsletter-success"
+            style="display:none;margin-top:0.75rem;padding:0.65rem 1rem;background:rgba(22,163,74,0.07);border:1px solid rgba(22,163,74,0.2);border-radius:0.75rem;display:none;align-items:center;gap:0.5rem">
+            <iconify-icon icon="solar:check-circle-linear"
+              style="color:#16a34a;font-size:18px;flex-shrink:0"></iconify-icon>
+            <span style="font-family:'Poppins',sans-serif;font-size:0.8125rem;color:#16a34a">Ótimo! Você está na lista.
+              🎉</span>
+          </div>
+        </div>
+
+      </div><!-- /footer-grid -->
+    </div>
+
+    <!-- Bottom bar -->
+    <div style="border-top:1px solid rgba(4,13,191,0.08)">
+      <div
+        style="max-width:82rem;margin:0 auto;padding:1.25rem 1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.75rem">
+        <p style="font-family:'Poppins',sans-serif;font-size:0.78rem;font-weight:300;color:var(--surface)">
+          © <span id="footer-year"></span> WS Net. Todos os direitos reservados.
+        </p>
+
+        <!-- Crédito Trius -->
+        <div style="display:flex;align-items:center;gap:0.5rem">
+          <span
+            style="font-family:'Poppins',sans-serif;font-size:0.78rem;font-weight:300;color:var(--surface)">Desenvolvido
+            por:</span>
+          <a href="https://agenciatrius.com.br" target="_blank" rel="noopener noreferrer" aria-label="Agência Trius"
+            style="display:inline-flex;align-items:center;opacity:0.75;transition:opacity 0.2s"
+            onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.75'">
+            <img src="assets/img/logoTrius.png" alt="Agência Trius"
+              style="height:22px;width:auto;object-fit:contain;filter:brightness(0) invert(1)">
+          </a>
+        </div>
+
+        <p style="font-family:'Poppins',sans-serif;font-size:0.78rem;font-weight:300;color:var(--surface)">
+          Mongaguá · Itanhaém · Peruíbe
+        </p>
+      </div>
+    </div>
+
+  </footer>
+
+  <style>
+    /* Footer responsive grid */
+    @media (max-width: 1024px) {
+      .footer-grid {
+        grid-template-columns: 1fr 1fr !important;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .footer-grid {
+        grid-template-columns: 1fr !important;
+      }
+    }
+  </style>
+
+  <script>
+    /* Footer year */
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+    /* Newsletter submit */
+    function handleFooterNewsletter(e) {
+      e.preventDefault();
+      const input = document.getElementById('footer-email-input');
+      const success = document.getElementById('footer-newsletter-success');
+      const btn = document.getElementById('footer-newsletter-btn');
+
+      btn.disabled = true;
+      btn.style.opacity = '0.6';
+      input.disabled = true;
+
+      setTimeout(() => {
+        input.style.display = 'none';
+        btn.style.display = 'none';
+        success.style.display = 'flex';
+      }, 400);
+    }
+  </script>
+
+  <!-- GSAP already loaded above for preloader (gsap@3.12.5) -->
+
+  <!-- Three.js Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- Antigravity Background Script -->
+  <script>
+    (function () {
+      const canvas = document.getElementById('antigravity-canvas');
+      const heroSection = document.getElementById('hero-section');
+      if (!canvas || !heroSection) return;
+
+      // Props / Configuration matching React Bits Antigravity
+      const count = 300;
+      const magnetRadius = 9;
+      const ringRadius = 7;
+      const waveSpeed = 0.4;
+      const waveAmplitude = 1.0;
+      const particleSize = 1.5;
+      const lerpSpeed = 0.05;
+      const color = '#1018c1'; // matching new user requested color
+      const autoAnimate = true;
+      const particleVariance = 1.0;
+      const rotationSpeed = 0.1;
+      const depthFactor = 1.0;
+      const pulseSpeed = 3.0;
+      const fieldStrength = 10.0;
+
+      // Setup Three.js Scene, Camera, Renderer
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(35, 1, 0.1, 1000);
+      camera.position.set(0, 0, 50);
+
+      const renderer = new THREE.WebGLRenderer({
+        canvas: canvas,
+        alpha: true,
+        antialias: true
+      });
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+      // Track sizes
+      let w = heroSection.clientWidth;
+      let h = heroSection.clientHeight;
+      let vWidth = 0;
+      let vHeight = 0;
+
+      function resize() {
+        w = heroSection.clientWidth;
+        h = heroSection.clientHeight;
+        renderer.setSize(w, h);
+        camera.aspect = w / h;
+        camera.updateProjectionMatrix();
+
+        // Calculate viewport width/height at distance 50
+        vHeight = 2 * Math.tan((35 * Math.PI) / 360) * 50;
+        vWidth = vHeight * camera.aspect;
+      }
+      resize();
+      window.addEventListener('resize', resize);
+
+      // Mouse tracking
+      const mouse = { x: 0, y: 0 };
+      const lastMousePos = { x: 0, y: 0 };
+      const virtualMouse = { x: 0, y: 0 };
+      let lastMouseMoveTime = Date.now();
+
+      heroSection.addEventListener('mousemove', (e) => {
+        const rect = heroSection.getBoundingClientRect();
+        const rawX = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+        const rawY = -((e.clientY - rect.top) / rect.height) * 2 + 1;
+
+        // Check if moved
+        const dist = Math.sqrt(Math.pow(rawX - lastMousePos.x, 2) + Math.pow(rawY - lastMousePos.y, 2));
+        if (dist > 0.001) {
+          lastMouseMoveTime = Date.now();
+          lastMousePos.x = rawX;
+          lastMousePos.y = rawY;
+          mouse.x = (rawX * vWidth) / 2;
+          mouse.y = (rawY * vHeight) / 2;
+        }
+      });
+
+      // Touch support
+      heroSection.addEventListener('touchmove', (e) => {
+        if (e.touches.length > 0) {
+          const t = e.touches[0];
+          const rect = heroSection.getBoundingClientRect();
+          const rawX = ((t.clientX - rect.left) / rect.width) * 2 - 1;
+          const rawY = -((t.clientY - rect.top) / rect.height) * 2 + 1;
+          lastMouseMoveTime = Date.now();
+          mouse.x = (rawX * vWidth) / 2;
+          mouse.y = (rawY * vHeight) / 2;
+        }
+      }, { passive: true });
+
+      // Create geometry & material
+      // We use CylinderGeometry to represent the capsules (like little fiber strands)
+      const geometry = new THREE.CylinderGeometry(0.06, 0.06, 0.3, 6);
+      // Rotate geometry so it aligns correctly like the original InstancedMesh lookAt
+      geometry.rotateX(Math.PI / 2);
+
+      const material = new THREE.MeshBasicMaterial({
+        color: new THREE.Color(color),
+        transparent: true,
+        opacity: 0.6,
+        blending: THREE.AdditiveBlending
+      });
+
+      const instancedMesh = new THREE.InstancedMesh(geometry, material, count);
+      scene.add(instancedMesh);
+
+      // Generate particles
+      const dummy = new THREE.Object3D();
+      const particles = [];
+
+      for (let i = 0; i < count; i++) {
+        const t = Math.random() * 100;
+        const speed = 0.01 + Math.random() / 200;
+
+        // Random start position within viewport bounds
+        const rx = (Math.random() - 0.5) * vWidth;
+        const ry = (Math.random() - 0.5) * vHeight;
+        const rz = (Math.random() - 0.5) * 20;
+
+        particles.push({
+          t: t,
+          speed: speed,
+          mx: rx,
+          my: ry,
+          mz: rz,
+          cx: rx,
+          cy: ry,
+          cz: rz,
+          randomRadiusOffset: (Math.random() - 0.5) * 2
+        });
+      }
+
+      const clock = new THREE.Clock();
+
+      // Render loop
+      function animate() {
+        requestAnimationFrame(animate);
+
+        const elapsedTime = clock.getElapsedTime();
+        const delta = clock.getDelta();
+
+        let destX = mouse.x;
+        let destY = mouse.y;
+
+        // Auto animate if idle
+        if (autoAnimate && (Date.now() - lastMouseMoveTime > 2000)) {
+          destX = Math.sin(elapsedTime * 0.5) * (vWidth / 4);
+          destY = Math.cos(elapsedTime * 0.5 * 2) * (vHeight / 4);
+        }
+
+        // Smoothly interpolate virtual mouse
+        virtualMouse.x += (destX - virtualMouse.x) * 0.05;
+        virtualMouse.y += (destY - virtualMouse.y) * 0.05;
+
+        const globalRotation = elapsedTime * rotationSpeed;
+
+        for (let i = 0; i < count; i++) {
+          const p = particles[i];
+          p.t += p.speed / 2;
+
+          const projectionFactor = 1 - p.cz / 50;
+          const projectedTargetX = virtualMouse.x * projectionFactor;
+          const projectedTargetY = virtualMouse.y * projectionFactor;
+
+          const dx = p.mx - projectedTargetX;
+          const dy = p.my - projectedTargetY;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+
+          const targetPos = { x: p.mx, y: p.my, z: p.mz * depthFactor };
+
+          if (dist < magnetRadius) {
+            const angle = Math.atan2(dy, dx) + globalRotation;
+            const wave = Math.sin(p.t * waveSpeed + angle) * (0.5 * waveAmplitude);
+            const deviation = p.randomRadiusOffset * (5 / (fieldStrength + 0.1));
+            const currentRingRadius = ringRadius + wave + deviation;
+
+            targetPos.x = projectedTargetX + currentRingRadius * Math.cos(angle);
+            targetPos.y = projectedTargetY + currentRingRadius * Math.sin(angle);
+            targetPos.z = p.mz * depthFactor + Math.sin(p.t) * (1 * waveAmplitude * depthFactor);
+          }
+
+          // Smooth lerp to target
+          p.cx += (targetPos.x - p.cx) * lerpSpeed;
+          p.cy += (targetPos.y - p.cy) * lerpSpeed;
+          p.cz += (targetPos.z - p.cz) * lerpSpeed;
+
+          dummy.position.set(p.cx, p.cy, p.cz);
+
+          // Rotate to look at the target (mouse position)
+          dummy.lookAt(projectedTargetX, projectedTargetY, p.cz);
+
+          // Calculate scale based on proximity to the ring
+          const currentDistToMouse = Math.sqrt(
+            Math.pow(p.cx - projectedTargetX, 2) + Math.pow(p.cy - projectedTargetY, 2)
+          );
+          const distFromRing = Math.abs(currentDistToMouse - ringRadius);
+          let scaleFactor = 1 - distFromRing / 10;
+          scaleFactor = Math.max(0, Math.min(1, scaleFactor));
+
+          const finalScale = scaleFactor * (0.8 + Math.sin(p.t * pulseSpeed) * 0.2 * particleVariance) * particleSize;
+          dummy.scale.set(finalScale, finalScale, finalScale);
+
+          dummy.updateMatrix();
+          instancedMesh.setMatrixAt(i, dummy.matrix);
+        }
+
+        instancedMesh.instanceMatrix.needsUpdate = true;
+        renderer.render(scene, camera);
+      }
+
+      animate();
+    })();
+  </script>
+
+  <!-- Electric Border Animation Script -->
+  <script>
+    (function () {
+      const container = document.getElementById('electric-combo-card');
+      const canvas = document.getElementById('eb-canvas-combo');
+      if (!container || !canvas) return;
+
+      const ctx = canvas.getContext('2d');
+      if (!ctx) return;
+
+      // Config
+      const color = '#040DBF';
+      const speed = 1.0;
+      const chaos = 0.09;
+      const borderRadius = 24;
+
+      const octaves = 10;
+      const lacunarity = 1.6;
+      const gain = 0.7;
+      const amplitude = chaos;
+      const frequency = 10;
+      const baseFlatness = 0;
+      const displacement = 60;
+      const borderOffset = 60;
+
+      let time = 0;
+      let lastFrameTime = performance.now();
+
+      // Noise functions
+      function random(x) {
+        return (Math.sin(x * 12.9898) * 43758.5453) % 1;
+      }
+
+      function noise2D(x, y) {
+        const i = Math.floor(x);
+        const j = Math.floor(y);
+        const fx = x - i;
+        const fy = y - j;
+
+        const a = random(i + j * 57);
+        const b = random(i + 1 + j * 57);
+        const c = random(i + (j + 1) * 57);
+        const d = random(i + 1 + (j + 1) * 57);
+
+        const ux = fx * fx * (3.0 - 2.0 * fx);
+        const uy = fy * fy * (3.0 - 2.0 * fy);
+
+        return a * (1 - ux) * (1 - uy) + b * ux * (1 - uy) + c * (1 - ux) * uy + d * ux * uy;
+      }
+
+      function octavedNoise(x, octaves, lacunarity, gain, baseAmplitude, baseFrequency, timeVal, seed, baseFlatness) {
+        let y = 0;
+        let amp = baseAmplitude;
+        let freq = baseFrequency;
+
+        for (let i = 0; i < octaves; i++) {
+          let octaveAmplitude = amp;
+          if (i === 0) {
+            octaveAmplitude *= baseFlatness;
+          }
+          y += octaveAmplitude * noise2D(freq * x + seed * 100, timeVal * freq * 0.3);
+          freq *= lacunarity;
+          amp *= gain;
+        }
+
+        return y;
+      }
+
+      function getCornerPoint(centerX, centerY, radius, startAngle, arcLength, progress) {
+        const angle = startAngle + progress * arcLength;
+        return {
+          x: centerX + radius * Math.cos(angle),
+          y: centerY + radius * Math.sin(angle)
+        };
+      }
+
+      function getRoundedRectPoint(t, left, top, width, height, radius) {
+        const straightWidth = width - 2 * radius;
+        const straightHeight = height - 2 * radius;
+        const cornerArc = (Math.PI * radius) / 2;
+        const totalPerimeter = 2 * straightWidth + 2 * straightHeight + 4 * cornerArc;
+        const distance = t * totalPerimeter;
+
+        let accumulated = 0;
+
+        // Top edge
+        if (distance <= accumulated + straightWidth) {
+          const progress = (distance - accumulated) / straightWidth;
+          return { x: left + radius + progress * straightWidth, y: top };
+        }
+        accumulated += straightWidth;
+
+        // Top-right corner
+        if (distance <= accumulated + cornerArc) {
+          const progress = (distance - accumulated) / cornerArc;
+          return getCornerPoint(left + width - radius, top + radius, radius, -Math.PI / 2, Math.PI / 2, progress);
+        }
+        accumulated += cornerArc;
+
+        // Right edge
+        if (distance <= accumulated + straightHeight) {
+          const progress = (distance - accumulated) / straightHeight;
+          return { x: left + width, y: top + radius + progress * straightHeight };
+        }
+        accumulated += straightHeight;
+
+        // Bottom-right corner
+        if (distance <= accumulated + cornerArc) {
+          const progress = (distance - accumulated) / cornerArc;
+          return getCornerPoint(left + width - radius, top + height - radius, radius, 0, Math.PI / 2, progress);
+        }
+        accumulated += cornerArc;
+
+        // Bottom edge
+        if (distance <= accumulated + straightWidth) {
+          const progress = (distance - accumulated) / straightWidth;
+          return { x: left + width - radius - progress * straightWidth, y: top + height };
+        }
+        accumulated += straightWidth;
+
+        // Bottom-left corner
+        if (distance <= accumulated + cornerArc) {
+          const progress = (distance - accumulated) / cornerArc;
+          return getCornerPoint(left + radius, top + height - radius, radius, Math.PI / 2, Math.PI / 2, progress);
+        }
+        accumulated += cornerArc;
+
+        // Left edge
+        if (distance <= accumulated + straightHeight) {
+          const progress = (distance - accumulated) / straightHeight;
+          return { x: left, y: top + height - radius - progress * straightHeight };
+        }
+        accumulated += straightHeight;
+
+        // Top-left corner
+        const progress = (distance - accumulated) / cornerArc;
+        return getCornerPoint(left + radius, top + radius, radius, Math.PI, Math.PI / 2, progress);
+      }
+
+      // Size management
+      let width = 0;
+      let height = 0;
+      let lastDpr = 1;
+
+      function updateSize() {
+        const rect = container.getBoundingClientRect();
+        width = rect.width + borderOffset * 2;
+        height = rect.height + borderOffset * 2;
+
+        const dpr = Math.min(window.devicePixelRatio || 1, 2);
+        lastDpr = dpr;
+
+        canvas.width = width * dpr;
+        canvas.height = height * dpr;
+        canvas.style.width = `${width}px`;
+        canvas.style.height = `${height}px`;
+        ctx.scale(dpr, dpr);
+      }
+
+      updateSize();
+
+      // Render loop
+      function drawElectricBorder(currentTime) {
+        const dpr = Math.min(window.devicePixelRatio || 1, 2);
+        if (dpr !== lastDpr) {
+          updateSize();
+        }
+
+        const deltaTime = (currentTime - lastFrameTime) / 1000;
+        time += deltaTime * speed;
+        lastFrameTime = currentTime;
+
+        ctx.setTransform(1, 0, 0, 1, 0, 0);
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.scale(dpr, dpr);
+
+        ctx.strokeStyle = color;
+        ctx.lineWidth = 2;
+        ctx.lineCap = 'round';
+        ctx.lineJoin = 'round';
+
+        const scale = displacement;
+        const left = borderOffset;
+        const top = borderOffset;
+        const borderWidth = width - 2 * borderOffset;
+        const borderHeight = height - 2 * borderOffset;
+        const maxRadius = Math.min(borderWidth, borderHeight) / 2;
+        const radius = Math.min(borderRadius, maxRadius);
+
+        const approximatePerimeter = 2 * (borderWidth + borderHeight) + 2 * Math.PI * radius;
+        const sampleCount = Math.floor(approximatePerimeter / 2);
+
+        ctx.beginPath();
+
+        for (let i = 0; i <= sampleCount; i++) {
+          const progress = i / sampleCount;
+          const point = getRoundedRectPoint(progress, left, top, borderWidth, borderHeight, radius);
+
+          const xNoise = octavedNoise(
+            progress * 8,
+            octaves,
+            lacunarity,
+            gain,
+            amplitude,
+            frequency,
+            time,
+            0,
+            baseFlatness
+          );
+
+          const yNoise = octavedNoise(
+            progress * 8,
+            octaves,
+            lacunarity,
+            gain,
+            amplitude,
+            frequency,
+            time,
+            1,
+            baseFlatness
+          );
+
+          const displacedX = point.x + xNoise * scale;
+          const displacedY = point.y + yNoise * scale;
+
+          if (i === 0) {
+            ctx.moveTo(displacedX, displacedY);
+          } else {
+            ctx.lineTo(displacedX, displacedY);
+          }
+        }
+
+        ctx.closePath();
+        ctx.stroke();
+
+        requestAnimationFrame(drawElectricBorder);
+      }
+
+      // Handle resize
+      const resizeObserver = new ResizeObserver(() => {
+        updateSize();
+      });
+      resizeObserver.observe(container);
+
+      requestAnimationFrame(drawElectricBorder);
+    })();
+  </script>
+
+  <!-- WS Net Premium GSAP Animations -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // 1. Register ScrollTrigger
+      gsap.registerPlugin(ScrollTrigger);
+
+      // 2. Dynamic Text Splitting for Hero Title
+      function wrapWords(element) {
+        if (!element) return;
+        const nodes = Array.from(element.childNodes);
+        element.innerHTML = '';
+        
+        nodes.forEach(node => {
+          if (node.nodeType === Node.TEXT_NODE) {
+            const text = node.textContent;
+            // Split by words, preserving space
+            const words = text.split(/(\s+)/);
+            words.forEach(word => {
+              if (word.trim().length > 0) {
+                const wrapper = document.createElement('span');
+                wrapper.className = 'word-wrapper';
+                const masked = document.createElement('span');
+                masked.className = 'masked-word';
+                masked.textContent = word;
+                wrapper.appendChild(masked);
+                element.appendChild(wrapper);
+              } else {
+                element.appendChild(document.createTextNode(word));
+              }
+            });
+          } else if (node.nodeType === Node.ELEMENT_NODE) {
+            if (node.tagName.toLowerCase() === 'br') {
+              element.appendChild(document.createElement('br'));
+            } else {
+              const clonedNode = node.cloneNode(false);
+              wrapWords(node);
+              clonedNode.innerHTML = node.innerHTML;
+              element.appendChild(clonedNode);
+            }
+          }
+        });
+      }
+
+      // Wrap the Hero Title
+      const heroTitle = document.querySelector('#hero-section h1');
+      if (heroTitle) {
+        wrapWords(heroTitle);
+      }
+
+      // 3. Hero Section Entrance - All elements at the same time
+      const heroBadge = document.querySelector('#hero-section .hero-content > div:first-of-type');
+      const heroSub = document.querySelector('#hero-section ul');
+      const heroModem = document.querySelector('#hero-section .hero-image-wrapper');
+
+      // Reveal masked words
+      gsap.to('#hero-section h1 .masked-word', {
+        y: '0%',
+        duration: 1.2,
+        stagger: 0,
+        ease: 'power4.out',
+        delay: 0.1
+      });
+
+      // Fade up badge, subtitle list, and modem — all at once
+      gsap.fromTo([heroBadge, heroSub, heroModem],
+        { y: 30, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1.0,
+          stagger: 0,
+          ease: 'power3.out',
+          delay: 0.1
+        }
+      );
+
+      // 4. Planos Section Animations
+      // Headline reveal
+      gsap.fromTo('#planos h2, #planos .badge',
+        { y: 30, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          stagger: 0.15,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: '#planos',
+            start: 'top 85%'
+          }
+        }
+      );
+
+      // Residencial cards reveal
+      gsap.fromTo('#grid-residencial .glass-card',
+        { y: 40, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          stagger: 0.15,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: '#grid-residencial',
+            start: 'top 85%'
+          },
+          clearProps: "transform" // clear transform so custom inline onmouseenter styles function perfectly
+        }
+      );
+
+      // Movel cards reveal (when it becomes visible, or on tab switch - we can animate both)
+      gsap.fromTo('#grid-movel .glass-card',
+        { y: 40, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          stagger: 0.15,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: '#grid-movel',
+            start: 'top 85%'
+          },
+          clearProps: "transform"
+        }
+      );
+
+      // 5. Combo Xperience Section Animations
+      gsap.fromTo('#electric-combo-card',
+        { y: 50, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1.0,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: '#electric-combo-card',
+            start: 'top 85%'
+          }
+        }
+      );
+
+      // 6. Nosso App Section Animations
+      gsap.fromTo('#nosso-app .scroll-reveal.from-left',
+        { x: -50, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 1.0,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: '#nosso-app',
+            start: 'top 80%'
+          }
+        }
+      );
+      
+      gsap.fromTo('#nosso-app .scroll-reveal:not(.from-left)',
+        { x: 50, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 1.0,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: '#nosso-app',
+            start: 'top 80%'
+          }
+        }
+      );
+
+      // 7. Depoimentos Section Animations
+      gsap.fromTo('#depoimentos .scroll-reveal',
+        { y: 30, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1.0,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: '#depoimentos',
+            start: 'top 80%'
+          }
+        }
+      );
+      
+      gsap.fromTo('#dep-viewport',
+        { y: 40, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1.0,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: '#dep-viewport',
+            start: 'top 85%'
+          }
+        }
+      );
+
+      // 8. Footer Section Animations
+      gsap.fromTo('#footer .scroll-reveal',
+        { y: 30, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          stagger: 0.15,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: '#footer',
+            start: 'top 90%'
+          }
+        }
+      );
+
+      // 9. Navbar Scroll Micro-interaction
+      const nav = document.querySelector('nav.nav-dark-theme');
+      if (nav) {
+        const onScroll = () => {
+          if (window.scrollY > 50) {
+            nav.style.top = '0.5rem';
+            nav.style.boxShadow = '0 8px 32px rgba(5, 108, 242, 0.18)';
+          } else {
+            nav.style.top = '1.25rem';
+            nav.style.boxShadow = '0 12px 40px rgba(5, 108, 242, 0.3)';
+          }
+        };
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+      }
+    });
+  </script>
+</body>
+
+</html>
