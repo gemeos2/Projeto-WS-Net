@@ -737,13 +737,13 @@ h6,
   }
 
   #hero-section {
-    padding-top: 110px !important;
+    padding-top: 140px !important;
     padding-bottom: 60px !important;
     min-height: auto !important;
   }
 
   #hero-section h1 {
-    font-size: clamp(1.5rem, 6vw, 2rem) !important;
+    font-size: clamp(1.5rem, 8vw, 3rem) !important;
   }
 
   .hero-container {
@@ -781,19 +781,117 @@ h6,
   }
 
   .tab-selector-wrap {
-    flex-direction: column !important;
-    width: 100% !important;
-    border-radius: 1rem !important;
+    flex-direction: row !important;
+    width: auto !important;
+    border-radius: 9999px !important;
+    display: flex !important;
+    margin: 0 auto !important;
   }
 
   .tab-selector-wrap button {
-    width: 100% !important;
-    border-radius: 0.75rem !important;
+    width: auto !important;
+    border-radius: 9999px !important;
+    font-size: 0.8rem !important;
+    padding: .5rem 1rem !important;
+    text-align: center !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
 
   #grid-residencial,
   #grid-movel {
     grid-template-columns: 1fr !important;
+  }
+
+  .plan-price {
+    font-size: 1.8rem !important;
+  }
+
+  .plan-speed {
+    font-size: 1.8rem !important;
+  }
+
+  .plan-unit {
+    font-size: 0.9rem !important;
+  }
+
+  .plan-name {
+    font-size: 0.85rem !important;
+  }
+
+  /* === ACORDEÃO MOBILE — CARDS DE PLANOS === */
+  .plan-card {
+    min-height: unset !important;
+    padding: 0 !important;
+    cursor: default !important;
+  }
+
+  .plan-card-trigger {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.1rem 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    gap: 0.5rem;
+  }
+
+  .plan-card-trigger-label {
+    display: flex;
+    align-items: baseline;
+    gap: 0.35rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: var(--text);
+    font-size: 1.4rem;
+    line-height: 1;
+  }
+
+  .plan-card-trigger-label span {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-mid);
+  }
+
+  .plan-card-trigger-right {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-shrink: 0;
+  }
+
+  .plan-card-trigger-price {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--c1);
+  }
+
+  .plan-card-chevron {
+    width: 1.1rem;
+    height: 1.1rem;
+    color: var(--text-faint);
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+  }
+
+  .plan-card.is-open .plan-card-chevron {
+    transform: rotate(180deg);
+  }
+
+  .plan-card-body {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    padding: 0 1.5rem;
+  }
+
+  .plan-card.is-open .plan-card-body {
+    max-height: 1200px;
+    padding: 0 1.5rem 1.75rem;
   }
 
   #nosso-app>div {

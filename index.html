@@ -294,7 +294,7 @@
         style="display:grid;grid-template-columns:repeat(auto-fit, minmax(min(320px, 100%), 1fr));gap:2rem;margin-bottom:40px;animation:fadeSlideIn 0.5s ease-out">
 
         <!-- Plan 1: SMART+ -->
-        <div class="glass-card scroll-reveal revealed"
+        <div class="glass-card plan-card scroll-reveal revealed"
           style="padding:3rem 2.25rem;display:flex;flex-direction:column;justify-content:space-between;min-height:540px;transition:transform 1.4s cubic-bezier(0.25,1,0.5,1),box-shadow 1.4s cubic-bezier(0.25,1,0.5,1),border-color 1.4s cubic-bezier(0.25,1,0.5,1);cursor:pointer;"
           onmouseenter="this.style.transform='scale(1.02) translateY(-2px)';this.style.borderColor='var(--c1)';this.style.boxShadow='0 24px 48px rgba(4,13,191,0.15)'"
           onmouseleave="this.style.transform='';this.style.borderColor='';this.style.boxShadow=''">
@@ -306,11 +306,11 @@
                 Fibra</span>
             </div>
             <h3
-              style="font-family:'Poppins',sans-serif;font-size:2.5rem;font-weight:700;color:var(--text);line-height:1;margin-bottom:0.25rem">
-              500<span style="font-size:1.25rem;font-weight:500;color:var(--text-mid)"> Mega</span>
+              class="plan-speed" style="font-family:'Poppins',sans-serif;font-size:2.5rem;font-weight:700;color:var(--text);line-height:1;margin-bottom:0.25rem">
+              500<span class="plan-unit" style="font-size:1.25rem;font-weight:500;color:var(--text-mid)"> Mega</span>
             </h3>
             <div
-              style="font-family:'Poppins',sans-serif;font-size:1.125rem;font-weight:600;color:var(--c1);margin-bottom:1.5rem">
+              class="plan-name" style="font-family:'Poppins',sans-serif;font-size:1.125rem;font-weight:600;color:var(--c1);margin-bottom:1.5rem">
               SMART+
             </div>
             <hr style="border:none;border-top:1px solid rgba(4,13,191,0.08);margin-bottom:1.5rem">
@@ -357,7 +357,7 @@
               Assinatura mensal
             </span>
             <div style="display:flex;align-items:baseline;gap:4px;margin-bottom:1.5rem">
-              <span style="font-family:'Poppins',sans-serif;font-size:2.5rem;font-weight:700;color:var(--c1)">R$
+              <span class="plan-price" style="font-family:'Poppins',sans-serif;font-size:2.5rem;font-weight:700;color:var(--c1)">R$
                 105,90</span>
               <span style="font-family:'Poppins',sans-serif;font-size:1rem;color:var(--text-faint)">/mês</span>
             </div>
@@ -373,7 +373,7 @@
         </div>
 
         <!-- Plan 2: Premium+ (Highlighted/Most Popular) -->
-        <div class="glass-card scroll-reveal revealed"
+        <div class="glass-card plan-card scroll-reveal revealed"
           style="padding:3rem 2.25rem;display:flex;flex-direction:column;justify-content:space-between;min-height:540px;transition:transform 1.4s cubic-bezier(0.25,1,0.5,1),box-shadow 1.4s cubic-bezier(0.25,1,0.5,1),border-color 1.4s cubic-bezier(0.25,1,0.5,1);position:relative;overflow:hidden;cursor:pointer;"
           onmouseenter="this.style.transform='scale(1.02) translateY(-2px)';this.style.borderColor='var(--c1)';this.style.boxShadow='0 24px 48px rgba(4,13,191,0.15)'"
           onmouseleave="this.style.transform='';this.style.borderColor='';this.style.boxShadow=''">
@@ -388,11 +388,11 @@
                 vendido</span>
             </div>
             <h3
-              style="font-family:'Poppins',sans-serif;font-size:2.5rem;font-weight:700;color:var(--text);line-height:1;margin-bottom:0.25rem">
-              750<span style="font-size:1.25rem;font-weight:500;color:var(--text-mid)"> Mega</span>
+              class="plan-speed" style="font-family:'Poppins',sans-serif;font-size:2.5rem;font-weight:700;color:var(--text);line-height:1;margin-bottom:0.25rem">
+              750<span class="plan-unit" style="font-size:1.25rem;font-weight:500;color:var(--text-mid)"> Mega</span>
             </h3>
             <div
-              style="font-family:'Poppins',sans-serif;font-size:1.125rem;font-weight:600;color:var(--c1);margin-bottom:1.5rem">
+              class="plan-name" style="font-family:'Poppins',sans-serif;font-size:1.125rem;font-weight:600;color:var(--c1);margin-bottom:1.5rem">
               Premium+
             </div>
             <hr style="border:none;border-top:1px solid rgba(4,13,191,0.08);margin-bottom:1.5rem">
@@ -444,7 +444,7 @@
               Assinatura mensal
             </span>
             <div style="display:flex;align-items:baseline;gap:4px;margin-bottom:1.5rem">
-              <span style="font-family:'Poppins',sans-serif;font-size:2.5rem;font-weight:700;color:var(--c1)">R$
+              <span class="plan-price" style="font-family:'Poppins',sans-serif;font-size:2.5rem;font-weight:700;color:var(--c1)">R$
                 137,90</span>
               <span style="font-family:'Poppins',sans-serif;font-size:1rem;color:var(--text-faint)">/mês</span>
             </div>
@@ -465,7 +465,7 @@
         </div>
 
         <!-- Plan 3: Extreme 5g -->
-        <div class="glass-card scroll-reveal revealed"
+        <div class="glass-card plan-card scroll-reveal revealed"
           style="padding:3rem 2.25rem;display:flex;flex-direction:column;justify-content:space-between;min-height:540px;transition:transform 1.4s cubic-bezier(0.25,1,0.5,1),box-shadow 1.4s cubic-bezier(0.25,1,0.5,1),border-color 1.4s cubic-bezier(0.25,1,0.5,1);cursor:pointer;"
           onmouseenter="this.style.transform='scale(1.02) translateY(-2px)';this.style.borderColor='var(--c1)';this.style.boxShadow='0 24px 48px rgba(4,13,191,0.15)'"
           onmouseleave="this.style.transform='';this.style.borderColor='';this.style.boxShadow=''">
@@ -477,11 +477,11 @@
                 Fibra</span>
             </div>
             <h3
-              style="font-family:'Poppins',sans-serif;font-size:2.5rem;font-weight:700;color:var(--text);line-height:1;margin-bottom:0.25rem">
-              1000<span style="font-size:1.25rem;font-weight:500;color:var(--text-mid)"> Mega</span>
+              class="plan-speed" style="font-family:'Poppins',sans-serif;font-size:2.5rem;font-weight:700;color:var(--text);line-height:1;margin-bottom:0.25rem">
+              1000<span class="plan-unit" style="font-size:1.25rem;font-weight:500;color:var(--text-mid)"> Mega</span>
             </h3>
             <div
-              style="font-family:'Poppins',sans-serif;font-size:1.125rem;font-weight:600;color:var(--c1);margin-bottom:1.5rem">
+              class="plan-name" style="font-family:'Poppins',sans-serif;font-size:1.125rem;font-weight:600;color:var(--c1);margin-bottom:1.5rem">
               Extreme 5g
             </div>
             <hr style="border:none;border-top:1px solid rgba(4,13,191,0.08);margin-bottom:1.5rem">
@@ -533,7 +533,7 @@
               Assinatura mensal
             </span>
             <div style="display:flex;align-items:baseline;gap:4px;margin-bottom:1.5rem">
-              <span style="font-family:'Poppins',sans-serif;font-size:2.5rem;font-weight:700;color:var(--c1)">R$
+              <span class="plan-price" style="font-family:'Poppins',sans-serif;font-size:2.5rem;font-weight:700;color:var(--c1)">R$
                 185,90</span>
               <span style="font-family:'Poppins',sans-serif;font-size:1rem;color:var(--text-faint)">/mês</span>
             </div>
@@ -556,7 +556,7 @@
         style="display:none;grid-template-columns:repeat(auto-fit, minmax(min(320px, 100%), 1fr));gap:2rem;margin-bottom:40px;animation:fadeSlideIn 0.5s ease-out">
 
         <!-- Plan 1: SMART+ (MÃ³vel) -->
-        <div class="glass-card"
+        <div class="glass-card plan-card"
           style="padding:3rem 2.25rem;display:flex;flex-direction:column;justify-content:space-between;min-height:540px;transition:transform 1.4s cubic-bezier(0.25,1,0.5,1),box-shadow 1.4s cubic-bezier(0.25,1,0.5,1),border-color 1.4s cubic-bezier(0.25,1,0.5,1);cursor:pointer;"
           onmouseenter="this.style.transform='scale(1.02) translateY(-2px)';this.style.borderColor='var(--c1)';this.style.boxShadow='0 24px 48px rgba(4,13,191,0.15)'"
           onmouseleave="this.style.transform='';this.style.borderColor='';this.style.boxShadow=''">
@@ -568,11 +568,11 @@
                 Móvel</span>
             </div>
             <h3
-              style="font-family:'Poppins',sans-serif;font-size:2.5rem;font-weight:700;color:var(--text);line-height:1;margin-bottom:0.25rem">
-              500<span style="font-size:1.25rem;font-weight:500;color:var(--text-mid)"> Mega</span>
+              class="plan-speed" style="font-family:'Poppins',sans-serif;font-size:2.5rem;font-weight:700;color:var(--text);line-height:1;margin-bottom:0.25rem">
+              500<span class="plan-unit" style="font-size:1.25rem;font-weight:500;color:var(--text-mid)"> Mega</span>
             </h3>
             <div
-              style="font-family:'Poppins',sans-serif;font-size:1.125rem;font-weight:600;color:var(--c1);margin-bottom:1.5rem">
+              class="plan-name" style="font-family:'Poppins',sans-serif;font-size:1.125rem;font-weight:600;color:var(--c1);margin-bottom:1.5rem">
               SMART+
             </div>
             <hr style="border:none;border-top:1px solid rgba(4,13,191,0.08);margin-bottom:1.5rem">
@@ -619,7 +619,7 @@
               Assinatura mensal
             </span>
             <div style="display:flex;align-items:baseline;gap:4px;margin-bottom:1.5rem">
-              <span style="font-family:'Poppins',sans-serif;font-size:2.5rem;font-weight:700;color:var(--c1)">R$
+              <span class="plan-price" style="font-family:'Poppins',sans-serif;font-size:2.5rem;font-weight:700;color:var(--c1)">R$
                 105,90</span>
               <span style="font-family:'Poppins',sans-serif;font-size:1rem;color:var(--text-faint)">/mês</span>
             </div>
@@ -635,7 +635,7 @@
         </div>
 
         <!-- Plan 2: Premium+ (MÃ³vel) -->
-        <div class="glass-card"
+        <div class="glass-card plan-card"
           style="padding:3rem 2.25rem;display:flex;flex-direction:column;justify-content:space-between;min-height:540px;transition:transform 1.4s cubic-bezier(0.25,1,0.5,1),box-shadow 1.4s cubic-bezier(0.25,1,0.5,1),border-color 1.4s cubic-bezier(0.25,1,0.5,1);position:relative;overflow:hidden;cursor:pointer;"
           onmouseenter="this.style.transform='scale(1.02) translateY(-2px)';this.style.borderColor='var(--c1)';this.style.boxShadow='0 24px 48px rgba(4,13,191,0.15)'"
           onmouseleave="this.style.transform='';this.style.borderColor='';this.style.boxShadow=''">
@@ -650,11 +650,11 @@
                 vendido</span>
             </div>
             <h3
-              style="font-family:'Poppins',sans-serif;font-size:2.5rem;font-weight:700;color:var(--text);line-height:1;margin-bottom:0.25rem">
-              750<span style="font-size:1.25rem;font-weight:500;color:var(--text-mid)"> Mega</span>
+              class="plan-speed" style="font-family:'Poppins',sans-serif;font-size:2.5rem;font-weight:700;color:var(--text);line-height:1;margin-bottom:0.25rem">
+              750<span class="plan-unit" style="font-size:1.25rem;font-weight:500;color:var(--text-mid)"> Mega</span>
             </h3>
             <div
-              style="font-family:'Poppins',sans-serif;font-size:1.125rem;font-weight:600;color:var(--c1);margin-bottom:1.5rem">
+              class="plan-name" style="font-family:'Poppins',sans-serif;font-size:1.125rem;font-weight:600;color:var(--c1);margin-bottom:1.5rem">
               Premium+
             </div>
             <hr style="border:none;border-top:1px solid rgba(4,13,191,0.08);margin-bottom:1.5rem">
@@ -706,7 +706,7 @@
               Assinatura mensal
             </span>
             <div style="display:flex;align-items:baseline;gap:4px;margin-bottom:1.5rem">
-              <span style="font-family:'Poppins',sans-serif;font-size:2.5rem;font-weight:700;color:var(--c1)">R$
+              <span class="plan-price" style="font-family:'Poppins',sans-serif;font-size:2.5rem;font-weight:700;color:var(--c1)">R$
                 137,90</span>
               <span style="font-family:'Poppins',sans-serif;font-size:1rem;color:var(--text-faint)">/mês</span>
             </div>
@@ -727,7 +727,7 @@
         </div>
 
         <!-- Plan 3: Extreme 5g (MÃ³vel) -->
-        <div class="glass-card"
+        <div class="glass-card plan-card"
           style="padding:3rem 2.25rem;display:flex;flex-direction:column;justify-content:space-between;min-height:540px;transition:transform 1.4s cubic-bezier(0.25,1,0.5,1),box-shadow 1.4s cubic-bezier(0.25,1,0.5,1),border-color 1.4s cubic-bezier(0.25,1,0.5,1);cursor:pointer;"
           onmouseenter="this.style.transform='scale(1.02) translateY(-2px)';this.style.borderColor='var(--c1)';this.style.boxShadow='0 24px 48px rgba(4,13,191,0.15)'"
           onmouseleave="this.style.transform='';this.style.borderColor='';this.style.boxShadow=''">
@@ -739,11 +739,11 @@
                 Móvel</span>
             </div>
             <h3
-              style="font-family:'Poppins',sans-serif;font-size:2.5rem;font-weight:700;color:var(--text);line-height:1;margin-bottom:0.25rem">
-              1000<span style="font-size:1.25rem;font-weight:500;color:var(--text-mid)"> Mega</span>
+              class="plan-speed" style="font-family:'Poppins',sans-serif;font-size:2.5rem;font-weight:700;color:var(--text);line-height:1;margin-bottom:0.25rem">
+              1000<span class="plan-unit" style="font-size:1.25rem;font-weight:500;color:var(--text-mid)"> Mega</span>
             </h3>
             <div
-              style="font-family:'Poppins',sans-serif;font-size:1.125rem;font-weight:600;color:var(--c1);margin-bottom:1.5rem">
+              class="plan-name" style="font-family:'Poppins',sans-serif;font-size:1.125rem;font-weight:600;color:var(--c1);margin-bottom:1.5rem">
               Extreme 5g
             </div>
             <hr style="border:none;border-top:1px solid rgba(4,13,191,0.08);margin-bottom:1.5rem">
@@ -795,7 +795,7 @@
               Assinatura mensal
             </span>
             <div style="display:flex;align-items:baseline;gap:4px;margin-bottom:1.5rem">
-              <span style="font-family:'Poppins',sans-serif;font-size:2.5rem;font-weight:700;color:var(--c1)">R$
+              <span class="plan-price" style="font-family:'Poppins',sans-serif;font-size:2.5rem;font-weight:700;color:var(--c1)">R$
                 185,90</span>
               <span style="font-family:'Poppins',sans-serif;font-size:1rem;color:var(--text-faint)">/mês</span>
             </div>
@@ -837,7 +837,7 @@
                   style="background:var(--c1);color:#fff;font-size:0.75rem;padding:4px 12px;border-radius:99px;margin-bottom:0.75rem;display:inline-block;">Combo
                   Especial</span>
                 <h3
-                  style="font-family:'Poppins',sans-serif;font-size:2.25rem;font-weight:700;color:var(--text);line-height:1.2;letter-spacing:-0.02em;">
+                  class="plan-speed" style="font-family:'Poppins',sans-serif;font-size:2.25rem;font-weight:700;color:var(--text);line-height:1.2;letter-spacing:-0.02em;">
                   COMBO XPERIENCE
                 </h3>
                 <p
@@ -890,7 +890,7 @@
                     Por apenas
                   </span>
                   <div style="display:flex;align-items:baseline;gap:4px;margin-bottom:1.5rem">
-                    <span style="font-family:'Poppins',sans-serif;font-size:2.25rem;font-weight:700;color:var(--c1)">R$
+                    <span class="plan-price" style="font-family:'Poppins',sans-serif;font-size:2.25rem;font-weight:700;color:var(--c1)">R$
                       69,90</span>
                     <span style="font-family:'Poppins',sans-serif;font-size:0.95rem;color:var(--text-faint)">/mês</span>
                   </div>
@@ -974,7 +974,7 @@
                     Total do combo
                   </span>
                   <div style="display:flex;align-items:baseline;gap:4px;margin-bottom:1.5rem">
-                    <span style="font-family:'Poppins',sans-serif;font-size:2.25rem;font-weight:700;color:var(--c1)">R$
+                    <span class="plan-price" style="font-family:'Poppins',sans-serif;font-size:2.25rem;font-weight:700;color:var(--c1)">R$
                       264,90</span>
                     <span style="font-family:'Poppins',sans-serif;font-size:0.95rem;color:var(--text-faint)">/mês</span>
                   </div>
