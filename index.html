@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WS Net - Internet Fibra Óptica de Ultra Velocidade</title>
+  <title>WS Net</title>
   <!-- Google Fonts -->
   <link
     href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
@@ -13,9 +13,9 @@
   <script src="https://cdn.jsdelivr.net/npm/iconify-icon@2.1.0/dist/iconify-icon.min.js"></script>
 
   <style>
-    /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+    /* Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â
          DESIGN SYSTEM STYLE BLOCK
-       â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+       Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â */
     *,
     *::before,
     *::after {
@@ -98,7 +98,7 @@
     }
 
     .dep-card:hover.active {
-      transform: scale(1.05) translateY(-4px);
+      transform: scale(1.05) translateY(-2px);
       box-shadow: 0 24px 48px rgba(4, 13, 191, 0.15);
       border-color: var(--c1);
     }
@@ -432,7 +432,7 @@
       color: var(--c1)
     }
 
-    /* â”€â”€ BUTTONS â”€â”€ */
+    /* Ã¢â€â‚¬Ã¢â€â‚¬ BUTTONS Ã¢â€â‚¬Ã¢â€â‚¬ */
     .btn {
       display: inline-flex;
       align-items: center;
@@ -626,7 +626,7 @@
     }
 
 
-    /* â”€â”€ DARK THEME & HERO LAYOUT OVERRIDES â”€â”€ */
+    /* Ã¢â€â‚¬Ã¢â€â‚¬ DARK THEME & HERO LAYOUT OVERRIDES Ã¢â€â‚¬Ã¢â€â‚¬ */
     .hero-dark-grid {
       background-image:
         linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
@@ -741,10 +741,130 @@
       .hero-content .animate-kinetic {
         align-self: center !important;
       }
+
+      .nav-cta-btn {
+        display: none !important;
+      }
+
+      .hamburger {
+        display: flex !important;
+      }
     }
 
     @media (max-width: 768px) {
-      .nav-menu {
+      #hero-section {
+        padding-top: 110px !important;
+        padding-bottom: 60px !important;
+        min-height: auto !important;
+      }
+
+      .hero-image-wrapper img {
+        max-width: 220px !important;
+      }
+
+      .tab-selector-wrap {
+        flex-direction: column !important;
+        width: 100% !important;
+        border-radius: 1rem !important;
+      }
+
+      .tab-selector-wrap button {
+        width: 100% !important;
+        border-radius: 0.75rem !important;
+      }
+
+      #grid-residencial,
+      #grid-movel {
+        grid-template-columns: 1fr !important;
+      }
+
+      #nosso-app > div {
+        width: 95% !important;
+        padding: 3rem 1.25rem 2.5rem !important;
+        overflow: hidden !important;
+      }
+
+      .app-section-deco {
+        display: none !important;
+      }
+
+      #nosso-app .scroll-reveal {
+        min-width: unset !important;
+      }
+
+      .footer-newsletter-form-wrap {
+        flex-direction: column !important;
+      }
+
+      .footer-newsletter-form-wrap button {
+        width: 100% !important;
+        border-radius: 0.75rem !important;
+      }
+    }
+
+    /* ── HAMBURGER MENU ── */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 40px;
+      height: 40px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      border-radius: 10px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--c1);
+      border-radius: 2px;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-nav-drawer {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      z-index: 99;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      padding: 2rem;
+    }
+
+    .mobile-nav-drawer.open {
+      display: flex;
+    }
+
+    .mobile-nav-drawer a {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: var(--c1);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .mobile-nav-drawer a:hover { color: var(--c2); }
+
+    @media (max-width: 1024px) {
+      .nav-menu-responsive {
         display: none !important;
       }
     }
@@ -832,33 +952,40 @@
       overflow: hidden;
       vertical-align: bottom;
     }
+
     .masked-word {
       display: inline-block;
       transform: translateY(110%);
     }
-    
+
     /* Disable default CSS keyframe animation for kinetic hero reveal when using GSAP */
     .animate-kinetic {
       animation: none !important;
       opacity: 0;
     }
+
     #hero-section h1.animate-kinetic {
       opacity: 1;
     }
-    
+
     /* Hide scroll-reveal elements initially so GSAP can fade them up */
     .scroll-reveal {
       opacity: 0;
       transform: translateY(30px);
-      transition: none !important; /* disable CSS transitions for GSAP control */
+      transition: none !important;
+      /* disable CSS transitions for GSAP control */
     }
+
     .scroll-reveal.from-left {
       transform: translateX(-40px);
     }
+
     .scroll-reveal.revealed {
-      opacity: 0; /* Override direct revealed state until GSAP controls it */
+      opacity: 0;
+      /* Override direct revealed state until GSAP controls it */
       transform: translateY(30px);
     }
+
     .scroll-reveal.from-left.revealed {
       transform: translateX(-40px);
     }
@@ -867,9 +994,9 @@
 
 <body>
 
-  <!-- ════════════════════════════════════════
-       PAGE PRELOADER — Lightning SVG Draw
-       ════════════════════════════════════════ -->
+  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+       PAGE PRELOADER â€” Lightning SVG Draw
+       â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
   <div id="preloader" aria-hidden="true" style="
     position: fixed;
     inset: 0;
@@ -892,24 +1019,31 @@
     "></div>
 
     <!-- SVG logo container -->
-    <div id="preloader-logo" style="width: clamp(160px, 22vw, 280px); position: relative; will-change: transform; filter: drop-shadow(0 0 12px rgba(5,108,242,0.5));">
+    <div id="preloader-logo"
+      style="width: clamp(80px, 12vw, 150px); position: relative; will-change: transform; filter: drop-shadow(0 0 12px rgba(5,108,242,0.5));">
       <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 8600 4800"
         style="width:100%;height:auto;display:block;overflow:visible">
 
-        <!-- ── stroke paths — single continuous pen draw ── -->
+        <!-- â”€â”€ stroke paths â€” single continuous pen draw â”€â”€ -->
         <g id="logo-strokes" style="opacity:1;will-change:transform">
-          <path id="sp0" class="svg-stroke-path" fill="none" stroke="#056CF2" stroke-width="80" stroke-linecap="round" stroke-linejoin="round"
-            d="M8427.43 2074.65c-91.16,981.1 -514.72,1828.93 -1090.41,2255.13 -885.99,655.93 -1700.97,14.96 -2468.5,-298.85 -1081.52,-442.19 -1783.45,-82.18 -2841.9,61.09 -1109.44,150.17 -1751.95,-503.84 -1855.59,-1458.32 -109.82,-1011.4 353.6,-1825.72 1507.28,-1797.8 503.62,12.18 958.29,140.58 1416.83,244.14 598.08,135.06 860.13,190.74 1423.46,-26.62 702.82,-271.18 1590.02,-840.06 2476.1,-857.73 1176.34,-23.47 1527.22,862.13 1432.73,1878.96zm-1739.02 -1988.39c-874.53,107.61 -1817.32,759.02 -2517.33,938.68 -458.9,117.77 -1054.97,-89.16 -1485.47,-180.14 -473.66,-100.11 -1045.85,-212.83 -1551.7,-94.42 -458.34,107.3 -788.55,401.54 -949.25,780.81 -349.03,823.72 -141.15,2033.47 655.09,2500.48 879.04,515.58 2009.38,-80.16 2971.98,-79.18 1179.72,1.2 1706.88,775.61 2657.94,791.62 1756.26,29.56 2588.09,-2912.14 1819.87,-4099.1 -322.16,-497.75 -938.11,-640.34 -1601.13,-558.75z"/>
-          <path id="sp1" class="svg-stroke-path" fill="none" stroke="#056CF2" stroke-width="80" stroke-linecap="round" stroke-linejoin="round"
-            d="M1259.66 3344.91l469.39 -0.43c35.62,-83.33 310.48,-738.9 338.69,-752.46l80.62 752.78 439.22 -1.02 474.82 -1629.62 -412.92 11.21 -207.92 669.53c-39.91,-66.19 -75.56,-547.08 -90.91,-674.91l-322.59 -7.84 -306.33 750.94 29.1 -749.83 -397.82 -0.05 -93.35 1631.7z"/>
-          <path id="sp2" class="svg-stroke-path" fill="none" stroke="#056CF2" stroke-width="80" stroke-linecap="round" stroke-linejoin="round"
-            d="M4010.62 3346.55c490.68,-2 377.55,77.42 501.73,-334.95 29.32,-97.36 66.96,-290.8 112.11,-355.97l49.38 686.97 424.72 1.8 482.26 -1630.71 -416.48 -0.28 -212.54 691.22 -70.68 -688.86 -399.06 -3.15 -356.37 1214.83c-31.63,109.39 -110.48,325.05 -115.07,419.1z"/>
-          <path id="sp3" class="svg-stroke-path" fill="none" stroke="#056CF2" stroke-width="80" stroke-linecap="round" stroke-linejoin="round"
-            d="M3332 2806.66l-415.15 -3.23c-53.91,182.22 -193.65,541.62 267.97,569.16 316.58,18.88 599.66,-25.94 724.3,-254.03 127.09,-232.56 170.19,-548.23 -53.27,-699.3 -139.49,-94.3 -386.94,-175.14 -276.06,-391.2 49.53,-96.53 210.05,-124.5 177.85,41.4 -8.01,41.23 -21.99,62.19 -30.66,110.97l397.28 2.65c60.47,-221.93 186.79,-513.92 -380.73,-502.03 -363.77,7.62 -520.65,109.44 -609.82,410.04 -134.15,452.21 71.04,446.6 307.06,642.61 103.1,85.62 55.37,298.65 -35.15,339.81 -224.84,102.22 -76.73,-249.02 -73.62,-266.85z"/>
-          <path id="sp4" class="svg-stroke-path" fill="none" stroke="#056CF2" stroke-width="80" stroke-linecap="round" stroke-linejoin="round"
-            d="M5279.76 3346.55l817.83 -3.39 110.92 -358.35 -423.58 -2.95 94.92 -326.19 385.29 -0.88 92.7 -312.99 -385.32 -2.19 83.11 -299.7 394.44 -1.2 100.86 -325.69 -797.51 -0.01c-46.16,195.95 -468.21,1523.04 -473.66,1633.54z"/>
-          <path id="sp5" class="svg-stroke-path" fill="none" stroke="#056CF2" stroke-width="80" stroke-linecap="round" stroke-linejoin="round"
-            d="M6602.55 2046.37l283.1 2.54 -368.67 1293.08 459.32 2.74 379.03 -1300.46 316.91 -6.59 99.19 -324.21 -1016.15 -1.6c-45.28,-0.07 -53.9,-1.35 -54.44,0.01l-14.88 37.06c-17.81,29.01 -73.57,253.15 -83.41,297.43z"/>
+          <path id="sp0" class="svg-stroke-path" fill="none" stroke="#056CF2" stroke-width="80" stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M8427.43 2074.65c-91.16,981.1 -514.72,1828.93 -1090.41,2255.13 -885.99,655.93 -1700.97,14.96 -2468.5,-298.85 -1081.52,-442.19 -1783.45,-82.18 -2841.9,61.09 -1109.44,150.17 -1751.95,-503.84 -1855.59,-1458.32 -109.82,-1011.4 353.6,-1825.72 1507.28,-1797.8 503.62,12.18 958.29,140.58 1416.83,244.14 598.08,135.06 860.13,190.74 1423.46,-26.62 702.82,-271.18 1590.02,-840.06 2476.1,-857.73 1176.34,-23.47 1527.22,862.13 1432.73,1878.96zm-1739.02 -1988.39c-874.53,107.61 -1817.32,759.02 -2517.33,938.68 -458.9,117.77 -1054.97,-89.16 -1485.47,-180.14 -473.66,-100.11 -1045.85,-212.83 -1551.7,-94.42 -458.34,107.3 -788.55,401.54 -949.25,780.81 -349.03,823.72 -141.15,2033.47 655.09,2500.48 879.04,515.58 2009.38,-80.16 2971.98,-79.18 1179.72,1.2 1706.88,775.61 2657.94,791.62 1756.26,29.56 2588.09,-2912.14 1819.87,-4099.1 -322.16,-497.75 -938.11,-640.34 -1601.13,-558.75z" />
+          <path id="sp1" class="svg-stroke-path" fill="none" stroke="#056CF2" stroke-width="80" stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M1259.66 3344.91l469.39 -0.43c35.62,-83.33 310.48,-738.9 338.69,-752.46l80.62 752.78 439.22 -1.02 474.82 -1629.62 -412.92 11.21 -207.92 669.53c-39.91,-66.19 -75.56,-547.08 -90.91,-674.91l-322.59 -7.84 -306.33 750.94 29.1 -749.83 -397.82 -0.05 -93.35 1631.7z" />
+          <path id="sp2" class="svg-stroke-path" fill="none" stroke="#056CF2" stroke-width="80" stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M4010.62 3346.55c490.68,-2 377.55,77.42 501.73,-334.95 29.32,-97.36 66.96,-290.8 112.11,-355.97l49.38 686.97 424.72 1.8 482.26 -1630.71 -416.48 -0.28 -212.54 691.22 -70.68 -688.86 -399.06 -3.15 -356.37 1214.83c-31.63,109.39 -110.48,325.05 -115.07,419.1z" />
+          <path id="sp3" class="svg-stroke-path" fill="none" stroke="#056CF2" stroke-width="80" stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M3332 2806.66l-415.15 -3.23c-53.91,182.22 -193.65,541.62 267.97,569.16 316.58,18.88 599.66,-25.94 724.3,-254.03 127.09,-232.56 170.19,-548.23 -53.27,-699.3 -139.49,-94.3 -386.94,-175.14 -276.06,-391.2 49.53,-96.53 210.05,-124.5 177.85,41.4 -8.01,41.23 -21.99,62.19 -30.66,110.97l397.28 2.65c60.47,-221.93 186.79,-513.92 -380.73,-502.03 -363.77,7.62 -520.65,109.44 -609.82,410.04 -134.15,452.21 71.04,446.6 307.06,642.61 103.1,85.62 55.37,298.65 -35.15,339.81 -224.84,102.22 -76.73,-249.02 -73.62,-266.85z" />
+          <path id="sp4" class="svg-stroke-path" fill="none" stroke="#056CF2" stroke-width="80" stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M5279.76 3346.55l817.83 -3.39 110.92 -358.35 -423.58 -2.95 94.92 -326.19 385.29 -0.88 92.7 -312.99 -385.32 -2.19 83.11 -299.7 394.44 -1.2 100.86 -325.69 -797.51 -0.01c-46.16,195.95 -468.21,1523.04 -473.66,1633.54z" />
+          <path id="sp5" class="svg-stroke-path" fill="none" stroke="#056CF2" stroke-width="80" stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M6602.55 2046.37l283.1 2.54 -368.67 1293.08 459.32 2.74 379.03 -1300.46 316.91 -6.59 99.19 -324.21 -1016.15 -1.6c-45.28,-0.07 -53.9,-1.35 -54.44,0.01l-14.88 37.06c-17.81,29.01 -73.57,253.15 -83.41,297.43z" />
         </g>
 
       </svg>
@@ -922,49 +1056,49 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 
   <script>
-    /* ──────────────────────────────────────────────────────────────
-       PRELOADER — Single-pen SVG Draw Animation
+    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+       PRELOADER â€” Single-pen SVG Draw Animation
        Each path is drawn fully before the next begins, simulating
        one continuous stroke travelling around the logo outline.
-    ────────────────────────────────────────────────────────────── */
+    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
     (function () {
-      const preloader   = document.getElementById('preloader');
-      const glow        = document.getElementById('preloader-glow');
+      const preloader = document.getElementById('preloader');
+      const glow = document.getElementById('preloader-glow');
       const strokePaths = Array.from(document.querySelectorAll('.svg-stroke-path'));
 
       /* Measure every path and hide it completely via dashoffset */
       strokePaths.forEach(path => {
         const len = path.getTotalLength();
-        path.style.strokeDasharray  = len;
+        path.style.strokeDasharray = len;
         path.style.strokeDashoffset = len;
       });
 
       const tl = gsap.timeline();
 
-      /* Glow entra junto com o traço */
+      /* Glow entra junto com o traÃ§o */
       tl.to(glow, { opacity: 1, duration: 0.6, ease: 'power2.out' }, 0);
 
-      /* Todas as letras e o contorno começam em t=0 e terminam juntos em t=drawTotal.
-         Cada path anima seu próprio dashoffset (comprimento → 0) na mesma duração. */
-      const outerPath   = strokePaths[0];
+      /* Todas as letras e o contorno comeÃ§am em t=0 e terminam juntos em t=drawTotal.
+         Cada path anima seu prÃ³prio dashoffset (comprimento â†’ 0) na mesma duraÃ§Ã£o. */
+      const outerPath = strokePaths[0];
       const letterPaths = strokePaths.slice(1);
-      const drawTotal   = 2.4;
+      const drawTotal = 2.4;
 
-      /* ── Todas as letras em paralelo, mesma duração ── */
+      /* â”€â”€ Todas as letras em paralelo, mesma duraÃ§Ã£o â”€â”€ */
       tl.to(letterPaths, {
         strokeDashoffset: 0,
         duration: drawTotal,
         ease: 'power2.inOut',
       }, 0);
 
-      /* ── Contorno em paralelo, mesma duração ── */
+      /* â”€â”€ Contorno em paralelo, mesma duraÃ§Ã£o â”€â”€ */
       tl.to(outerPath, {
         strokeDashoffset: 0,
         duration: drawTotal,
         ease: 'power2.inOut',
       }, 0);
 
-      /* 3 — Fade entire preloader out after draw completes */
+      /* 3 â€” Fade entire preloader out after draw completes */
       tl.to(preloader, {
         opacity: 0,
         duration: 0.65,
@@ -990,7 +1124,7 @@
       </div>
 
       <!-- Nav menu layout -->
-      <div class="nav-menu" style="display:flex;align-items:center;gap:28px">
+      <div class="nav-menu nav-menu-responsive" style="display:flex;align-items:center;gap:28px">
         <a href="#planos" class="nav-link">Planos</a>
         <a href="#atendimento" class="nav-link">Atendimento</a>
         <a href="#cobertura" class="nav-link">Cobertura</a>
@@ -1000,7 +1134,7 @@
 
       <!-- Nav CTAs -->
       <div style="display:flex;align-items:center;gap:10px">
-        <a href="https://wa.me/5500000000000" target="_blank" class="btn btn-primary btn-sm"
+        <a href="https://wa.me/5500000000000" target="_blank" class="btn btn-primary btn-sm nav-cta-btn"
           onmouseenter="this.querySelector('.btn-glow-layer').style.transform='translateX(0)'"
           onmouseleave="this.querySelector('.btn-glow-layer').style.transform='translateX(-100%)'"
           style="text-decoration:none">
@@ -1008,13 +1142,60 @@
           <span>ASSINE JÁ</span>
           <iconify-icon icon="solar:arrow-right-linear" style="position:relative;z-index:1"></iconify-icon>
         </a>
+        <!-- Hambúrguer -->
+        <button class="hamburger" id="hamburger-btn" aria-label="Abrir menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </div>
   </nav>
 
-  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+  <!-- Mobile Nav Drawer -->
+  <div class="mobile-nav-drawer" id="mobile-drawer">
+    <button id="drawer-close" aria-label="Fechar menu"
+      style="position:absolute;top:1.5rem;right:1.5rem;width:40px;height:40px;border:none;background:transparent;cursor:pointer;font-size:1.5rem;color:var(--c1)">✕</button>
+    <a href="#planos" class="mobile-nav-link">Planos</a>
+    <a href="#atendimento" class="mobile-nav-link">Atendimento</a>
+    <a href="#cobertura" class="mobile-nav-link">Cobertura</a>
+    <a href="#sobre" class="mobile-nav-link">Sobre nós</a>
+    <a href="#area-assinante" class="mobile-nav-link">Área do assinante</a>
+    <a href="https://wa.me/5500000000000" target="_blank" class="btn btn-primary btn-lg" style="margin-top:1rem;text-decoration:none">
+      <span>ASSINE JÁ</span>
+      <iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
+    </a>
+  </div>
+
+  <script>
+    (function() {
+      const btn = document.getElementById('hamburger-btn');
+      const drawer = document.getElementById('mobile-drawer');
+      const closeBtn = document.getElementById('drawer-close');
+
+      function openDrawer() {
+        drawer.classList.add('open');
+        btn.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeDrawer() {
+        drawer.classList.remove('open');
+        btn.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+
+      btn.addEventListener('click', function() {
+        drawer.classList.contains('open') ? closeDrawer() : openDrawer();
+      });
+      closeBtn.addEventListener('click', closeDrawer);
+
+      drawer.querySelectorAll('a.mobile-nav-link').forEach(function(link) {
+        link.addEventListener('click', closeDrawer);
+      });
+    })();
+  </script>
+
+  <!-- Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â
        HERO SECTION (Royal Blue c1)
-     â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+     Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â -->
   <section id="hero-section"
     style="position:relative;display:flex;align-items:center;justify-content:center;padding-top:180px;padding-bottom:50px;min-height:90vh;background:var(--c1)"
     class="grid-pattern hero-dark-grid">
@@ -1110,7 +1291,7 @@
         <div class="s-glow animate-pulse-glow"
           style="width:380px;height:380px;background:radial-gradient(circle,rgba(5,242,242,0.16),transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);filter:blur(40px)">
         </div>
-        <img src="assets/img/Sem-Título-3333.png" alt="Modem Wi-Fi WS Net Fibra"
+        <img src="assets/img/moldemIMG.png" alt="Modem Wi-Fi WS Net Fibra"
           style="position:relative;z-index:2;max-width:100%;height:auto;object-fit:contain;filter:drop-shadow(0 20px 50px rgba(4,13,191,0.4)) drop-shadow(0 10px 15px rgba(5,108,242,0.2))">
       </div>
 
@@ -1147,7 +1328,7 @@
         </h2>
 
         <!-- Tab Selector Capsule -->
-        <div
+        <div class="tab-selector-wrap"
           style="display:inline-flex;background:var(--surface2);padding:6px;border-radius:9999px;border:1px solid var(--border);box-shadow:0 4px 12px rgba(4,13,191,0.05)">
           <button id="tab-residencial" onclick="switchTab('residencial')" class="btn btn-sm btn-primary"
             style="border-radius:9999px;font-weight:500;padding:.5rem 1.5rem;border:none;cursor:pointer;">
@@ -1166,9 +1347,9 @@
 
         <!-- Plan 1: SMART+ -->
         <div class="glass-card scroll-reveal revealed"
-          style="padding:3rem 2.25rem;display:flex;flex-direction:column;justify-content:space-between;min-height:540px;transition:all .4s cubic-bezier(.4,0,.2,1);cursor:pointer;"
-          onmouseenter="this.style.transform='translateY(-8px)';this.style.borderColor='var(--border-bright)';this.style.boxShadow='0 20px 40px rgba(4,13,191,0.08)'"
-          onmouseleave="this.style.transform='';this.style.borderColor='var(--border)';this.style.boxShadow=''">
+          style="padding:3rem 2.25rem;display:flex;flex-direction:column;justify-content:space-between;min-height:540px;transition:transform 1.4s cubic-bezier(0.25,1,0.5,1),box-shadow 1.4s cubic-bezier(0.25,1,0.5,1),border-color 1.4s cubic-bezier(0.25,1,0.5,1);cursor:pointer;"
+          onmouseenter="this.style.transform='scale(1.02) translateY(-2px)';this.style.borderColor='var(--c1)';this.style.boxShadow='0 24px 48px rgba(4,13,191,0.15)'"
+          onmouseleave="this.style.transform='';this.style.borderColor='';this.style.boxShadow=''">
 
           <div>
             <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem">
@@ -1207,7 +1388,7 @@
               <li style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-mid)">
                 <iconify-icon icon="solar:check-circle-bold"
                   style="color:var(--c3);flex-shrink:0;font-size:1.1rem"></iconify-icon>
-                Acesso ao jornalz
+                Acesso ao jornal
               </li>
               <li style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-mid)">
                 <iconify-icon icon="solar:check-circle-bold"
@@ -1232,7 +1413,7 @@
                 105,90</span>
               <span style="font-family:'Poppins',sans-serif;font-size:1rem;color:var(--text-faint)">/mês</span>
             </div>
-            <a href="https://wa.me/5500000000000?text=Olá!%20Gostaria%20de%20assinar%20o%20plano%20SMART+%20de%20500%20Mega"
+            <a href="https://wa.me/5500000000000?text=OlÃ¡!%20Gostaria%20de%20assinar%20o%20plano%20SMART+%20de%20500%20Mega"
               target="_blank" class="btn btn-outline"
               style="width:100%;justify-content:center;gap:8px;border-color:rgba(4, 13, 191, 0.25)">
               <img src="assets/icons/wpp verde.svg" alt="WhatsApp"
@@ -1245,13 +1426,9 @@
 
         <!-- Plan 2: Premium+ (Highlighted/Most Popular) -->
         <div class="glass-card scroll-reveal revealed"
-          style="padding:3rem 2.25rem;display:flex;flex-direction:column;justify-content:space-between;min-height:540px;transition:all .4s cubic-bezier(.4,0,.2,1);position:relative;overflow:hidden;border-color:rgba(4,13,191,0.25);cursor:pointer;"
-          onmouseenter="this.style.transform='translateY(-8px)';this.style.borderColor='var(--border-bright)';this.style.boxShadow='0 20px 40px rgba(4,13,191,0.12)'"
-          onmouseleave="this.style.transform='';this.style.borderColor='rgba(4,13,191,0.25)';this.style.boxShadow=''">
-
-          <div
-            style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:60%;height:2px;background:linear-gradient(90deg,transparent,var(--c2),transparent)">
-          </div>
+          style="padding:3rem 2.25rem;display:flex;flex-direction:column;justify-content:space-between;min-height:540px;transition:transform 1.4s cubic-bezier(0.25,1,0.5,1),box-shadow 1.4s cubic-bezier(0.25,1,0.5,1),border-color 1.4s cubic-bezier(0.25,1,0.5,1);position:relative;overflow:hidden;cursor:pointer;"
+          onmouseenter="this.style.transform='scale(1.02) translateY(-2px)';this.style.borderColor='var(--c1)';this.style.boxShadow='0 24px 48px rgba(4,13,191,0.15)'"
+          onmouseleave="this.style.transform='';this.style.borderColor='';this.style.boxShadow=''">
 
           <div>
             <div style="display:flex;justify-content:between;align-items:center;margin-bottom:0.5rem">
@@ -1298,7 +1475,7 @@
               <li style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-mid)">
                 <iconify-icon icon="solar:check-circle-bold"
                   style="color:var(--c3);flex-shrink:0;font-size:1.1rem"></iconify-icon>
-                Acesso ao jornalz
+                Acesso ao jornal
               </li>
               <li style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-mid)">
                 <iconify-icon icon="solar:check-circle-bold"
@@ -1323,7 +1500,7 @@
                 137,90</span>
               <span style="font-family:'Poppins',sans-serif;font-size:1rem;color:var(--text-faint)">/mês</span>
             </div>
-            <a href="https://wa.me/5500000000000?text=Olá!%20Gostaria%20de%20assinar%20o%20plano%20Premium+%20de%20750%20Mega"
+            <a href="https://wa.me/5500000000000?text=OlÃ¡!%20Gostaria%20de%20assinar%20o%20plano%20Premium+%20de%20750%20Mega"
               target="_blank" class="btn btn-primary"
               onmouseenter="this.querySelector('.btn-glow-layer').style.transform='translateX(0)'"
               onmouseleave="this.querySelector('.btn-glow-layer').style.transform='translateX(-100%)'"
@@ -1341,9 +1518,9 @@
 
         <!-- Plan 3: Extreme 5g -->
         <div class="glass-card scroll-reveal revealed"
-          style="padding:3rem 2.25rem;display:flex;flex-direction:column;justify-content:space-between;min-height:540px;transition:all .4s cubic-bezier(.4,0,.2,1);cursor:pointer;"
-          onmouseenter="this.style.transform='translateY(-8px)';this.style.borderColor='var(--border-bright)';this.style.boxShadow='0 20px 40px rgba(4,13,191,0.08)'"
-          onmouseleave="this.style.transform='';this.style.borderColor='var(--border)';this.style.boxShadow=''">
+          style="padding:3rem 2.25rem;display:flex;flex-direction:column;justify-content:space-between;min-height:540px;transition:transform 1.4s cubic-bezier(0.25,1,0.5,1),box-shadow 1.4s cubic-bezier(0.25,1,0.5,1),border-color 1.4s cubic-bezier(0.25,1,0.5,1);cursor:pointer;"
+          onmouseenter="this.style.transform='scale(1.02) translateY(-2px)';this.style.borderColor='var(--c1)';this.style.boxShadow='0 24px 48px rgba(4,13,191,0.15)'"
+          onmouseleave="this.style.transform='';this.style.borderColor='';this.style.boxShadow=''">
 
           <div>
             <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem">
@@ -1382,7 +1559,7 @@
               <li style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-mid)">
                 <iconify-icon icon="solar:check-circle-bold"
                   style="color:var(--c3);flex-shrink:0;font-size:1.1rem"></iconify-icon>
-                Acesso ao jornalz
+                Acesso ao jornal
               </li>
               <li style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-mid)">
                 <iconify-icon icon="solar:check-circle-bold"
@@ -1412,7 +1589,7 @@
                 185,90</span>
               <span style="font-family:'Poppins',sans-serif;font-size:1rem;color:var(--text-faint)">/mês</span>
             </div>
-            <a href="https://wa.me/5500000000000?text=Olá!%20Gostaria%20de%20assinar%20o%20plano%20Extreme%205g%20de%201000%20Mega"
+            <a href="https://wa.me/5500000000000?text=OlÃ¡!%20Gostaria%20de%20assinar%20o%20plano%20Extreme%205g%20de%201000%20Mega"
               target="_blank" class="btn btn-outline"
               style="width:100%;justify-content:center;gap:8px;border-color:rgba(4, 13, 191, 0.25)">
               <img src="assets/icons/wpp verde.svg" alt="WhatsApp"
@@ -1430,16 +1607,16 @@
       <div id="grid-movel"
         style="display:none;grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));gap:2rem;margin-bottom:40px;animation:fadeSlideIn 0.5s ease-out">
 
-        <!-- Plan 1: SMART+ (Móvel) -->
+        <!-- Plan 1: SMART+ (MÃ³vel) -->
         <div class="glass-card"
-          style="padding:3rem 2.25rem;display:flex;flex-direction:column;justify-content:space-between;min-height:540px;transition:all .4s cubic-bezier(.4,0,.2,1);cursor:pointer;"
-          onmouseenter="this.style.transform='translateY(-8px)';this.style.borderColor='var(--border-bright)';this.style.boxShadow='0 20px 40px rgba(4,13,191,0.08)'"
-          onmouseleave="this.style.transform='';this.style.borderColor='var(--border)';this.style.boxShadow=''">
+          style="padding:3rem 2.25rem;display:flex;flex-direction:column;justify-content:space-between;min-height:540px;transition:transform 1.4s cubic-bezier(0.25,1,0.5,1),box-shadow 1.4s cubic-bezier(0.25,1,0.5,1),border-color 1.4s cubic-bezier(0.25,1,0.5,1);cursor:pointer;"
+          onmouseenter="this.style.transform='scale(1.02) translateY(-2px)';this.style.borderColor='var(--c1)';this.style.boxShadow='0 24px 48px rgba(4,13,191,0.15)'"
+          onmouseleave="this.style.transform='';this.style.borderColor='';this.style.boxShadow=''">
 
           <div>
             <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem">
               <span
-                style="font-family:'Roboto Mono',monospace;font-size:0.8125rem;font-weight:600;color:var(--c2);text-transform:uppercase;letter-spacing:0.05em">Conexão
+                style="font-family:'Roboto Mono',monospace;font-size:0.8125rem;font-weight:600;color:var(--c2);text-transform:uppercase;letter-spacing:0.05em">ConexÃ£o
                 Móvel</span>
             </div>
             <h3
@@ -1468,12 +1645,12 @@
               <li style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-mid)">
                 <iconify-icon icon="solar:check-circle-bold"
                   style="color:var(--c3);flex-shrink:0;font-size:1.1rem"></iconify-icon>
-                Acesso à estante digital
+                Acesso á estante digital
               </li>
               <li style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-mid)">
                 <iconify-icon icon="solar:check-circle-bold"
                   style="color:var(--c3);flex-shrink:0;font-size:1.1rem"></iconify-icon>
-                Acesso ao jornalz
+                Acesso ao jornal
               </li>
               <li style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-mid)">
                 <iconify-icon icon="solar:check-circle-bold"
@@ -1498,7 +1675,7 @@
                 105,90</span>
               <span style="font-family:'Poppins',sans-serif;font-size:1rem;color:var(--text-faint)">/mês</span>
             </div>
-            <a href="https://wa.me/5500000000000?text=Olá!%20Gostaria%20de%20assinar%20o%20plano%20Móvel%20SMART+%20de%20500%20Mega"
+            <a href="https://wa.me/5500000000000?text=OlÃ¡!%20Gostaria%20de%20assinar%20o%20plano%20MÃ³vel%20SMART+%20de%20500%20Mega"
               target="_blank" class="btn btn-outline"
               style="width:100%;justify-content:center;gap:8px;border-color:rgba(4, 13, 191, 0.25)">
               <img src="assets/icons/wpp verde.svg" alt="WhatsApp"
@@ -1509,20 +1686,16 @@
 
         </div>
 
-        <!-- Plan 2: Premium+ (Móvel) -->
+        <!-- Plan 2: Premium+ (MÃ³vel) -->
         <div class="glass-card"
-          style="padding:3rem 2.25rem;display:flex;flex-direction:column;justify-content:space-between;min-height:540px;transition:all .4s cubic-bezier(.4,0,.2,1);position:relative;overflow:hidden;border-color:rgba(4,13,191,0.25);cursor:pointer;"
-          onmouseenter="this.style.transform='translateY(-8px)';this.style.borderColor='var(--border-bright)';this.style.boxShadow='0 20px 40px rgba(4,13,191,0.12)'"
-          onmouseleave="this.style.transform='';this.style.borderColor='rgba(4,13,191,0.25)';this.style.boxShadow=''">
-
-          <div
-            style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:60%;height:2px;background:linear-gradient(90deg,transparent,var(--c2),transparent)">
-          </div>
+          style="padding:3rem 2.25rem;display:flex;flex-direction:column;justify-content:space-between;min-height:540px;transition:transform 1.4s cubic-bezier(0.25,1,0.5,1),box-shadow 1.4s cubic-bezier(0.25,1,0.5,1),border-color 1.4s cubic-bezier(0.25,1,0.5,1);position:relative;overflow:hidden;cursor:pointer;"
+          onmouseenter="this.style.transform='scale(1.02) translateY(-2px)';this.style.borderColor='var(--c1)';this.style.boxShadow='0 24px 48px rgba(4,13,191,0.15)'"
+          onmouseleave="this.style.transform='';this.style.borderColor='';this.style.boxShadow=''">
 
           <div>
             <div style="display:flex;justify-content:between;align-items:center;margin-bottom:0.5rem">
               <span
-                style="font-family:'Roboto Mono',monospace;font-size:0.8125rem;font-weight:600;color:var(--c2);text-transform:uppercase;letter-spacing:0.05em;margin-right:8px">Conexão
+                style="font-family:'Roboto Mono',monospace;font-size:0.8125rem;font-weight:600;color:var(--c2);text-transform:uppercase;letter-spacing:0.05em;margin-right:8px">ConexÃ£o
                 Móvel</span>
               <span class="badge badge-c2"
                 style="font-size:0.7rem;background:var(--c2);color:#fff;padding:2px 8px;border-radius:99px">Mais
@@ -1559,12 +1732,12 @@
               <li style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-mid)">
                 <iconify-icon icon="solar:check-circle-bold"
                   style="color:var(--c3);flex-shrink:0;font-size:1.1rem"></iconify-icon>
-                Acesso à estante digital
+                Acesso á estante digital
               </li>
               <li style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-mid)">
                 <iconify-icon icon="solar:check-circle-bold"
                   style="color:var(--c3);flex-shrink:0;font-size:1.1rem"></iconify-icon>
-                Acesso ao jornalz
+                Acesso ao jornal
               </li>
               <li style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-mid)">
                 <iconify-icon icon="solar:check-circle-bold"
@@ -1589,7 +1762,7 @@
                 137,90</span>
               <span style="font-family:'Poppins',sans-serif;font-size:1rem;color:var(--text-faint)">/mês</span>
             </div>
-            <a href="https://wa.me/5500000000000?text=Olá!%20Gostaria%20de%20assinar%20o%20plano%20Móvel%20Premium+%20de%20750%20Mega"
+            <a href="https://wa.me/5500000000000?text=OlÃ¡!%20Gostaria%20de%20assinar%20o%20plano%20MÃ³vel%20Premium+%20de%20750%20Mega"
               target="_blank" class="btn btn-primary"
               onmouseenter="this.querySelector('.btn-glow-layer').style.transform='translateX(0)'"
               onmouseleave="this.querySelector('.btn-glow-layer').style.transform='translateX(-100%)'"
@@ -1605,16 +1778,16 @@
 
         </div>
 
-        <!-- Plan 3: Extreme 5g (Móvel) -->
+        <!-- Plan 3: Extreme 5g (MÃ³vel) -->
         <div class="glass-card"
-          style="padding:3rem 2.25rem;display:flex;flex-direction:column;justify-content:space-between;min-height:540px;transition:all .4s cubic-bezier(.4,0,.2,1);cursor:pointer;"
-          onmouseenter="this.style.transform='translateY(-8px)';this.style.borderColor='var(--border-bright)';this.style.boxShadow='0 20px 40px rgba(4,13,191,0.08)'"
-          onmouseleave="this.style.transform='';this.style.borderColor='var(--border)';this.style.boxShadow=''">
+          style="padding:3rem 2.25rem;display:flex;flex-direction:column;justify-content:space-between;min-height:540px;transition:transform 1.4s cubic-bezier(0.25,1,0.5,1),box-shadow 1.4s cubic-bezier(0.25,1,0.5,1),border-color 1.4s cubic-bezier(0.25,1,0.5,1);cursor:pointer;"
+          onmouseenter="this.style.transform='scale(1.02) translateY(-2px)';this.style.borderColor='var(--c1)';this.style.boxShadow='0 24px 48px rgba(4,13,191,0.15)'"
+          onmouseleave="this.style.transform='';this.style.borderColor='';this.style.boxShadow=''">
 
           <div>
             <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem">
               <span
-                style="font-family:'Roboto Mono',monospace;font-size:0.8125rem;font-weight:600;color:var(--c2);text-transform:uppercase;letter-spacing:0.05em">Conexão
+                style="font-family:'Roboto Mono',monospace;font-size:0.8125rem;font-weight:600;color:var(--c2);text-transform:uppercase;letter-spacing:0.05em">ConexÃ£o
                 Móvel</span>
             </div>
             <h3
@@ -1643,12 +1816,12 @@
               <li style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-mid)">
                 <iconify-icon icon="solar:check-circle-bold"
                   style="color:var(--c3);flex-shrink:0;font-size:1.1rem"></iconify-icon>
-                Acesso à estante digital
+                Acesso á estante digital
               </li>
               <li style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-mid)">
                 <iconify-icon icon="solar:check-circle-bold"
                   style="color:var(--c3);flex-shrink:0;font-size:1.1rem"></iconify-icon>
-                Acesso ao jornalz
+                Acesso ao jornal
               </li>
               <li style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-mid)">
                 <iconify-icon icon="solar:check-circle-bold"
@@ -1678,7 +1851,7 @@
                 185,90</span>
               <span style="font-family:'Poppins',sans-serif;font-size:1rem;color:var(--text-faint)">/mês</span>
             </div>
-            <a href="https://wa.me/5500000000000?text=Olá!%20Gostaria%20de%20assinar%20o%20plano%20Móvel%20Extreme%205g%20de%201000%20Mega"
+            <a href="https://wa.me/5500000000000?text=OlÃ¡!%20Gostaria%20de%20assinar%20o%20plano%20MÃ³vel%20Extreme%205g%20de%201000%20Mega"
               target="_blank" class="btn btn-outline"
               style="width:100%;justify-content:center;gap:8px;border-color:rgba(4, 13, 191, 0.25)">
               <img src="assets/icons/wpp verde.svg" alt="WhatsApp"
@@ -1728,7 +1901,7 @@
               <div
                 style="display:flex;align-items:center;gap:10px;background:#fff;padding:8px 16px;border-radius:12px;border:1px solid var(--border);">
                 <iconify-icon icon="solar:shield-check-bold" style="color:var(--c2);font-size:1.5rem;"></iconify-icon>
-                <span style="font-size:0.875rem;font-weight:600;color:var(--text);">Melhor Custo-Benefício</span>
+                <span style="font-size:0.875rem;font-weight:600;color:var(--text);">Melhor Custo-BenefÃ­cio</span>
               </div>
             </div>
 
@@ -1773,7 +1946,7 @@
                       69,90</span>
                     <span style="font-family:'Poppins',sans-serif;font-size:0.95rem;color:var(--text-faint)">/mês</span>
                   </div>
-                  <a href="https://wa.me/5500000000000?text=Olá!%20Gostaria%20de%20assinar%20o%20Plano%20Internet%20do%20Combo%20Xperience%20de%201000%20Mega"
+                  <a href="https://wa.me/5500000000000?text=OlÃ¡!%20Gostaria%20de%20assinar%20o%20Plano%20Internet%20do%20Combo%20Xperience%20de%201000%20Mega"
                     target="_blank" class="btn btn-outline"
                     style="width:100%;justify-content:center;gap:8px;border-color:rgba(4, 13, 191, 0.25)">
                     <img src="assets/icons/wpp verde.svg" alt="WhatsApp"
@@ -1837,7 +2010,7 @@
                     <li style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-mid)">
                       <iconify-icon icon="solar:check-circle-bold"
                         style="color:var(--c1);flex-shrink:0;font-size:1.1rem"></iconify-icon>
-                      Acesso à estante digital & jornalz
+                      Acesso à estante digital & jornal
                     </li>
                     <li style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-mid)">
                       <iconify-icon icon="solar:check-circle-bold"
@@ -1857,7 +2030,7 @@
                       264,90</span>
                     <span style="font-family:'Poppins',sans-serif;font-size:0.95rem;color:var(--text-faint)">/mês</span>
                   </div>
-                  <a href="https://wa.me/5500000000000?text=Olá!%20Gostaria%20de%20assinar%20o%20Combo%20Completo%20Xperience%20de%20R$264,90"
+                  <a href="https://wa.me/5500000000000?text=OlÃ¡!%20Gostaria%20de%20assinar%20o%20Combo%20Completo%20Xperience%20de%20R$264,90"
                     target="_blank" class="btn btn-primary"
                     onmouseenter="this.querySelector('.btn-glow-layer').style.transform='translateX(0)'"
                     onmouseleave="this.querySelector('.btn-glow-layer').style.transform='translateX(-100%)'"
@@ -1892,8 +2065,9 @@
   <!-- Nosso APP Section -->
   <section id="nosso-app" style="background:var(--surface);padding:2rem 1.5rem;overflow:hidden">
     <div
-      style="background:var(--c1) url('assets/img/bgapp.png') center/cover no-repeat;border-radius:2rem;padding:5rem 1.5rem;width:80%;margin:0 auto;position:relative;overflow:visible;">
+      style="background:var(--c1) url('assets/img/bgapp.png') center/cover no-repeat;border-radius:2rem;padding:5rem 1.5rem;width:80%;margin:0 auto;position:relative;overflow:hidden;">
       <img src="assets/img/hf_20260601_171421_5a6d203b-2df9-4f36-82a1-e0dc6002a160.png" alt=""
+        class="app-section-deco"
         style="position:absolute;bottom:-30px;right:-50px;height:200px;pointer-events:none;user-select:none">
       <div style="max-width:72rem;margin:0 auto;display:flex;align-items:center;gap:3rem;flex-wrap:wrap">
 
@@ -2058,7 +2232,7 @@
           onmouseout="this.style.background='#fff';this.style.color='var(--c1)';this.style.borderColor='var(--border-bright)'">
           <iconify-icon icon="ri:arrow-left-s-line" width="22"></iconify-icon>
         </button>
-        <button id="dep-next" aria-label="Próximo"
+        <button id="dep-next" aria-label="PrÃ³ximo"
           style="width:48px;height:48px;border-radius:50%;border:1.5px solid var(--border-bright);background:#fff;color:var(--c1);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all 0.2s"
           onmouseover="this.style.background='var(--c1)';this.style.color='#fff';this.style.borderColor='var(--c1)'"
           onmouseout="this.style.background='#fff';this.style.color='var(--c1)';this.style.borderColor='var(--border-bright)'">
@@ -2075,17 +2249,17 @@
       const origCards = Array.from(track.querySelectorAll('.dep-card'));
       const total = origCards.length;
       const GAP = 24;
-      let pos = 0;       // índice absoluto, cresce/diminui livremente
+      let pos = 0;       // Ã­ndice absoluto, cresce/diminui livremente
       let isAnimating = false;
 
-      // Duplicar os cards 3x: [cópia][originais][cópia] para ter margem nos dois sentidos
+      // Duplicar os cards 3x: [cÃ³pia][originais][cÃ³pia] para ter margem nos dois sentidos
       origCards.forEach(c => track.appendChild(c.cloneNode(true)));
       origCards.forEach(c => track.appendChild(c.cloneNode(true)));
       origCards.slice().reverse().forEach(c => track.insertBefore(c.cloneNode(true), track.firstChild));
       origCards.slice().reverse().forEach(c => track.insertBefore(c.cloneNode(true), track.firstChild));
 
       const allCards = Array.from(track.querySelectorAll('.dep-card'));
-      const OFFSET = total * 2; // os originais começam nesta posição no allCards
+      const OFFSET = total * 2; // os originais comeÃ§am nesta posiÃ§Ã£o no allCards
 
       function getSiteMargin() {
         const vw = window.innerWidth;
@@ -2199,9 +2373,9 @@
     }
   </script>
 
-  <!-- ══════════════════════════════
+  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
        FOOTER
-  ══════════════════════════════ -->
+  â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
   <footer id="footer"
     style="background:var(--c1);border-top:1px solid rgba(4,13,191,0.08);position:relative;overflow:hidden">
 
@@ -2217,7 +2391,7 @@
     <div style="max-width:82rem;margin:0 auto;padding:4rem 1.5rem 3rem">
       <div style="display:grid;grid-template-columns:1.4fr 1fr 1.6fr;gap:3.5rem;align-items:start" class="footer-grid">
 
-        <!-- Col 1: Logo + Descrição + Redes sociais -->
+        <!-- Col 1: Logo + DescriÃ§Ã£o + Redes sociais -->
         <div class="scroll-reveal revealed">
           <!-- Logo -->
           <div style="margin-bottom:1.5rem">
@@ -2227,8 +2401,8 @@
           <!-- Tagline -->
           <p
             style="font-family:'Poppins',sans-serif;font-size:0.875rem;font-weight:300;color:var(--surface);line-height:1.75;max-width:280px;margin-bottom:2rem">
-            Internet fibra óptica de ultra velocidade em Mongaguá, Itanhaém e Peruíbe. Conexão estável, rápida e com
-            atendimento de verdade.
+            Internet fibra Óptica de ultra velocidade em Mongaguá, Itanhaém e Peruí­be. Conexão estável, rápida e
+            com atendimento de verdade.
           </p>
 
           <!-- Redes sociais -->
@@ -2257,11 +2431,11 @@
           </div>
         </div>
 
-        <!-- Col 2: Links de navegação -->
+        <!-- Col 2: Links de navegaÃ§Ã£o -->
         <div class="scroll-reveal revealed" style="animation-delay:0.1s">
           <p
             style="font-family:'Roboto Mono',monospace;font-size:1rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--c4);margin-bottom:1.5rem">
-            Navegação</p>
+            NavegaÃ§Ã£o</p>
           <nav style="display:flex;flex-direction:column;gap:0.875rem">
             <a href="#planos" id="footer-link-planos"
               style="font-family:'Poppins',sans-serif;font-size:0.875rem;font-weight:300;color:var(--surface);text-decoration:none;display:inline-flex;align-items:center;gap:0.4rem;transition:color 0.2s,gap 0.2s"
@@ -2313,12 +2487,14 @@
             Receba Novidades</p>
           <p
             style="font-family:'Poppins',sans-serif;font-size:0.8125rem;font-weight:300;color:var(--surface);line-height:1.65;margin-bottom:1.25rem">
-            Cadastre-se e receba em primeira mão promoções exclusivas, melhorias nos planos e dicas para aproveitar ao
+            Cadastre-se e receba em primeira mão promoções exclusivas, melhorias nos planos e dicas para aproveitar
+            ao
             máximo a sua internet. Sem spam, e você pode cancelar quando quiser!
           </p>
 
           <!-- Form -->
           <form id="footer-newsletter-form" onsubmit="handleFooterNewsletter(event)"
+            class="footer-newsletter-form-wrap"
             style="display:flex;gap:0.5rem;align-items:stretch">
             <div style="flex:1;position:relative">
               <input id="footer-email-input" type="email" placeholder="Seu E-mail" required
@@ -2340,8 +2516,8 @@
             style="display:none;margin-top:0.75rem;padding:0.65rem 1rem;background:rgba(22,163,74,0.07);border:1px solid rgba(22,163,74,0.2);border-radius:0.75rem;display:none;align-items:center;gap:0.5rem">
             <iconify-icon icon="solar:check-circle-linear"
               style="color:#16a34a;font-size:18px;flex-shrink:0"></iconify-icon>
-            <span style="font-family:'Poppins',sans-serif;font-size:0.8125rem;color:#16a34a">Ótimo! Você está na lista.
-              🎉</span>
+            <span style="font-family:'Poppins',sans-serif;font-size:0.8125rem;color:#16a34a">Ótimo! Você está na
+              lista.</span>
           </div>
         </div>
 
@@ -2353,24 +2529,24 @@
       <div
         style="max-width:82rem;margin:0 auto;padding:1.25rem 1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.75rem">
         <p style="font-family:'Poppins',sans-serif;font-size:0.78rem;font-weight:300;color:var(--surface)">
-          © <span id="footer-year"></span> WS Net. Todos os direitos reservados.
+          Â© <span id="footer-year"></span> WS Net. Todos os direitos reservados.
         </p>
 
-        <!-- Crédito Trius -->
+        <!-- CrÃ©dito Trius -->
         <div style="display:flex;align-items:center;gap:0.5rem">
           <span
             style="font-family:'Poppins',sans-serif;font-size:0.78rem;font-weight:300;color:var(--surface)">Desenvolvido
             por:</span>
-          <a href="https://agenciatrius.com.br" target="_blank" rel="noopener noreferrer" aria-label="Agência Trius"
+          <a href="https://agenciatrius.com.br" target="_blank" rel="noopener noreferrer" aria-label="AgÃªncia Trius"
             style="display:inline-flex;align-items:center;opacity:0.75;transition:opacity 0.2s"
             onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.75'">
-            <img src="assets/img/logoTrius.png" alt="Agência Trius"
+            <img src="assets/img/logoTrius.png" alt="AgÃªncia Trius"
               style="height:22px;width:auto;object-fit:contain;filter:brightness(0) invert(1)">
           </a>
         </div>
 
         <p style="font-family:'Poppins',sans-serif;font-size:0.78rem;font-weight:300;color:var(--surface)">
-          Mongaguá · Itanhaém · Peruíbe
+          MongaguÃ¡ Â· ItanhaÃ©m Â· PeruÃ­be
         </p>
       </div>
     </div>
@@ -2893,7 +3069,7 @@
         if (!element) return;
         const nodes = Array.from(element.childNodes);
         element.innerHTML = '';
-        
+
         nodes.forEach(node => {
           if (node.nodeType === Node.TEXT_NODE) {
             const text = node.textContent;
@@ -2945,7 +3121,7 @@
         delay: 0.1
       });
 
-      // Fade up badge, subtitle list, and modem — all at once
+      // Fade up badge, subtitle list, and modem â€” all at once
       gsap.fromTo([heroBadge, heroSub, heroModem],
         { y: 30, opacity: 0 },
         {
@@ -3038,7 +3214,7 @@
           }
         }
       );
-      
+
       gsap.fromTo('#nosso-app .scroll-reveal:not(.from-left)',
         { x: 50, opacity: 0 },
         {
@@ -3067,7 +3243,7 @@
           }
         }
       );
-      
+
       gsap.fromTo('#dep-viewport',
         { y: 40, opacity: 0 },
         {
