@@ -108,102 +108,32 @@ function switchTab(type) {
     gridMov.style.display = 'grid';
   }
 
-  if (window._initPlanAccordion) window._initPlanAccordion();
 }
 
 
-/* === ACORDEÃO MOBILE — CARDS DE PLANOS === */
+
+/* === ACORDEÃO MOBILE — fecha cards ao carregar em mobile === */
 (function () {
+  function closePlanCards() {
+    document.querySelectorAll('.plan-card, .combo-accordion').forEach(function (el) {
+      el.removeAttribute('open');
+    });
+  }
+  function openPlanCards() {
+    document.querySelectorAll('.plan-card, .combo-accordion').forEach(function (el) {
+      el.setAttribute('open', '');
+    });
+  }
   var mq = window.matchMedia('(max-width: 768px)');
-
-  function getSpeedText(card) {
-    var speedEl = card.querySelector('.plan-speed');
-    if (!speedEl) return { num: '', unit: 'Mega' };
-    var unitEl = speedEl.querySelector('.plan-unit');
-    var num = speedEl.childNodes[0] ? speedEl.childNodes[0].textContent.trim() : '';
-    var unit = unitEl ? unitEl.textContent.trim() : 'Mega';
-    return { num: num, unit: unit };
-  }
-
-  function getPriceText(card) {
-    var priceEl = card.querySelector('.plan-price');
-    if (!priceEl) return '';
-    return priceEl.textContent.replace(/\s+/g, ' ').trim();
-  }
-
-  function initCard(card) {
-    if (card.querySelector('.plan-card-trigger')) return; // já inicializado
-
-    var speed = getSpeedText(card);
-    var price = getPriceText(card);
-
-    var trigger = document.createElement('button');
-    trigger.className = 'plan-card-trigger';
-    trigger.setAttribute('aria-expanded', 'false');
-    trigger.innerHTML =
-      '<span class="plan-card-trigger-label">' + speed.num + '<span> ' + speed.unit + '</span></span>' +
-      '<span class="plan-card-trigger-right">' +
-        '<span class="plan-card-trigger-price">' + price + '</span>' +
-        '<svg class="plan-card-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>' +
-      '</span>';
-
-    var body = document.createElement('div');
-    body.className = 'plan-card-body';
-    var children = Array.from(card.childNodes);
-    children.forEach(function (child) { body.appendChild(child); });
-
-    trigger.addEventListener('click', function () {
-      var isOpen = card.classList.contains('is-open');
-      document.querySelectorAll('.plan-card.is-open').forEach(function (c) {
-        c.classList.remove('is-open');
-        var t = c.querySelector('.plan-card-trigger');
-        if (t) t.setAttribute('aria-expanded', 'false');
-      });
-      if (!isOpen) {
-        card.classList.add('is-open');
-        trigger.setAttribute('aria-expanded', 'true');
-      }
-    });
-
-    card.appendChild(trigger);
-    card.appendChild(body);
-  }
-
-  function destroyCard(card) {
-    card.classList.remove('is-open');
-    var trigger = card.querySelector('.plan-card-trigger');
-    var body = card.querySelector('.plan-card-body');
-    if (!trigger || !body) return;
-    Array.from(body.childNodes).forEach(function (child) {
-      card.insertBefore(child, trigger);
-    });
-    trigger.remove();
-    body.remove();
-  }
-
-  function initAll() {
-    document.querySelectorAll('.plan-card').forEach(initCard);
-  }
-
-  function destroyAll() {
-    document.querySelectorAll('.plan-card').forEach(destroyCard);
-  }
-
   function onBreakpoint(e) {
-    if (e.matches) initAll();
-    else destroyAll();
+    if (e.matches) closePlanCards();
+    else openPlanCards();
   }
-
-  window._initPlanAccordion = initAll;
-
   mq.addEventListener('change', onBreakpoint);
-
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function () {
-      if (mq.matches) initAll();
-    });
+    document.addEventListener('DOMContentLoaded', function () { onBreakpoint(mq); });
   } else {
-    if (mq.matches) initAll();
+    onBreakpoint(mq);
   }
 })();
 

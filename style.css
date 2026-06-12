@@ -730,6 +730,91 @@ h6,
   }
 }
 
+/* === PLANOS: REGRAS BASE (desktop) === */
+.plan-card {
+  padding: 0;
+}
+
+.plan-summary {
+  display: none;
+}
+
+.plan-body {
+  padding: 3rem 2.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.plan-summary::-webkit-details-marker { display: none; }
+.plan-summary::marker { display: none; }
+
+.plan-summary-speed {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  color: var(--text);
+  font-size: 1.4rem;
+  line-height: 1;
+  display: flex;
+  align-items: baseline;
+  gap: 0.35rem;
+}
+
+.plan-summary-speed span {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-mid);
+}
+
+.plan-summary-right {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex-shrink: 0;
+}
+
+.plan-summary-price {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--c1);
+}
+
+.plan-summary-chevron {
+  width: 1.4rem;
+  height: 1.4rem;
+  color: var(--text-faint);
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+details[open] .plan-summary-chevron {
+  transform: rotate(180deg);
+}
+
+/* === COMBO ACCORDION === */
+.combo-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.1rem 2.25rem;
+  cursor: default;
+  pointer-events: none;
+  gap: 0.5rem;
+}
+
+.combo-summary .plan-summary-chevron {
+  display: none;
+}
+
+.combo-body {
+  display: block;
+}
+
+.combo-summary::-webkit-details-marker { display: none; }
+.combo-summary::marker { display: none; }
+
 @media (max-width: 768px) {
   .badge-ultra-fibra {
     font-size: .625rem !important;
@@ -780,6 +865,15 @@ h6,
     padding-top: 110px !important;
   }
 
+  #electric-combo-card {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+
+  .combo-custo-beneficio {
+    display: none !important;
+  }
+
   .tab-selector-wrap {
     flex-direction: row !important;
     width: auto !important;
@@ -824,74 +918,42 @@ h6,
   .plan-card {
     min-height: unset !important;
     padding: 0 !important;
-    cursor: default !important;
   }
 
-  .plan-card-trigger {
-    width: 100%;
-    display: flex;
+  .plan-summary {
+    display: flex !important;
+    padding: 1.35rem 1.5rem !important;
+  }
+
+  .plan-body {
+    padding: 0 1.5rem 1.5rem !important;
+  }
+
+  .plan-body > div + div {
+    margin-top: 1.5rem;
+  }
+
+  /* === ACORDEÃO MOBILE — COMBO XPERIENCE === */
+  .combo-accordion {
+    padding: 0 !important;
+  }
+
+  .combo-summary {
+    display: flex !important;
     align-items: center;
     justify-content: space-between;
     padding: 1.1rem 1.5rem;
-    background: none;
-    border: none;
-    cursor: pointer;
+    cursor: pointer !important;
+    pointer-events: auto !important;
     gap: 0.5rem;
   }
 
-  .plan-card-trigger-label {
-    display: flex;
-    align-items: baseline;
-    gap: 0.35rem;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    color: var(--text);
-    font-size: 1.4rem;
-    line-height: 1;
+  .combo-summary .plan-summary-chevron {
+    display: block !important;
   }
 
-  .plan-card-trigger-label span {
-    font-size: 0.85rem;
-    font-weight: 500;
-    color: var(--text-mid);
-  }
-
-  .plan-card-trigger-right {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    flex-shrink: 0;
-  }
-
-  .plan-card-trigger-price {
-    font-family: 'Poppins', sans-serif;
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: var(--c1);
-  }
-
-  .plan-card-chevron {
-    width: 1.1rem;
-    height: 1.1rem;
-    color: var(--text-faint);
-    transition: transform 0.3s ease;
-    flex-shrink: 0;
-  }
-
-  .plan-card.is-open .plan-card-chevron {
-    transform: rotate(180deg);
-  }
-
-  .plan-card-body {
-    overflow: hidden;
-    max-height: 0;
-    transition: max-height 0.45s cubic-bezier(0.16, 1, 0.3, 1);
-    padding: 0 1.5rem;
-  }
-
-  .plan-card.is-open .plan-card-body {
-    max-height: 1200px;
-    padding: 0 1.5rem 1.75rem;
+  .combo-body {
+    padding: 0 1.5rem 1.5rem !important;
   }
 
   #nosso-app>div {
@@ -908,6 +970,20 @@ h6,
     min-width: unset !important;
     flex: none !important;
     width: 100% !important;
+  }
+
+  #nosso-app>div>div {
+    flex-direction: column !important;
+  }
+
+  .app-phone-img-wrap {
+    order: 2 !important;
+    flex: none !important;
+    width: 100% !important;
+  }
+
+  .app-phone-img-wrap img {
+    max-width: 140px !important;
   }
 
   .dep-card {
