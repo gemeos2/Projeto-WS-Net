@@ -1068,7 +1068,7 @@
     <div
       style="background:var(--c1) url('assets/img/bgapp.png') center/cover no-repeat;border-radius:2rem;padding:5rem 1.5rem;width:80%;margin:0 auto;position:relative;overflow:visible;">
       <img src="assets/img/hf_20260601_171421_5a6d203b-2df9-4f36-82a1-e0dc6002a160.png" alt="" class="app-section-deco"
-        style="position:absolute;bottom:-30px;right:-50px;height:25%;pointer-events:none;user-select:none; z-index: 1000;">
+        style="position:absolute;bottom:-30px;right:-50px;height:25%;pointer-events:none;user-select:none;">
       <div style="max-width:72rem;margin:0 auto;display:flex;align-items:center;gap:3rem;flex-wrap:wrap">
 
         <!-- Imagem (esquerda) -->
@@ -1396,13 +1396,15 @@
     <!-- Bottom bar -->
     <div style="border-top:1px solid rgba(4,13,191,0.08)">
       <div
-        style="max-width:82rem;margin:0 auto;padding:1.25rem 1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.75rem">
-        <p style="font-family:'Poppins',sans-serif;font-size:0.78rem;font-weight:300;color:var(--surface)">
-          Â© <span id="footer-year"></span> WS Net. Todos os direitos reservados.
+        style="max-width:82rem;margin:0 auto;padding:1.25rem 1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.75rem"
+        class="footer-bottom-bar">
+        <p
+          style="font-family:'Poppins',sans-serif;font-size:clamp(0.6rem, 0.8vw, 15px);font-weight:300;color:var(--surface)">
+          © <span id="footer-year"></span> WS Net. Todos os direitos reservados.
         </p>
 
-        <!-- CrÃ©dito Trius -->
-        <div style="display:flex;align-items:center;gap:0.5rem">
+        <!-- Crédito Trius -->
+        <div class="footer-trius-credit" style="display:flex;align-items:center;gap:0.5rem">
           <span
             style="font-family:'Poppins',sans-serif;font-size:0.78rem;font-weight:300;color:var(--surface)">Desenvolvido
             por:</span>
@@ -1413,10 +1415,6 @@
               style="height:22px;width:auto;object-fit:contain;filter:brightness(0) invert(1)">
           </a>
         </div>
-
-        <p style="font-family:'Poppins',sans-serif;font-size:0.78rem;font-weight:300;color:var(--surface)">
-          MongaguÃ¡ Â· ItanhaÃ©m Â· PeruÃ­be
-        </p>
       </div>
     </div>
 

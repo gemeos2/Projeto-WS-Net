@@ -1053,12 +1053,24 @@ details[open] .plan-summary-chevron {
   }
 
   .footer-newsletter-form-wrap {
-    flex-direction: column !important;
+    flex-direction: row !important;
+  }
+
+  .footer-newsletter-form-wrap > div {
+    flex: 1 !important;
+    min-width: 0 !important;
+  }
+
+  .footer-newsletter-form-wrap > div input {
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
 
   .footer-newsletter-form-wrap button {
-    width: 100% !important;
+    flex-shrink: 0 !important;
     border-radius: 0.75rem !important;
+    padding: 0 1rem !important;
+    font-size: 0.8rem !important;
   }
 
   .hero-mobile-cta {
@@ -1264,5 +1276,26 @@ details[open] .plan-summary-chevron {
 @media (max-width: 640px) {
   .footer-grid {
     grid-template-columns: 1fr !important;
+  }
+}
+
+/* Footer bottom bar — trius credit centered */
+@media (min-width: 641px) {
+  .footer-bottom-bar {
+    position: relative !important;
+    justify-content: center !important;
+  }
+
+  .footer-bottom-bar > p {
+    position: absolute !important;
+    left: 1.5rem !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-bottom-bar {
+    flex-direction: column-reverse !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
 }
