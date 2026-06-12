@@ -124,7 +124,7 @@ function switchTab(type) {
       el.setAttribute('open', '');
     });
   }
-  var mq = window.matchMedia('(max-width: 768px)');
+  var mq = window.matchMedia('(max-width: 1024px)');
   function onBreakpoint(e) {
     if (e.matches) closePlanCards();
     else openPlanCards();

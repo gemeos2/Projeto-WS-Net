@@ -728,6 +728,53 @@ h6,
   .hamburger {
     display: flex !important;
   }
+
+  /* === ACORDEÃO — CARDS DE PLANOS === */
+  #grid-residencial,
+  #grid-movel {
+    grid-template-columns: 1fr !important;
+  }
+
+  .plan-card {
+    min-height: unset !important;
+    padding: 0 !important;
+  }
+
+  .plan-summary {
+    display: flex !important;
+    padding: 1.35rem 1.5rem !important;
+  }
+
+  .plan-body {
+    padding: 0 1.5rem 1.5rem !important;
+  }
+
+  .plan-body > div + div {
+    margin-top: 1.5rem;
+  }
+
+  /* === ACORDEÃO — COMBO XPERIENCE === */
+  .combo-accordion {
+    padding: 0 !important;
+  }
+
+  .combo-summary {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.1rem 1.5rem;
+    cursor: pointer !important;
+    pointer-events: auto !important;
+    gap: 0.5rem;
+  }
+
+  .combo-summary .plan-summary-chevron {
+    display: block !important;
+  }
+
+  .combo-body {
+    padding: 0 1.5rem 1.5rem !important;
+  }
 }
 
 /* === PLANOS: REGRAS BASE (desktop) === */
@@ -893,11 +940,6 @@ details[open] .plan-summary-chevron {
     justify-content: center !important;
   }
 
-  #grid-residencial,
-  #grid-movel {
-    grid-template-columns: 1fr !important;
-  }
-
   .plan-price {
     font-size: 1.8rem !important;
   }
@@ -912,48 +954,6 @@ details[open] .plan-summary-chevron {
 
   .plan-name {
     font-size: 0.85rem !important;
-  }
-
-  /* === ACORDEÃO MOBILE — CARDS DE PLANOS === */
-  .plan-card {
-    min-height: unset !important;
-    padding: 0 !important;
-  }
-
-  .plan-summary {
-    display: flex !important;
-    padding: 1.35rem 1.5rem !important;
-  }
-
-  .plan-body {
-    padding: 0 1.5rem 1.5rem !important;
-  }
-
-  .plan-body > div + div {
-    margin-top: 1.5rem;
-  }
-
-  /* === ACORDEÃO MOBILE — COMBO XPERIENCE === */
-  .combo-accordion {
-    padding: 0 !important;
-  }
-
-  .combo-summary {
-    display: flex !important;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1.1rem 1.5rem;
-    cursor: pointer !important;
-    pointer-events: auto !important;
-    gap: 0.5rem;
-  }
-
-  .combo-summary .plan-summary-chevron {
-    display: block !important;
-  }
-
-  .combo-body {
-    padding: 0 1.5rem 1.5rem !important;
   }
 
   #nosso-app>div {
