@@ -220,6 +220,40 @@ function switchTab(type) {
   document.getElementById('dep-next').addEventListener('click', () => goTo(1));
   window.addEventListener('resize', init);
 
+  /* === SWIPE (mobile only) === */
+  const viewport = document.getElementById('dep-viewport');
+  let touchStartX = 0;
+  let touchStartY = 0;
+  let touchDeltaX = 0;
+  let isSwiping = false;
+  const SWIPE_THRESHOLD = 40;
+
+  viewport.addEventListener('touchstart', function (e) {
+    if (window.innerWidth >= 768) return;
+    touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
+    touchDeltaX = 0;
+    isSwiping = false;
+  }, { passive: true });
+
+  viewport.addEventListener('touchmove', function (e) {
+    if (window.innerWidth >= 768) return;
+    const dx = e.touches[0].clientX - touchStartX;
+    const dy = e.touches[0].clientY - touchStartY;
+    if (!isSwiping && Math.abs(dy) > Math.abs(dx)) return;
+    isSwiping = true;
+    touchDeltaX = dx;
+    e.preventDefault();
+  }, { passive: false });
+
+  viewport.addEventListener('touchend', function () {
+    if (window.innerWidth >= 768 || !isSwiping) return;
+    if (Math.abs(touchDeltaX) >= SWIPE_THRESHOLD) {
+      goTo(touchDeltaX < 0 ? 1 : -1);
+    }
+    isSwiping = false;
+  }, { passive: true });
+
   init();
 })();
 

@@ -749,7 +749,7 @@ h6,
     padding: 0 1.5rem 1.5rem !important;
   }
 
-  .plan-body > div + div {
+  .plan-body>div+div {
     margin-top: 1.5rem;
   }
 
@@ -794,8 +794,13 @@ h6,
   flex: 1;
 }
 
-.plan-summary::-webkit-details-marker { display: none; }
-.plan-summary::marker { display: none; }
+.plan-summary::-webkit-details-marker {
+  display: none;
+}
+
+.plan-summary::marker {
+  display: none;
+}
 
 .plan-summary-speed {
   font-family: 'Poppins', sans-serif;
@@ -859,13 +864,42 @@ details[open] .plan-summary-chevron {
   display: block;
 }
 
-.combo-summary::-webkit-details-marker { display: none; }
-.combo-summary::marker { display: none; }
+.combo-summary::-webkit-details-marker {
+  display: none;
+}
+
+.combo-summary::marker {
+  display: none;
+}
 
 @media (max-width: 768px) {
   .badge-ultra-fibra {
     font-size: .625rem !important;
     letter-spacing: 0.03em !important;
+  }
+
+  #planos .plans-headline {
+    text-align: left !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  #planos .plans-headline .tab-selector-wrap {
+    align-self: center !important;
+    margin: 0 auto !important;
+  }
+
+  .depoimentos-headline {
+    text-align: left !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .depoimentos-headline p {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
 
   #hero-section {
@@ -989,6 +1023,15 @@ details[open] .plan-summary-chevron {
   .dep-card {
     width: calc(90vw - 3rem) !important;
     max-width: 100% !important;
+  }
+
+  #dep-viewport {
+    overflow: hidden !important;
+  }
+
+  #dep-viewport::before,
+  #dep-viewport::after {
+    display: none !important;
   }
 
   .s-glow {
