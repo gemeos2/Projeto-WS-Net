@@ -137,55 +137,18 @@
        HERO SECTION (Royal Blue c1)
      Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â -->
   <section id="hero-section"
-    style="position:relative;display:flex;align-items:center;justify-content:center;padding-top:140px;padding-bottom:40px;min-height:75vh;background:var(--c1)"
-    class="grid-pattern hero-dark-grid">
+    style="position:relative;display:flex;align-items:center;justify-content:center;padding-top:140px;padding-bottom:40px;min-height:90vh;overflow:hidden"
+    class="hero-dark-grid">
 
-    <!-- Antigravity Canvas Background -->
-    <canvas id="antigravity-canvas"
-      style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:2"></canvas>
-
-    <!-- Ambient glows (brand-colored) -->
-    <div class="s-glow animate-pulse-glow"
-      style="width:600px;height:600px;background:radial-gradient(circle,rgba(5,175,242,0.15),transparent 70%);top:-80px;left:-80px">
-    </div>
-    <div class="s-glow animate-pulse-glow animate-float-d1"
-      style="width:480px;height:480px;background:radial-gradient(circle,rgba(5,242,242,0.12),transparent 70%);bottom:-60px;right:-60px">
-    </div>
-    <div class="s-glow animate-float"
-      style="width:260px;height:260px;background:radial-gradient(circle,rgba(5,108,242,0.18),transparent 70%);top:38%;right:14%">
-    </div>
-
-    <!-- Orbiting rings -->
-    <div
-      style="position:absolute;width:320px;height:320px;border-radius:50%;border:1px solid rgba(255,255,255,0.05);top:50%;left:50%;transform:translate(-50%,-50%);animation:spin 30s linear infinite">
-    </div>
-    <div
-      style="position:absolute;width:480px;height:480px;border-radius:50%;border:1px dashed rgba(255,255,255,0.03);top:50%;left:50%;transform:translate(-50%,-50%);animation:spin 50s linear infinite reverse">
-    </div>
-    <!-- Orbiting dot -->
-    <div
-      style="position:absolute;top:50%;left:50%;width:8px;height:8px;margin:-4px;border-radius:50%;background:var(--c4);box-shadow:0 0 16px rgba(5,242,242,0.7);animation:orbitGlow 8s linear infinite">
-    </div>
-
-    <!-- Floating particles -->
-    <div
-      style="position:absolute;width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,0.25);top:22%;left:18%;animation:float 7s ease-in-out infinite">
-    </div>
-    <div
-      style="position:absolute;width:4px;height:4px;border-radius:50%;background:rgba(5,242,242,0.4);top:58%;left:14%;animation:float 9s ease-in-out infinite 2s">
-    </div>
-    <div
-      style="position:absolute;width:6px;height:6px;border-radius:50%;background:rgba(5,175,242,0.4);top:33%;right:19%;animation:float 8s ease-in-out infinite 1s">
-    </div>
-    <div
-      style="position:absolute;width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,0.15);bottom:28%;right:28%;animation:float 6s ease-in-out infinite 3s">
-    </div>
+    <!-- Silk WebGL Background -->
+    <canvas id="silk-canvas"
+      style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0"></canvas>
 
     <!-- Layout Container -->
     <div class="hero-container"
       style="position:relative;z-index:10;max-width:82rem;margin:0 auto;padding:0 1.5rem;display:grid;grid-template-columns:1.15fr 0.85fr;gap:4rem;align-items:center;width:100%">
 
-      <!-- Content (Left Column) -->
+      <!-- Content -->
       <div class="hero-content"
         style="display:flex;flex-direction:column;align-items:flex-start;perspective:1200px;transform-style:preserve-3d">
 
@@ -205,7 +168,7 @@
 
         <!-- Headline -->
         <h1 class="animate-kinetic animate-kinetic-d1"
-          style="font-family:'Poppins',sans-serif;font-size:clamp(2.25rem,4.5vw,3.75rem);font-weight:600;line-height:1.15;letter-spacing:-.03em;transform-style:preserve-3d;margin-bottom:1.5rem;color:#ffffff">
+          style="font-family:'Poppins',sans-serif;font-size:clamp(2.25rem,4.5vw,3.75rem);font-weight:600;line-height:1.30;letter-spacing:-.03em;transform-style:preserve-3d;margin-bottom:1.5rem;color:#ffffff">
           A internet mais bem avaliada de <br>
           <span class="text-liquid">Mongaguá, Itanhaém e Peruíbe</span>
         </h1>
@@ -233,14 +196,13 @@
 
       </div>
 
-      <!-- Modem Image (Right Column) -->
+      <!-- Video (Right Column) -->
       <div class="hero-image-wrapper animate-kinetic animate-kinetic-d2"
-        style="display:flex;flex-direction:column;justify-content:center;align-items:center;position:relative;width:100%;z-index:20">
-        <div class="s-glow animate-pulse-glow"
-          style="width:380px;height:380px;background:radial-gradient(circle,rgba(5,242,242,0.16),transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);filter:blur(40px)">
-        </div>
-        <img src="assets/img/moldemIMG.png" alt="Modem Wi-Fi WS Net Fibra" class="modem-hero-img" id="modem-hero-img"
-          style="position:relative;z-index:2;max-width:100%;height:auto;object-fit:contain;filter:drop-shadow(0 20px 50px rgba(4,13,191,0.4)) drop-shadow(0 10px 15px rgba(5,108,242,0.2))">
+        style="display:flex;justify-content:center;align-items:center;position:relative;width:100%;z-index:20">
+        <video autoplay muted loop playsinline
+          style="width:100%;height:auto;border-radius:1.25rem;object-fit:cover;box-shadow:0 20px 60px rgba(4,13,191,0.5)">
+          <source src="assets/video/videoHeroSection.mp4" type="video/mp4">
+        </video>
       </div>
 
     </div>
@@ -1422,11 +1384,108 @@
 
   <!-- GSAP already loaded above for preloader (gsap@3.12.5) -->
 
-  <!-- Three.js Library -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-
   <!-- JavaScript do projeto -->
   <script src="script.js"></script>
+
+  <!-- Silk WebGL Background -->
+  <script>
+    (function () {
+      var canvas = document.getElementById('silk-canvas');
+      if (!canvas) return;
+      var gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+      if (!gl) return;
+
+      var vs = [
+        'attribute vec2 a_pos;',
+        'varying vec2 vUv;',
+        'void main(){',
+        '  vUv = a_pos * 0.5 + 0.5;',
+        '  gl_Position = vec4(a_pos, 0.0, 1.0);',
+        '}'
+      ].join('\n');
+
+      var fs = [
+        'precision mediump float;',
+        'varying vec2 vUv;',
+        'uniform float uTime;',
+        'uniform vec3  uColor;',
+        'uniform float uSpeed;',
+        'uniform float uScale;',
+        'uniform float uRotation;',
+        'uniform float uNoiseIntensity;',
+        'const float e = 2.71828182845904523536;',
+        'float noise(vec2 t){',
+        '  float G=e; vec2 r=G*sin(G*t);',
+        '  return fract(r.x*r.y*(1.0+t.x));',
+        '}',
+        'vec2 rotateUvs(vec2 uv,float a){',
+        '  float c=cos(a),s=sin(a);',
+        '  return mat2(c,-s,s,c)*uv;',
+        '}',
+        'void main(){',
+        '  float rnd = noise(gl_FragCoord.xy);',
+        '  vec2 uv  = rotateUvs(vUv*uScale, uRotation);',
+        '  vec2 tex = uv*uScale;',
+        '  float t  = uSpeed*uTime;',
+        '  tex.y += 0.03*sin(8.0*tex.x - t);',
+        '  float p = 0.6 + 0.4*sin(5.0*(tex.x+tex.y+cos(3.0*tex.x+5.0*tex.y)+0.02*t)+sin(20.0*(tex.x+tex.y-0.1*t)));',
+        '  vec4 col = vec4(uColor,1.0)*vec4(p) - rnd/15.0*uNoiseIntensity;',
+        '  col.a = 1.0;',
+        '  gl_FragColor = col;',
+        '}'
+      ].join('\n');
+
+      function mkShader(type, src) {
+        var s = gl.createShader(type);
+        gl.shaderSource(s, src); gl.compileShader(s); return s;
+      }
+      var prog = gl.createProgram();
+      gl.attachShader(prog, mkShader(gl.VERTEX_SHADER, vs));
+      gl.attachShader(prog, mkShader(gl.FRAGMENT_SHADER, fs));
+      gl.linkProgram(prog);
+      gl.useProgram(prog);
+
+      var buf = gl.createBuffer();
+      gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]), gl.STATIC_DRAW);
+      var loc = gl.getAttribLocation(prog, 'a_pos');
+      gl.enableVertexAttribArray(loc);
+      gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
+
+      var uTime = gl.getUniformLocation(prog, 'uTime');
+      var uColor = gl.getUniformLocation(prog, 'uColor');
+      var uSpeed = gl.getUniformLocation(prog, 'uSpeed');
+      var uScale = gl.getUniformLocation(prog, 'uScale');
+      var uRotation = gl.getUniformLocation(prog, 'uRotation');
+      var uNoise = gl.getUniformLocation(prog, 'uNoiseIntensity');
+
+      /* Props: color=#040DBF, speed=5, scale=0.1, noiseIntensity=1.5, rotation=0 */
+      gl.uniform3f(uColor, 4 / 255, 13 / 255, 191 / 255);
+      gl.uniform1f(uSpeed, 0.3);
+      gl.uniform1f(uScale, 0.1);
+      gl.uniform1f(uRotation, 0.0);
+      gl.uniform1f(uNoise, 1.5);
+
+      function resize() {
+        canvas.width = canvas.offsetWidth * (window.devicePixelRatio || 1);
+        canvas.height = canvas.offsetHeight * (window.devicePixelRatio || 1);
+        gl.viewport(0, 0, canvas.width, canvas.height);
+      }
+      resize();
+      window.addEventListener('resize', resize);
+
+      var t = 0, last = 0;
+      function frame(now) {
+        var dt = Math.min((now - last) / 1000, 0.05);
+        last = now; t += dt;
+        gl.uniform1f(uTime, t);
+        gl.clear(gl.COLOR_BUFFER_BIT);
+        gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+        requestAnimationFrame(frame);
+      }
+      requestAnimationFrame(frame);
+    })();
+  </script>
 </body>
 
 </html>
