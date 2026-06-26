@@ -613,9 +613,7 @@ h6,
 
 /* ── DARK THEME & HERO LAYOUT OVERRIDES ── */
 .hero-dark-grid {
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background: none;
 }
 
 .hero-dark-grid .text-liquid {
@@ -917,33 +915,21 @@ details[open] .plan-summary-chevron {
   }
 
   .hero-content {
-    align-items: flex-start !important;
+    align-items: center !important;
+    text-align: center !important;
   }
 
   .hero-content .animate-kinetic {
-    align-self: flex-start !important;
+    align-self: center !important;
   }
 
   #hero-section {
-    overflow: visible !important;
-    padding-bottom: 120px !important;
-  }
-
-  .hero-image-wrapper {
-    position: absolute !important;
-    bottom: -150px !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    width: auto !important;
-    z-index: 30 !important;
-  }
-
-  .hero-image-wrapper img {
-    max-width: 100px !important;
+    overflow: hidden !important;
+    padding-bottom: 60px !important;
   }
 
   #planos {
-    padding-top: 110px !important;
+    padding-top: 60px !important;
   }
 
   #electric-combo-card {
